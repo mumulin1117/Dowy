@@ -6,10 +6,14 @@ target 'Miauomiccjt' do
   use_frameworks!
 
   # Pods for Miauomiccjt
+  pod "MJRefresh"
 pod 'TransitionableTab'
 pod 'LNZCollectionLayouts'
 pod "IQKeyboardManager"
 pod 'SnapKit'
 pod "SwiftyStoreKit"
 pod "Player"
+
+pod 'ActiveLabel'
+
 end

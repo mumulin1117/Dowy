@@ -1,14 +1,18 @@
 PODS:
+  - ActiveLabel (1.1.0)
   - IQKeyboardManager (6.5.19)
   - LNZCollectionLayouts (1.2.2)
+  - MJRefresh (3.7.9)
   - Player (0.14.0)
   - SnapKit (5.7.1)
   - SwiftyStoreKit (0.16.1)
   - TransitionableTab (0.2.0)
 
 DEPENDENCIES:
+  - ActiveLabel
   - IQKeyboardManager
   - LNZCollectionLayouts
+  - MJRefresh
   - Player
   - SnapKit
   - SwiftyStoreKit
@@ -16,21 +20,25 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ActiveLabel
     - IQKeyboardManager
     - LNZCollectionLayouts
+    - MJRefresh
     - Player
     - SnapKit
     - SwiftyStoreKit
     - TransitionableTab
 
 SPEC CHECKSUMS:
+  ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   LNZCollectionLayouts: 509d8143a70db014f2094ae7052ec879ab988dab
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   Player: 37e0acc16ea1495fc241df88fe9f089367513331
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   TransitionableTab: 54a5d0af475033bdb83959fde4e5d6201af7e2ab
 
-PODFILE CHECKSUM: fbbdfa85a1c8194785551077d72bdac831e87bf0
+PODFILE CHECKSUM: 4a6b055c6b83a2cf3749173c9dd1f8a2bb855246
 
 COCOAPODS: 1.16.2

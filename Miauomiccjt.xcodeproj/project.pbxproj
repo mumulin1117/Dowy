@@ -7,16 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047218982D71555D0028B44D /* BucueCarstarTruber.swift */; };
+		0472189B2D71555D0028B44D /* BucueCarstarTruber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047218992D71555D0028B44D /* BucueCarstarTruber.xib */; };
+		0472189D2D715E980028B44D /* BucueEluaiTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472189C2D715E980028B44D /* BucueEluaiTruber.swift */; };
+		047218A02D7194410028B44D /* BucuepuerjnhTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472189E2D7194410028B44D /* BucuepuerjnhTruber.swift */; };
+		047218A12D7194410028B44D /* BucuepuerjnhTruber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0472189F2D7194410028B44D /* BucuepuerjnhTruber.xib */; };
+		047218A32D71A8F80028B44D /* MOibduijpkdf.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047218A22D71A8F80028B44D /* MOibduijpkdf.plist */; };
+		047218A52D71ADF60028B44D /* MIAJ_fugai0.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 047218A42D71ADF60028B44D /* MIAJ_fugai0.mp4 */; };
+		047218A72D71AE020028B44D /* MIAJ_fugai1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 047218A62D71AE020028B44D /* MIAJ_fugai1.mp4 */; };
+		047218A92D71AE0B0028B44D /* MIAJ_fugai2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 047218A82D71AE0B0028B44D /* MIAJ_fugai2.mp4 */; };
+		047218AB2D71AE120028B44D /* MIAJ_fugai3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 047218AA2D71AE120028B44D /* MIAJ_fugai3.mp4 */; };
+		047218AD2D71AE190028B44D /* MIAJ_fugai4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 047218AC2D71AE190028B44D /* MIAJ_fugai4.mp4 */; };
+		047218AF2D71AE1F0028B44D /* MIAJ_fugai5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 047218AE2D71AE1F0028B44D /* MIAJ_fugai5.mp4 */; };
+		047218B12D71AE260028B44D /* MIAJ_fugai7.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 047218B02D71AE260028B44D /* MIAJ_fugai7.mp4 */; };
 		04A8E0102D6F01E800876DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E0062D6F01E800876DCD /* AppDelegate.swift */; };
 		04A8E0132D6F01E800876DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E0072D6F01E800876DCD /* Assets.xcassets */; };
 		04A8E0152D6F01E800876DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E00A2D6F01E800876DCD /* LaunchScreen.storyboard */; };
 		04A8E0182D6F06DA00876DCD /* UserPauioellViewImmitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E0172D6F06DA00876DCD /* UserPauioellViewImmitation.swift */; };
 		04A8E01C2D6F081000876DCD /* MIAJPerdforemImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E01A2D6F081000876DCD /* MIAJPerdforemImmtion.swift */; };
 		04A8E01D2D6F081000876DCD /* MIAJPerdforemImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E01B2D6F081000876DCD /* MIAJPerdforemImmtion.xib */; };
+		04A8E0212D6F10C800876DCD /* MIAJWuoeImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E01F2D6F10C800876DCD /* MIAJWuoeImmtion.swift */; };
+		04A8E0222D6F10C800876DCD /* MIAJWuoeImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E0202D6F10C800876DCD /* MIAJWuoeImmtion.xib */; };
+		04A8E0262D6F122200876DCD /* MIAJPubyaImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E0242D6F122200876DCD /* MIAJPubyaImmtion.swift */; };
+		04A8E0272D6F122200876DCD /* MIAJPubyaImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E0252D6F122200876DCD /* MIAJPubyaImmtion.xib */; };
+		04A8E02A2D6F1AC200876DCD /* MIAJOudiyouCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E0292D6F1AC200876DCD /* MIAJOudiyouCell.xib */; };
+		04A8E02B2D6F1AC200876DCD /* MIAJOudiyouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E0282D6F1AC200876DCD /* MIAJOudiyouCell.swift */; };
+		04A8E02E2D6F1F2A00876DCD /* MIAJTakediImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E02C2D6F1F2A00876DCD /* MIAJTakediImmtion.swift */; };
+		04A8E02F2D6F1F2A00876DCD /* MIAJTakediImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E02D2D6F1F2A00876DCD /* MIAJTakediImmtion.xib */; };
 		5527258DF3A130CF6F704E27 /* Pods_Miauomiccjt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED16E822E9E1E588B0856718 /* Pods_Miauomiccjt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047218982D71555D0028B44D /* BucueCarstarTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucueCarstarTruber.swift; sourceTree = "<group>"; };
+		047218992D71555D0028B44D /* BucueCarstarTruber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BucueCarstarTruber.xib; sourceTree = "<group>"; };
+		0472189C2D715E980028B44D /* BucueEluaiTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucueEluaiTruber.swift; sourceTree = "<group>"; };
+		0472189E2D7194410028B44D /* BucuepuerjnhTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucuepuerjnhTruber.swift; sourceTree = "<group>"; };
+		0472189F2D7194410028B44D /* BucuepuerjnhTruber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BucuepuerjnhTruber.xib; sourceTree = "<group>"; };
+		047218A22D71A8F80028B44D /* MOibduijpkdf.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MOibduijpkdf.plist; sourceTree = "<group>"; };
+		047218A42D71ADF60028B44D /* MIAJ_fugai0.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIAJ_fugai0.mp4; sourceTree = "<group>"; };
+		047218A62D71AE020028B44D /* MIAJ_fugai1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIAJ_fugai1.mp4; sourceTree = "<group>"; };
+		047218A82D71AE0B0028B44D /* MIAJ_fugai2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIAJ_fugai2.mp4; sourceTree = "<group>"; };
+		047218AA2D71AE120028B44D /* MIAJ_fugai3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIAJ_fugai3.mp4; sourceTree = "<group>"; };
+		047218AC2D71AE190028B44D /* MIAJ_fugai4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIAJ_fugai4.mp4; sourceTree = "<group>"; };
+		047218AE2D71AE1F0028B44D /* MIAJ_fugai5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIAJ_fugai5.mp4; sourceTree = "<group>"; };
+		047218B02D71AE260028B44D /* MIAJ_fugai7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIAJ_fugai7.mp4; sourceTree = "<group>"; };
 		04A8DFEE2D6F01DB00876DCD /* Miauomiccjt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miauomiccjt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A8E0062D6F01E800876DCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A8E0072D6F01E800876DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -25,6 +59,14 @@
 		04A8E0172D6F06DA00876DCD /* UserPauioellViewImmitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPauioellViewImmitation.swift; sourceTree = "<group>"; };
 		04A8E01A2D6F081000876DCD /* MIAJPerdforemImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJPerdforemImmtion.swift; sourceTree = "<group>"; };
 		04A8E01B2D6F081000876DCD /* MIAJPerdforemImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJPerdforemImmtion.xib; sourceTree = "<group>"; };
+		04A8E01F2D6F10C800876DCD /* MIAJWuoeImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJWuoeImmtion.swift; sourceTree = "<group>"; };
+		04A8E0202D6F10C800876DCD /* MIAJWuoeImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJWuoeImmtion.xib; sourceTree = "<group>"; };
+		04A8E0242D6F122200876DCD /* MIAJPubyaImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJPubyaImmtion.swift; sourceTree = "<group>"; };
+		04A8E0252D6F122200876DCD /* MIAJPubyaImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJPubyaImmtion.xib; sourceTree = "<group>"; };
+		04A8E0282D6F1AC200876DCD /* MIAJOudiyouCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJOudiyouCell.swift; sourceTree = "<group>"; };
+		04A8E0292D6F1AC200876DCD /* MIAJOudiyouCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJOudiyouCell.xib; sourceTree = "<group>"; };
+		04A8E02C2D6F1F2A00876DCD /* MIAJTakediImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJTakediImmtion.swift; sourceTree = "<group>"; };
+		04A8E02D2D6F1F2A00876DCD /* MIAJTakediImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJTakediImmtion.xib; sourceTree = "<group>"; };
 		6AF38A6DF86333246B2E151E /* Pods-Miauomiccjt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miauomiccjt.debug.xcconfig"; path = "Target Support Files/Pods-Miauomiccjt/Pods-Miauomiccjt.debug.xcconfig"; sourceTree = "<group>"; };
 		A72FB339C8490EEA0A118369 /* Pods-Miauomiccjt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miauomiccjt.release.xcconfig"; path = "Target Support Files/Pods-Miauomiccjt/Pods-Miauomiccjt.release.xcconfig"; sourceTree = "<group>"; };
 		ED16E822E9E1E588B0856718 /* Pods_Miauomiccjt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Miauomiccjt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +84,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047218972D7155400028B44D /* PsueCarbi（登陆） */ = {
+			isa = PBXGroup;
+			children = (
+				047218982D71555D0028B44D /* BucueCarstarTruber.swift */,
+				047218992D71555D0028B44D /* BucueCarstarTruber.xib */,
+				0472189C2D715E980028B44D /* BucueEluaiTruber.swift */,
+				0472189E2D7194410028B44D /* BucuepuerjnhTruber.swift */,
+				0472189F2D7194410028B44D /* BucuepuerjnhTruber.xib */,
+			);
+			path = "PsueCarbi（登陆）";
+			sourceTree = "<group>";
+		};
 		04A8DFE52D6F01DB00876DCD = {
 			isa = PBXGroup;
 			children = (
@@ -50,9 +104,9 @@
 				20922096D3781E06836D1569 /* Pods */,
 				7C21337F995343825ABC11BB /* Frameworks */,
 			);
-			indentWidth = 3;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 3;
+			tabWidth = 4;
 		};
 		04A8DFEF2D6F01DB00876DCD /* Products */ = {
 			isa = PBXGroup;
@@ -65,12 +119,23 @@
 		04A8E00F2D6F01E800876DCD /* Miauomiccjt */ = {
 			isa = PBXGroup;
 			children = (
+				047218B02D71AE260028B44D /* MIAJ_fugai7.mp4 */,
+				047218AE2D71AE1F0028B44D /* MIAJ_fugai5.mp4 */,
+				047218AC2D71AE190028B44D /* MIAJ_fugai4.mp4 */,
+				047218AA2D71AE120028B44D /* MIAJ_fugai3.mp4 */,
+				047218A82D71AE0B0028B44D /* MIAJ_fugai2.mp4 */,
+				047218A62D71AE020028B44D /* MIAJ_fugai1.mp4 */,
+				047218A42D71ADF60028B44D /* MIAJ_fugai0.mp4 */,
+				047218972D7155400028B44D /* PsueCarbi（登陆） */,
+				04A8E0232D6F120E00876DCD /* PsuePubya(发布) */,
+				04A8E01E2D6F109F00876DCD /* PsueWpe */,
 				04A8E0192D6F079F00876DCD /* PsuePerfre */,
 				04A8E0062D6F01E800876DCD /* AppDelegate.swift */,
 				04A8E0072D6F01E800876DCD /* Assets.xcassets */,
 				04A8E0082D6F01E800876DCD /* Info.plist */,
 				04A8E00A2D6F01E800876DCD /* LaunchScreen.storyboard */,
 				04A8E0172D6F06DA00876DCD /* UserPauioellViewImmitation.swift */,
+				047218A22D71A8F80028B44D /* MOibduijpkdf.plist */,
 			);
 			path = Miauomiccjt;
 			sourceTree = "<group>";
@@ -80,8 +145,30 @@
 			children = (
 				04A8E01A2D6F081000876DCD /* MIAJPerdforemImmtion.swift */,
 				04A8E01B2D6F081000876DCD /* MIAJPerdforemImmtion.xib */,
+				04A8E0282D6F1AC200876DCD /* MIAJOudiyouCell.swift */,
+				04A8E0292D6F1AC200876DCD /* MIAJOudiyouCell.xib */,
+				04A8E02C2D6F1F2A00876DCD /* MIAJTakediImmtion.swift */,
+				04A8E02D2D6F1F2A00876DCD /* MIAJTakediImmtion.xib */,
 			);
 			path = PsuePerfre;
+			sourceTree = "<group>";
+		};
+		04A8E01E2D6F109F00876DCD /* PsueWpe */ = {
+			isa = PBXGroup;
+			children = (
+				04A8E01F2D6F10C800876DCD /* MIAJWuoeImmtion.swift */,
+				04A8E0202D6F10C800876DCD /* MIAJWuoeImmtion.xib */,
+			);
+			path = PsueWpe;
+			sourceTree = "<group>";
+		};
+		04A8E0232D6F120E00876DCD /* PsuePubya(发布) */ = {
+			isa = PBXGroup;
+			children = (
+				04A8E0242D6F122200876DCD /* MIAJPubyaImmtion.swift */,
+				04A8E0252D6F122200876DCD /* MIAJPubyaImmtion.xib */,
+			);
+			path = "PsuePubya(发布)";
 			sourceTree = "<group>";
 		};
 		20922096D3781E06836D1569 /* Pods */ = {
@@ -164,8 +251,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A8E01D2D6F081000876DCD /* MIAJPerdforemImmtion.xib in Resources */,
+				047218A92D71AE0B0028B44D /* MIAJ_fugai2.mp4 in Resources */,
+				047218AD2D71AE190028B44D /* MIAJ_fugai4.mp4 in Resources */,
 				04A8E0132D6F01E800876DCD /* Assets.xcassets in Resources */,
+				047218AB2D71AE120028B44D /* MIAJ_fugai3.mp4 in Resources */,
+				04A8E0272D6F122200876DCD /* MIAJPubyaImmtion.xib in Resources */,
+				04A8E02A2D6F1AC200876DCD /* MIAJOudiyouCell.xib in Resources */,
+				047218B12D71AE260028B44D /* MIAJ_fugai7.mp4 in Resources */,
+				047218A52D71ADF60028B44D /* MIAJ_fugai0.mp4 in Resources */,
+				04A8E02F2D6F1F2A00876DCD /* MIAJTakediImmtion.xib in Resources */,
+				04A8E0222D6F10C800876DCD /* MIAJWuoeImmtion.xib in Resources */,
+				047218A32D71A8F80028B44D /* MOibduijpkdf.plist in Resources */,
+				047218A12D7194410028B44D /* BucuepuerjnhTruber.xib in Resources */,
 				04A8E0152D6F01E800876DCD /* LaunchScreen.storyboard in Resources */,
+				0472189B2D71555D0028B44D /* BucueCarstarTruber.xib in Resources */,
+				047218A72D71AE020028B44D /* MIAJ_fugai1.mp4 in Resources */,
+				047218AF2D71AE1F0028B44D /* MIAJ_fugai5.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +320,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A8E0182D6F06DA00876DCD /* UserPauioellViewImmitation.swift in Sources */,
+				04A8E02E2D6F1F2A00876DCD /* MIAJTakediImmtion.swift in Sources */,
+				04A8E0262D6F122200876DCD /* MIAJPubyaImmtion.swift in Sources */,
+				0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */,
 				04A8E01C2D6F081000876DCD /* MIAJPerdforemImmtion.swift in Sources */,
+				04A8E02B2D6F1AC200876DCD /* MIAJOudiyouCell.swift in Sources */,
+				04A8E0212D6F10C800876DCD /* MIAJWuoeImmtion.swift in Sources */,
+				047218A02D7194410028B44D /* BucuepuerjnhTruber.swift in Sources */,
+				0472189D2D715E980028B44D /* BucueEluaiTruber.swift in Sources */,
 				04A8E0102D6F01E800876DCD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +354,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MZJ9G935YV;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Miauomiccjt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -253,12 +363,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mo.Miauomiccjt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linqian.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -278,6 +389,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MZJ9G935YV;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Miauomiccjt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -285,12 +398,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mo.Miauomiccjt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linqian.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

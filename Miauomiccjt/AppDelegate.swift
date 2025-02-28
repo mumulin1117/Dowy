@@ -10,13 +10,26 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+   var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+       window = UIWindow(frame: UIScreen.main.bounds)
+        initRootCnotrollerAppWind(ifsignin:true)
+      
+       window?.makeKeyAndVisible()
+       return true
     }
 
+    
+    func initRootCnotrollerAppWind(ifsignin:Bool)  {
+        if ifsignin {
+            window?.rootViewController = UserPauioellViewImmitation()
+        }else{
+            let gjiokcv = UINavigationController.init(rootViewController: BucueCarstarTruber.init())
+            gjiokcv.navigationBar.isHidden = true
+            window?.rootViewController = gjiokcv
+        }
+    }
  
 
 }

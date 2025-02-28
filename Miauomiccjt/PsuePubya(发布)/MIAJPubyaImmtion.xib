@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIAJPubyaImmtion" customModule="Miauomiccjt" customModuleProvider="target">
+            <connections>
+                <outlet property="fanDismimag" destination="4cq-rd-yze" id="yNb-xt-BrC"/>
+                <outlet property="guessUploafinh" destination="HJq-ek-VbU" id="29U-8b-CwZ"/>
+                <outlet property="guessnomalafinh" destination="R1A-xV-XBH" id="SJL-9w-gCE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MIAJELUAbl" translatesAutoresizingMaskIntoConstraints="NO" id="SZ4-6t-ng4">
+                    <rect key="frame" x="0.0" y="347" width="375" height="320"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="320" id="3MW-C7-CNU"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heisechadef" translatesAutoresizingMaskIntoConstraints="NO" id="4cq-rd-yze">
+                    <rect key="frame" x="157.5" y="581" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Ms1-Ke-wtz"/>
+                        <constraint firstAttribute="height" constant="60" id="eLE-Lg-Ffd"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploaNormaowuo" translatesAutoresizingMaskIntoConstraints="NO" id="R1A-xV-XBH">
+                    <rect key="frame" x="200" y="400" width="140" height="150"/>
+                </imageView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploaduguwuo" translatesAutoresizingMaskIntoConstraints="NO" id="HJq-ek-VbU">
+                    <rect key="frame" x="35" y="400" width="140" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="ASo-xy-rZ7"/>
+                        <constraint firstAttribute="width" constant="140" id="im1-vR-kQA"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4cq-rd-yze" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8p3-B2-LdW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4cq-rd-yze" secondAttribute="bottom" constant="26" id="FQ0-Og-pRT"/>
+                <constraint firstItem="R1A-xV-XBH" firstAttribute="centerY" secondItem="HJq-ek-VbU" secondAttribute="centerY" id="LP5-Jh-H0F"/>
+                <constraint firstItem="4cq-rd-yze" firstAttribute="top" secondItem="HJq-ek-VbU" secondAttribute="bottom" constant="31" id="Okc-mV-84R"/>
+                <constraint firstItem="SZ4-6t-ng4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OrC-4n-QmM"/>
+                <constraint firstItem="R1A-xV-XBH" firstAttribute="width" secondItem="HJq-ek-VbU" secondAttribute="width" id="Ucs-bG-Myv"/>
+                <constraint firstItem="R1A-xV-XBH" firstAttribute="height" secondItem="HJq-ek-VbU" secondAttribute="height" id="fl8-aq-rfJ"/>
+                <constraint firstItem="SZ4-6t-ng4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hzO-am-xRC"/>
+                <constraint firstItem="R1A-xV-XBH" firstAttribute="leading" secondItem="HJq-ek-VbU" secondAttribute="trailing" constant="25" id="muZ-jw-lkA"/>
+                <constraint firstItem="R1A-xV-XBH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="12.5" id="phY-Te-Aq1"/>
+                <constraint firstItem="SZ4-6t-ng4" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="wKK-BZ-USd"/>
+            </constraints>
+            <point key="canvasLocation" x="104.8" y="20.239880059970016"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="MIAJELUAbl" width="315" height="680.5"/>
+        <image name="heisechadef" width="60" height="60"/>
+        <image name="uploaNormaowuo" width="140" height="150"/>
+        <image name="uploaduguwuo" width="140" height="150"/>
+    </resources>
+</document>
