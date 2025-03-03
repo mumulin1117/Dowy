@@ -96,7 +96,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
     
     //ai
     @IBAction func poterSder(_ sender: UIButton) {
-        
+        self.navigationController?.pushViewController(MiAJACIAyImmtiom.init(), animated: true)
         
     }
     

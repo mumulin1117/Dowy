@@ -11,6 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MiAJACIAyImmtiom" customModule="Miauomiccjt" customModuleProvider="target">
             <connections>
+                <outlet property="aiopBlance" destination="5yc-pt-EHm" id="aTo-Ib-nwY"/>
+                <outlet property="cikdgrt" destination="Ab5-fZ-WkZ" id="RWM-NL-WCp"/>
+                <outlet property="descvtnum" destination="eVH-cB-3bv" id="N8y-QF-lwY"/>
+                <outlet property="ebtruDesbMIAJ" destination="J9C-op-kBS" id="XId-Pv-sBX"/>
+                <outlet property="trunbvButon" destination="AJX-02-m1F" id="bQf-d1-L9W"/>
+                <outlet property="typecvtnum" destination="5a6-gR-H7u" id="Gis-Ia-vcB"/>
                 <outlet property="view" destination="kD9-nV-kWa" id="AAt-AJ-gwQ"/>
             </connections>
         </placeholder>
@@ -97,16 +103,6 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="OK" backgroundImage="colofulanniu"/>
                 </button>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ab5-fZ-WkZ">
-                    <rect key="frame" x="13" y="417" width="388" height="356"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fqe-nI-2Si">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5a6-gR-H7u">
                     <rect key="frame" x="13" y="369" width="194" height="72"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,6 +117,16 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ab5-fZ-WkZ">
+                    <rect key="frame" x="13" y="417" width="388" height="356"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fqe-nI-2Si">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="dyg-V4-HjC"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

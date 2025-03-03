@@ -65,10 +65,10 @@ class MiAJACPickCell: UICollectionViewCell {
         coverviewMIAJ.layer.borderColor =  UIColor(red: 0.94, green: 0.55, blue: 1, alpha: 1).cgColor
         coverviewMIAJ.layer.borderWidth = 2
         contentView.addSubview(coverviewMIAJ)
-        coverviewMIAJ.addSubview(coverviewMIAJ)
+        
         coverviewMIAJ.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.leading.trailing.equalToSuperview().inset(6)
+            make.leading.trailing.equalToSuperview().inset(6)
             make.height.equalTo(98)
             make.top.equalToSuperview().offset(24)
         }
