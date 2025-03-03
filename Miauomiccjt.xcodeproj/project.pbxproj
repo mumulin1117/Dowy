@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0406F5802D753DF10021498C /* MIAJPubImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0406F57F2D753DF10021498C /* MIAJPubImmtion.xib */; };
+		0406F5812D753DF10021498C /* MIAJPubImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F57E2D753DF10021498C /* MIAJPubImmtion.swift */; };
+		0406F5842D75560B0021498C /* MIAJMeiwnuImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0406F5832D75560B0021498C /* MIAJMeiwnuImmtion.xib */; };
+		0406F5852D75560B0021498C /* MIAJMeiwnuImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F5822D75560B0021498C /* MIAJMeiwnuImmtion.swift */; };
+		0406F58A2D7560BD0021498C /* MIAJSendingImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F5882D7560BD0021498C /* MIAJSendingImmtion.swift */; };
+		0406F58B2D7560BD0021498C /* MIAJSendingImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0406F5892D7560BD0021498C /* MIAJSendingImmtion.xib */; };
+		0406F58E2D7560D80021498C /* MIAJcollImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F58C2D7560D80021498C /* MIAJcollImmtion.swift */; };
+		0406F58F2D7560D80021498C /* MIAJcollImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0406F58D2D7560D80021498C /* MIAJcollImmtion.xib */; };
+		0465C1EE2D75890D0040B698 /* MiAJSotrImmtiom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C1ED2D75890D0040B698 /* MiAJSotrImmtiom.xib */; };
+		0465C1EF2D75890D0040B698 /* MiAJSotrImmtiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C1EC2D75890D0040B698 /* MiAJSotrImmtiom.swift */; };
+		0465C1F22D75903C0040B698 /* MiAJEisditImmtiom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C1F12D75903C0040B698 /* MiAJEisditImmtiom.xib */; };
+		0465C1F32D75903C0040B698 /* MiAJEisditImmtiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C1F02D75903C0040B698 /* MiAJEisditImmtiom.swift */; };
+		0465C1F62D7593C60040B698 /* MiAJPumuAyImmtiom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C1F52D7593C60040B698 /* MiAJPumuAyImmtiom.xib */; };
+		0465C1F72D7593C60040B698 /* MiAJPumuAyImmtiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C1F42D7593C60040B698 /* MiAJPumuAyImmtiom.swift */; };
+		0465C1FE2D75A3940040B698 /* MiAJACIAyImmtiom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C1FD2D75A3940040B698 /* MiAJACIAyImmtiom.xib */; };
+		0465C1FF2D75A3940040B698 /* MiAJACIAyImmtiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C1FC2D75A3940040B698 /* MiAJACIAyImmtiom.swift */; };
+		0465C2012D75A6F20040B698 /* MiAJACPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C2002D75A6F20040B698 /* MiAJACPickCell.swift */; };
+		0465C2042D75A9720040B698 /* MiAJACPiReslit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C2032D75A9720040B698 /* MiAJACPiReslit.xib */; };
+		0465C2052D75A9720040B698 /* MiAJACPiReslit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C2022D75A9720040B698 /* MiAJACPiReslit.swift */; };
+		0465C2082D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C2072D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib */; };
+		0465C2092D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C2062D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift */; };
 		0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047218982D71555D0028B44D /* BucueCarstarTruber.swift */; };
 		0472189B2D71555D0028B44D /* BucueCarstarTruber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047218992D71555D0028B44D /* BucueCarstarTruber.xib */; };
 		0472189D2D715E980028B44D /* BucueEluaiTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472189C2D715E980028B44D /* BucueEluaiTruber.swift */; };
@@ -38,6 +59,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0406F57E2D753DF10021498C /* MIAJPubImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJPubImmtion.swift; sourceTree = "<group>"; };
+		0406F57F2D753DF10021498C /* MIAJPubImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJPubImmtion.xib; sourceTree = "<group>"; };
+		0406F5822D75560B0021498C /* MIAJMeiwnuImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJMeiwnuImmtion.swift; sourceTree = "<group>"; };
+		0406F5832D75560B0021498C /* MIAJMeiwnuImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJMeiwnuImmtion.xib; sourceTree = "<group>"; };
+		0406F5882D7560BD0021498C /* MIAJSendingImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJSendingImmtion.swift; sourceTree = "<group>"; };
+		0406F5892D7560BD0021498C /* MIAJSendingImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJSendingImmtion.xib; sourceTree = "<group>"; };
+		0406F58C2D7560D80021498C /* MIAJcollImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJcollImmtion.swift; sourceTree = "<group>"; };
+		0406F58D2D7560D80021498C /* MIAJcollImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJcollImmtion.xib; sourceTree = "<group>"; };
+		0465C1EC2D75890D0040B698 /* MiAJSotrImmtiom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJSotrImmtiom.swift; sourceTree = "<group>"; };
+		0465C1ED2D75890D0040B698 /* MiAJSotrImmtiom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJSotrImmtiom.xib; sourceTree = "<group>"; };
+		0465C1F02D75903C0040B698 /* MiAJEisditImmtiom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJEisditImmtiom.swift; sourceTree = "<group>"; };
+		0465C1F12D75903C0040B698 /* MiAJEisditImmtiom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJEisditImmtiom.xib; sourceTree = "<group>"; };
+		0465C1F42D7593C60040B698 /* MiAJPumuAyImmtiom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJPumuAyImmtiom.swift; sourceTree = "<group>"; };
+		0465C1F52D7593C60040B698 /* MiAJPumuAyImmtiom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJPumuAyImmtiom.xib; sourceTree = "<group>"; };
+		0465C1FC2D75A3940040B698 /* MiAJACIAyImmtiom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJACIAyImmtiom.swift; sourceTree = "<group>"; };
+		0465C1FD2D75A3940040B698 /* MiAJACIAyImmtiom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJACIAyImmtiom.xib; sourceTree = "<group>"; };
+		0465C2002D75A6F20040B698 /* MiAJACPickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJACPickCell.swift; sourceTree = "<group>"; };
+		0465C2022D75A9720040B698 /* MiAJACPiReslit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJACPiReslit.swift; sourceTree = "<group>"; };
+		0465C2032D75A9720040B698 /* MiAJACPiReslit.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJACPiReslit.xib; sourceTree = "<group>"; };
+		0465C2062D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJAFetaiolCPImmpo.swift; sourceTree = "<group>"; };
+		0465C2072D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJAFetaiolCPImmpo.xib; sourceTree = "<group>"; };
 		047218982D71555D0028B44D /* BucueCarstarTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucueCarstarTruber.swift; sourceTree = "<group>"; };
 		047218992D71555D0028B44D /* BucueCarstarTruber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BucueCarstarTruber.xib; sourceTree = "<group>"; };
 		0472189C2D715E980028B44D /* BucueEluaiTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucueEluaiTruber.swift; sourceTree = "<group>"; };
@@ -84,6 +126,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0465C1F82D7593CF0040B698 /* MIAJPau */ = {
+			isa = PBXGroup;
+			children = (
+				0465C1F42D7593C60040B698 /* MiAJPumuAyImmtiom.swift */,
+				0465C1F52D7593C60040B698 /* MiAJPumuAyImmtiom.xib */,
+				0465C1FC2D75A3940040B698 /* MiAJACIAyImmtiom.swift */,
+				0465C1FD2D75A3940040B698 /* MiAJACIAyImmtiom.xib */,
+				0465C2002D75A6F20040B698 /* MiAJACPickCell.swift */,
+				0465C2022D75A9720040B698 /* MiAJACPiReslit.swift */,
+				0465C2032D75A9720040B698 /* MiAJACPiReslit.xib */,
+			);
+			path = MIAJPau;
+			sourceTree = "<group>";
+		};
 		047218972D7155400028B44D /* PsueCarbi（登陆） */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +175,7 @@
 		04A8E00F2D6F01E800876DCD /* Miauomiccjt */ = {
 			isa = PBXGroup;
 			children = (
+				0465C1F82D7593CF0040B698 /* MIAJPau */,
 				047218B02D71AE260028B44D /* MIAJ_fugai7.mp4 */,
 				047218AE2D71AE1F0028B44D /* MIAJ_fugai5.mp4 */,
 				047218AC2D71AE190028B44D /* MIAJ_fugai4.mp4 */,
@@ -149,6 +206,8 @@
 				04A8E0292D6F1AC200876DCD /* MIAJOudiyouCell.xib */,
 				04A8E02C2D6F1F2A00876DCD /* MIAJTakediImmtion.swift */,
 				04A8E02D2D6F1F2A00876DCD /* MIAJTakediImmtion.xib */,
+				0465C2062D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift */,
+				0465C2072D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib */,
 			);
 			path = PsuePerfre;
 			sourceTree = "<group>";
@@ -158,6 +217,16 @@
 			children = (
 				04A8E01F2D6F10C800876DCD /* MIAJWuoeImmtion.swift */,
 				04A8E0202D6F10C800876DCD /* MIAJWuoeImmtion.xib */,
+				0406F5822D75560B0021498C /* MIAJMeiwnuImmtion.swift */,
+				0406F5832D75560B0021498C /* MIAJMeiwnuImmtion.xib */,
+				0406F5882D7560BD0021498C /* MIAJSendingImmtion.swift */,
+				0406F5892D7560BD0021498C /* MIAJSendingImmtion.xib */,
+				0406F58C2D7560D80021498C /* MIAJcollImmtion.swift */,
+				0406F58D2D7560D80021498C /* MIAJcollImmtion.xib */,
+				0465C1EC2D75890D0040B698 /* MiAJSotrImmtiom.swift */,
+				0465C1ED2D75890D0040B698 /* MiAJSotrImmtiom.xib */,
+				0465C1F02D75903C0040B698 /* MiAJEisditImmtiom.swift */,
+				0465C1F12D75903C0040B698 /* MiAJEisditImmtiom.xib */,
 			);
 			path = PsueWpe;
 			sourceTree = "<group>";
@@ -167,6 +236,8 @@
 			children = (
 				04A8E0242D6F122200876DCD /* MIAJPubyaImmtion.swift */,
 				04A8E0252D6F122200876DCD /* MIAJPubyaImmtion.xib */,
+				0406F57E2D753DF10021498C /* MIAJPubImmtion.swift */,
+				0406F57F2D753DF10021498C /* MIAJPubImmtion.xib */,
 			);
 			path = "PsuePubya(发布)";
 			sourceTree = "<group>";
@@ -253,19 +324,29 @@
 				04A8E01D2D6F081000876DCD /* MIAJPerdforemImmtion.xib in Resources */,
 				047218A92D71AE0B0028B44D /* MIAJ_fugai2.mp4 in Resources */,
 				047218AD2D71AE190028B44D /* MIAJ_fugai4.mp4 in Resources */,
+				0406F5842D75560B0021498C /* MIAJMeiwnuImmtion.xib in Resources */,
 				04A8E0132D6F01E800876DCD /* Assets.xcassets in Resources */,
 				047218AB2D71AE120028B44D /* MIAJ_fugai3.mp4 in Resources */,
 				04A8E0272D6F122200876DCD /* MIAJPubyaImmtion.xib in Resources */,
+				0465C1EE2D75890D0040B698 /* MiAJSotrImmtiom.xib in Resources */,
 				04A8E02A2D6F1AC200876DCD /* MIAJOudiyouCell.xib in Resources */,
 				047218B12D71AE260028B44D /* MIAJ_fugai7.mp4 in Resources */,
 				047218A52D71ADF60028B44D /* MIAJ_fugai0.mp4 in Resources */,
 				04A8E02F2D6F1F2A00876DCD /* MIAJTakediImmtion.xib in Resources */,
+				0465C2082D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib in Resources */,
+				0465C1FE2D75A3940040B698 /* MiAJACIAyImmtiom.xib in Resources */,
+				0465C1F62D7593C60040B698 /* MiAJPumuAyImmtiom.xib in Resources */,
 				04A8E0222D6F10C800876DCD /* MIAJWuoeImmtion.xib in Resources */,
 				047218A32D71A8F80028B44D /* MOibduijpkdf.plist in Resources */,
 				047218A12D7194410028B44D /* BucuepuerjnhTruber.xib in Resources */,
 				04A8E0152D6F01E800876DCD /* LaunchScreen.storyboard in Resources */,
+				0465C1F22D75903C0040B698 /* MiAJEisditImmtiom.xib in Resources */,
 				0472189B2D71555D0028B44D /* BucueCarstarTruber.xib in Resources */,
 				047218A72D71AE020028B44D /* MIAJ_fugai1.mp4 in Resources */,
+				0406F58B2D7560BD0021498C /* MIAJSendingImmtion.xib in Resources */,
+				0465C2042D75A9720040B698 /* MiAJACPiReslit.xib in Resources */,
+				0406F5802D753DF10021498C /* MIAJPubImmtion.xib in Resources */,
+				0406F58F2D7560D80021498C /* MIAJcollImmtion.xib in Resources */,
 				047218AF2D71AE1F0028B44D /* MIAJ_fugai5.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,14 +401,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A8E0182D6F06DA00876DCD /* UserPauioellViewImmitation.swift in Sources */,
+				0465C1F32D75903C0040B698 /* MiAJEisditImmtiom.swift in Sources */,
+				0406F5812D753DF10021498C /* MIAJPubImmtion.swift in Sources */,
+				0406F58A2D7560BD0021498C /* MIAJSendingImmtion.swift in Sources */,
+				0465C1F72D7593C60040B698 /* MiAJPumuAyImmtiom.swift in Sources */,
 				04A8E02E2D6F1F2A00876DCD /* MIAJTakediImmtion.swift in Sources */,
 				04A8E0262D6F122200876DCD /* MIAJPubyaImmtion.swift in Sources */,
 				0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */,
 				04A8E01C2D6F081000876DCD /* MIAJPerdforemImmtion.swift in Sources */,
+				0465C2092D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift in Sources */,
+				0465C2012D75A6F20040B698 /* MiAJACPickCell.swift in Sources */,
 				04A8E02B2D6F1AC200876DCD /* MIAJOudiyouCell.swift in Sources */,
 				04A8E0212D6F10C800876DCD /* MIAJWuoeImmtion.swift in Sources */,
 				047218A02D7194410028B44D /* BucuepuerjnhTruber.swift in Sources */,
+				0465C1EF2D75890D0040B698 /* MiAJSotrImmtiom.swift in Sources */,
+				0406F5852D75560B0021498C /* MIAJMeiwnuImmtion.swift in Sources */,
 				0472189D2D715E980028B44D /* BucueEluaiTruber.swift in Sources */,
+				0465C2052D75A9720040B698 /* MiAJACPiReslit.swift in Sources */,
+				0465C1FF2D75A3940040B698 /* MiAJACIAyImmtiom.swift in Sources */,
+				0406F58E2D7560D80021498C /* MIAJcollImmtion.swift in Sources */,
 				04A8E0102D6F01E800876DCD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

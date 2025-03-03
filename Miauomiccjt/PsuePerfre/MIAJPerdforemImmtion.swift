@@ -60,7 +60,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
         maploviw.rowHeight = 354 + 15
         maploviw.backgroundColor = .clear
         maploviw.contentInsetAdjustmentBehavior = .never
-
+        maploviw.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 150, right: 0)
         maploviw.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(updateselmaploviw))
         maploviw.register(UINib(nibName: "MIAJOudiyouCell", bundle: nil), forCellReuseIdentifier: "MIAJOudiyouCellID")
         conginwerCop()
@@ -76,7 +76,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
     }
     private func conginwerCop()  {
         maploviw.dataSource = self
-        maploviw.dataSource = self
+        maploviw.delegate = self
         maploviw.showsVerticalScrollIndicator = false
         maploviw.mj_header?.beginRefreshing()
        
@@ -120,6 +120,12 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
         static let opacityValues: [Float] = [1.0, 0.8, 1.0, 0.9, 1.0, 1.0]
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.navigationController?.pushViewController( MiAJAFetaiolCPImmpo.init(_tdastaMiAJ: cbinMIAJ[indexPath.row]), animated: true)
+       
+    }
     class func startHeartbeatAnimation(WiujhiView:UIView) {
             
         let animationGroup = CAAnimationGroup()

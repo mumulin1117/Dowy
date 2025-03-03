@@ -222,6 +222,17 @@ class MIAJQuView: UIView {
       coverview.contentMode = .scaleToFill
       return coverview
    }()
+    
+    
+    lazy var centrolaplaima: UIImageView = {
+       let coverview = UIImageView.init()
+        coverview.image = UIImage(named: "biolplo")
+       coverview.contentMode = .scaleToFill
+       return coverview
+    }()
+    
+    
+    
    override init(frame: CGRect) {
       super.init(frame: frame)
       
@@ -252,6 +263,12 @@ class MIAJQuView: UIView {
          make.left.right.equalToSuperview().inset(14)
          make.bottom.equalTo(olaplaima.snp.top).offset(-18)
       }
+       
+       addSubview(centrolaplaima)
+       centrolaplaima.snp.makeConstraints { make in
+           make.center.equalToSuperview()
+           make.width.height.equalTo(50)
+       }
    }
    
    required init?(coder: NSCoder) {
