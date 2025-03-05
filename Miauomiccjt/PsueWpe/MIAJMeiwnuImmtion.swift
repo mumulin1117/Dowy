@@ -2,13 +2,24 @@
 //  MIAJMeiwnuImmtion.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/3.
+//  Created by Miauomiccjt on 2025/3/3.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
 import UIKit
 
 class MIAJMeiwnuImmtion: UIViewController {
+    
+    var uiBinh:Dictionary<String,String>
+    init(uiBinh: Dictionary<String, String>) {
+       
+        self.uiBinh = uiBinh
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     @IBOutlet weak var gomiun: UIImageView!
@@ -71,6 +82,8 @@ class MIAJMeiwnuImmtion: UIViewController {
         
         toeFollowering.isUserInteractionEnabled = true
         toeFollowering.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
+        
+        ainsertbnhUpdate()
     }
     
     
@@ -155,4 +168,25 @@ class MIAJMeiwnuImmtion: UIViewController {
         bottmiWjhite.layer.masksToBounds = true
     }
 
+    
+    func ainsertbnhUpdate()  {
+        if  MIAJWuoeImmtion.lognfolloweing.contains(uiBinh){
+            self.toeFollowering.image = UIImage(named: "bunmio")
+        }else{
+            self.toeFollowering.image = UIImage(named: "bunmiosun")
+        }
+        
+        alipoMineIcon.image = UIImage(named: uiBinh["MIAJphotl"]!)
+        aiopMInenamf.text = uiBinh["MIAJNbbme"]
+       
+      
+        aiopbrtiufd.text = uiBinh["MIAJBrief"]
+        self.aiopfance.text = "\(Int.random(in: 0...4))"
+        
+        self.aiopfollort.text = "\(Int.random(in: 0...5))"
+        
+        
+      
+       
+   }
 }

@@ -2,7 +2,7 @@
 //  MIAJOudiyouCell.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/2/26.
+//  Created by Miauomiccjt on 2025/2/26.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
@@ -24,8 +24,17 @@ class MIAJOudiyouCell: UITableViewCell {
     
     @IBOutlet weak var heabetCouny: UILabel!
     
+    
+    @IBOutlet weak var refpiutry: UIButton!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+        pubuserAvtMIAJ.layer.cornerRadius = 25
+        pubuserAvtMIAJ.layer.masksToBounds = true
         
         heabetCouny.layer.cornerRadius = 18
         heabetCouny.layer.masksToBounds = true

@@ -2,7 +2,7 @@
 //  MiAJAFetaiolCPImmpo.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/3.
+//  Created by Miauomiccjt on 2025/3/3.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
@@ -16,9 +16,13 @@ class MiAJAFetaiolCPImmpo: UIViewController {
     @IBOutlet weak var replopiun: UIButton!
 
     
+    @IBOutlet weak var bottmmMJAI: UIView!
     var tdastaMiAJ:Dictionary<String,String>
-    init(_tdastaMiAJ: Dictionary<String,String>) {
+    var pageMIAITypeL:Int
+    
+    init(_tdastaMiAJ: Dictionary<String,String>,_pageMIAITypeL:Int) {
         self.tdastaMiAJ = _tdastaMiAJ
+        self.pageMIAITypeL = _pageMIAITypeL
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,14 +36,46 @@ class MiAJAFetaiolCPImmpo: UIViewController {
         viderplayet?.view.removeFromSuperview()
         viderplayet?.removeFromParent()
     }
+    @objc func MJAIfsender()  {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    //举报
+    @objc func MJAIfReportin()  {
+       
+    }
+    
+    
+    @IBOutlet weak var tousercentertPUnMIADi: UIImageView!
+    
+    //个人中心
+    @objc func addtTapiserunincenter()  {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pubuserAvtMIAJ.layer.cornerRadius = 33
+        pubuserAvtMIAJ.layer.masksToBounds = true
+        tousercentertPUnMIADi.isUserInteractionEnabled = true
+        tousercentertPUnMIADi.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addtTapiserunincenter)))
+        
+        
         viderplayet = Player()
         Cunmifhj()
         enterToplayerAuto()
+        gomiun.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
         
+        replopiun.addTarget(self, action: #selector(MJAIfReportin), for: .touchUpInside)
         self.viderplayet?.playFromBeginning()
+        
+        if pageMIAITypeL == 1 {
+            bottmmMJAI.snp.makeConstraints { make in
+                make.left.trailing.equalToSuperview().inset(13)
+                make.height.equalTo(0)
+                make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom)
+            }
+        }
     }
     
     func enterToplayerAuto()  {
@@ -96,13 +132,15 @@ class MiAJAFetaiolCPImmpo: UIViewController {
     
     
     func Cunmifhj() {
+        bottmmMJAI.layer.cornerRadius = 15
+        bottmmMJAI.layer.masksToBounds = true
         pubuserAvtMIAJ.image = UIImage.init(named: tdastaMiAJ["MIAJphotl"] ?? "")
        
         celcovervvMIAJ.image = UIImage.init(named: tdastaMiAJ["MIAJViocovbr"] ?? "")
         
         titkolppppMIAJ.text = tdastaMiAJ["MIAJvioeoTexvct"]
         
-       usernnameNIAJ.text = tdastaMiAJ["MIAJNbbme"]
+        usernnameNIAJ.text = "@" + (tdastaMiAJ["MIAJNbbme"] ?? "")
         heabetCouny.image = UIImage(named: "nothathuiop")
     }
     

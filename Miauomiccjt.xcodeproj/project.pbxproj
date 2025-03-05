@@ -28,6 +28,8 @@
 		0465C2052D75A9720040B698 /* MiAJACPiReslit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C2022D75A9720040B698 /* MiAJACPiReslit.swift */; };
 		0465C2082D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C2072D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib */; };
 		0465C2092D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C2062D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift */; };
+		0465C20E2D7852630040B698 /* MiAJAMiunConterPImmpo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C20C2D7852630040B698 /* MiAJAMiunConterPImmpo.swift */; };
+		0465C20F2D7852630040B698 /* MiAJAMiunConterPImmpo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C20D2D7852630040B698 /* MiAJAMiunConterPImmpo.xib */; };
 		0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047218982D71555D0028B44D /* BucueCarstarTruber.swift */; };
 		0472189B2D71555D0028B44D /* BucueCarstarTruber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047218992D71555D0028B44D /* BucueCarstarTruber.xib */; };
 		0472189D2D715E980028B44D /* BucueEluaiTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472189C2D715E980028B44D /* BucueEluaiTruber.swift */; };
@@ -80,6 +82,8 @@
 		0465C2032D75A9720040B698 /* MiAJACPiReslit.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJACPiReslit.xib; sourceTree = "<group>"; };
 		0465C2062D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJAFetaiolCPImmpo.swift; sourceTree = "<group>"; };
 		0465C2072D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJAFetaiolCPImmpo.xib; sourceTree = "<group>"; };
+		0465C20C2D7852630040B698 /* MiAJAMiunConterPImmpo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJAMiunConterPImmpo.swift; sourceTree = "<group>"; };
+		0465C20D2D7852630040B698 /* MiAJAMiunConterPImmpo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJAMiunConterPImmpo.xib; sourceTree = "<group>"; };
 		047218982D71555D0028B44D /* BucueCarstarTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucueCarstarTruber.swift; sourceTree = "<group>"; };
 		047218992D71555D0028B44D /* BucueCarstarTruber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BucueCarstarTruber.xib; sourceTree = "<group>"; };
 		0472189C2D715E980028B44D /* BucueEluaiTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucueEluaiTruber.swift; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 				0465C1ED2D75890D0040B698 /* MiAJSotrImmtiom.xib */,
 				0465C1F02D75903C0040B698 /* MiAJEisditImmtiom.swift */,
 				0465C1F12D75903C0040B698 /* MiAJEisditImmtiom.xib */,
+				0465C20C2D7852630040B698 /* MiAJAMiunConterPImmpo.swift */,
+				0465C20D2D7852630040B698 /* MiAJAMiunConterPImmpo.xib */,
 			);
 			path = PsueWpe;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				04A8E0222D6F10C800876DCD /* MIAJWuoeImmtion.xib in Resources */,
 				047218A32D71A8F80028B44D /* MOibduijpkdf.plist in Resources */,
 				047218A12D7194410028B44D /* BucuepuerjnhTruber.xib in Resources */,
+				0465C20F2D7852630040B698 /* MiAJAMiunConterPImmpo.xib in Resources */,
 				04A8E0152D6F01E800876DCD /* LaunchScreen.storyboard in Resources */,
 				0465C1F22D75903C0040B698 /* MiAJEisditImmtiom.xib in Resources */,
 				0472189B2D71555D0028B44D /* BucueCarstarTruber.xib in Resources */,
@@ -406,6 +413,7 @@
 				0406F58A2D7560BD0021498C /* MIAJSendingImmtion.swift in Sources */,
 				0465C1F72D7593C60040B698 /* MiAJPumuAyImmtiom.swift in Sources */,
 				04A8E02E2D6F1F2A00876DCD /* MIAJTakediImmtion.swift in Sources */,
+				0465C20E2D7852630040B698 /* MiAJAMiunConterPImmpo.swift in Sources */,
 				04A8E0262D6F122200876DCD /* MIAJPubyaImmtion.swift in Sources */,
 				0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */,
 				04A8E01C2D6F081000876DCD /* MIAJPerdforemImmtion.swift in Sources */,
@@ -450,11 +458,12 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Miauomiccjt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Dowy;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,11 +494,12 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Miauomiccjt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Dowy;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

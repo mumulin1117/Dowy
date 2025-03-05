@@ -64,6 +64,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR7-wm-2CS">
+                        <rect key="frame" x="414" y="18" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="bMP-sE-cJp"/>
+                            <constraint firstAttribute="height" constant="30" id="rhn-Vz-NGe"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="repoutinUser"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hyZ-dV-vkw" firstAttribute="top" secondItem="fv1-9A-Y8m" secondAttribute="bottom" constant="-44" id="0t9-Ey-jpC"/>
@@ -72,8 +81,10 @@
                     <constraint firstItem="GtB-wr-SAN" firstAttribute="top" secondItem="OMB-X1-aeY" secondAttribute="bottom" constant="8" id="6ud-nh-5kW"/>
                     <constraint firstItem="GtB-wr-SAN" firstAttribute="trailing" secondItem="fv1-9A-Y8m" secondAttribute="trailing" id="8HN-b0-4NN"/>
                     <constraint firstItem="fv1-9A-Y8m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="AMA-ue-oV5"/>
+                    <constraint firstItem="gR7-wm-2CS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="Ay1-Yb-1mY"/>
                     <constraint firstItem="OMB-X1-aeY" firstAttribute="leading" secondItem="5uF-DJ-xm0" secondAttribute="trailing" constant="10" id="BBz-fz-GSS"/>
                     <constraint firstItem="OMB-X1-aeY" firstAttribute="top" secondItem="5uF-DJ-xm0" secondAttribute="top" id="J5x-OW-UAf"/>
+                    <constraint firstAttribute="trailing" secondItem="gR7-wm-2CS" secondAttribute="trailing" constant="14" id="N2F-S6-cTX"/>
                     <constraint firstAttribute="trailing" secondItem="fv1-9A-Y8m" secondAttribute="trailing" constant="10" id="P4Y-LE-pkY"/>
                     <constraint firstItem="Sgp-H8-Yxd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Sod-IV-fT5"/>
                     <constraint firstAttribute="trailing" secondItem="hyZ-dV-vkw" secondAttribute="trailing" constant="27" id="XsD-NA-EAC"/>
@@ -92,14 +103,16 @@
                 <outlet property="celcovervvMIAJ" destination="fv1-9A-Y8m" id="0jq-40-ylh"/>
                 <outlet property="heabetCouny" destination="hyZ-dV-vkw" id="b1G-1S-TOF"/>
                 <outlet property="pubuserAvtMIAJ" destination="5uF-DJ-xm0" id="1cL-Ej-pit"/>
+                <outlet property="refpiutry" destination="gR7-wm-2CS" id="CbD-k2-jaP"/>
                 <outlet property="titkolppppMIAJ" destination="GtB-wr-SAN" id="syT-2e-Lbj"/>
                 <outlet property="usernnameNIAJ" destination="OMB-X1-aeY" id="Vn5-Xh-Wwp"/>
             </connections>
-            <point key="canvasLocation" x="-64.122137404580144" y="17.95774647887324"/>
+            <point key="canvasLocation" x="0.0" y="19"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="biolplo" width="65" height="64"/>
         <image name="colofulcellbl" width="177" height="228"/>
+        <image name="repoutinUser" width="48" height="48"/>
     </resources>
 </document>

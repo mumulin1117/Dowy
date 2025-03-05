@@ -2,12 +2,13 @@
 //  BucueCarstarTruber.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/2/28.
+//  Created by Miauomiccjt on 2025/2/28.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
 import UIKit
 import ActiveLabel
+import SVProgressHUD
 class BucueCarstarTruber: UIViewController {
    
    private var agreenAready:Int = 0
@@ -46,8 +47,9 @@ class BucueCarstarTruber: UIViewController {
       
       toeEamillMAKl.isUserInteractionEnabled = true
       toeEamillMAKl.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(tapclivktouxck(tapMal:))))
-      addNoerbuiol()
-      
+//      addNoerbuiol()
+       toemailLablMAKl.layer.cornerRadius = 28
+       toemailLablMAKl.layer.masksToBounds = true
     }
    
    func addNoerbuiol()  {
@@ -67,8 +69,7 @@ class BucueCarstarTruber: UIViewController {
          eluaijg.modalPresentationStyle = .overCurrentContext
          self.present(eluaijg, animated: true)
       }
-      toemailLablMAKl.layer.cornerRadius = 28
-      toemailLablMAKl.layer.masksToBounds = true
+      
    }
 
    
@@ -82,6 +83,12 @@ class BucueCarstarTruber: UIViewController {
          //ELUA
          let eluaijg = BucueEluaiTruber.init()
          eluaijg.shoingindicatoer.text = showirResturnContenu(which: 0)
+          eluaijg.bloakMIAJ = { iug in
+              self.agreenAready = iug ? 1 : 0
+              self.indicaterAgree.image = UIImage(named: iug ? "xzdys" : "mxzdys")
+          }
+          
+          
          eluaijg.modalPresentationStyle = .overCurrentContext
          self.present(eluaijg, animated: true)
       }
@@ -97,8 +104,16 @@ class BucueCarstarTruber: UIViewController {
       
       if tapview ==  toeEamillMAKl || tapview == toemailLablMAKl {
          //EMail
-         
+          
+          if agreenAready == 0 {
+              SVProgressHUD.showInfo(withStatus: "Agree to  the Terms of Service and Privacy Policy first!")
+              return
+              
+          }
+          self.navigationController?.pushViewController(BucuepuerjnhTruber.init(), animated: true)
       }
+       
+      
    }
    
    

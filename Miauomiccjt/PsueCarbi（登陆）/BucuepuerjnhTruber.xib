@@ -88,6 +88,12 @@
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If  no account, it will be automatically created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II3-39-Ewb">
+                    <rect key="frame" x="23.5" y="646" width="328" height="15"/>
+                    <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="15"/>
+                    <color key="textColor" red="0.29803921570000003" green="0.1215686275" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="COI-3c-pMD"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -110,10 +116,12 @@
                 <constraint firstItem="Jjw-oe-FFG" firstAttribute="leading" secondItem="COI-3c-pMD" secondAttribute="leading" constant="15" id="Z29-c1-T7j"/>
                 <constraint firstItem="S15-Ns-WGJ" firstAttribute="leading" secondItem="COI-3c-pMD" secondAttribute="leading" id="asx-bC-U6p"/>
                 <constraint firstItem="COI-3c-pMD" firstAttribute="trailing" secondItem="F3c-rm-gvn" secondAttribute="trailing" constant="33" id="b1E-mS-aBw"/>
+                <constraint firstItem="II3-39-Ewb" firstAttribute="centerX" secondItem="Tzd-RR-nXz" secondAttribute="centerX" id="dwn-hG-p6x"/>
                 <constraint firstItem="b5P-42-H2o" firstAttribute="centerX" secondItem="vsU-N7-DnR" secondAttribute="centerX" id="g2D-4V-Sxu"/>
                 <constraint firstItem="vsU-N7-DnR" firstAttribute="centerX" secondItem="Tzd-RR-nXz" secondAttribute="centerX" id="hVQ-YJ-PzA"/>
                 <constraint firstItem="F3c-rm-gvn" firstAttribute="top" secondItem="m7x-bp-MLd" secondAttribute="bottom" constant="18" id="hw0-iD-hne"/>
                 <constraint firstItem="COI-3c-pMD" firstAttribute="trailing" secondItem="olf-nQ-Kr0" secondAttribute="trailing" constant="12" id="iT7-EO-cEd"/>
+                <constraint firstItem="COI-3c-pMD" firstAttribute="bottom" secondItem="II3-39-Ewb" secondAttribute="bottom" constant="6" id="lz9-Wn-88N"/>
                 <constraint firstItem="mM9-Fd-fQ7" firstAttribute="trailing" secondItem="F3c-rm-gvn" secondAttribute="trailing" id="pE1-b7-MFN"/>
                 <constraint firstItem="JRm-9l-vJ8" firstAttribute="top" secondItem="olf-nQ-Kr0" secondAttribute="bottom" constant="-85" id="rr5-GG-hry"/>
                 <constraint firstItem="olf-nQ-Kr0" firstAttribute="leading" secondItem="COI-3c-pMD" secondAttribute="leading" constant="12" id="s1a-wv-GD0"/>

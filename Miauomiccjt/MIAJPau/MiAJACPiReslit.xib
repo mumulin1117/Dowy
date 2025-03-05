@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MiAJACPiReslit" customModule="Miauomiccjt" customModuleProvider="target">
             <connections>
+                <outlet property="resuiltingBug" destination="2I1-b8-52G" id="bar-pF-fGt"/>
                 <outlet property="view" destination="1CL-MQ-Jna" id="MR6-Ma-G0H"/>
             </connections>
         </placeholder>
@@ -20,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uohdi_bgyi" translatesAutoresizingMaskIntoConstraints="NO" id="Wu3-bk-UaQ">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="812"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8B-nk-BXW">
                     <rect key="frame" x="13" y="59" width="44" height="44"/>
@@ -30,19 +31,19 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="uowhiheiBaker"/>
+                    <connections>
+                        <action selector="Quiocxerymui:" destination="-1" eventType="touchUpInside" id="VSh-p0-k7l"/>
+                    </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiopivonm" translatesAutoresizingMaskIntoConstraints="NO" id="4LR-iF-CHk">
-                    <rect key="frame" x="46" y="117" width="301" height="100"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ai_suguseddd" translatesAutoresizingMaskIntoConstraints="NO" id="4LR-iF-CHk">
+                    <rect key="frame" x="26.666666666666657" y="117" width="340" height="210"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="vH1-6T-SM4"/>
+                        <constraint firstAttribute="height" constant="210" id="vH1-6T-SM4"/>
                     </constraints>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Waiting result" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2I1-b8-52G">
-                    <rect key="frame" x="13" y="202" width="367" height="588"/>
+                    <rect key="frame" x="13" y="292" width="367" height="538"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="140" id="TY7-kT-IMt"/>
-                    </constraints>
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -55,9 +56,12 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="repoutinUser"/>
+                    <connections>
+                        <action selector="aGopdgerAlert:" destination="-1" eventType="touchUpInside" id="5gT-tV-3ii"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-EP-Ao0">
-                    <rect key="frame" x="109.66666666666669" y="734" width="174" height="44"/>
+                    <rect key="frame" x="109.66666666666669" y="774" width="174" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="174" id="9HJ-yZ-jLP"/>
                         <constraint firstAttribute="height" constant="44" id="mZI-hE-GzX"/>
@@ -65,6 +69,9 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="GET" backgroundImage="colofulanniu"/>
+                    <connections>
+                        <action selector="Quiocxerymui:" destination="-1" eventType="touchUpInside" id="Wzf-U9-TCI"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="5xj-Bb-nFs"/>
@@ -73,7 +80,7 @@
                 <constraint firstItem="7Kd-EP-Ao0" firstAttribute="centerX" secondItem="1CL-MQ-Jna" secondAttribute="centerX" id="3TM-xo-gzY"/>
                 <constraint firstItem="cmY-MP-bpH" firstAttribute="centerY" secondItem="r8B-nk-BXW" secondAttribute="centerY" id="469-Gn-G8x"/>
                 <constraint firstItem="4LR-iF-CHk" firstAttribute="centerX" secondItem="1CL-MQ-Jna" secondAttribute="centerX" id="4Oa-Py-aN4"/>
-                <constraint firstItem="2I1-b8-52G" firstAttribute="top" secondItem="4LR-iF-CHk" secondAttribute="bottom" constant="-15" id="4WS-kt-8dV"/>
+                <constraint firstItem="2I1-b8-52G" firstAttribute="top" secondItem="4LR-iF-CHk" secondAttribute="bottom" constant="-35" id="4WS-kt-8dV"/>
                 <constraint firstItem="2I1-b8-52G" firstAttribute="leading" secondItem="5xj-Bb-nFs" secondAttribute="leading" constant="13" id="6W8-zz-uFi"/>
                 <constraint firstItem="Wu3-bk-UaQ" firstAttribute="top" secondItem="1CL-MQ-Jna" secondAttribute="top" id="7PQ-v8-3ju"/>
                 <constraint firstItem="5xj-Bb-nFs" firstAttribute="trailing" secondItem="2I1-b8-52G" secondAttribute="trailing" constant="13" id="Agr-UF-kah"/>
@@ -91,9 +98,9 @@
         </view>
     </objects>
     <resources>
+        <image name="ai_suguseddd" width="340" height="210"/>
         <image name="colofulanniu" width="321" height="62"/>
         <image name="repoutinUser" width="48" height="48"/>
-        <image name="tiopivonm" width="301" height="109"/>
         <image name="uohdi_bgyi" width="375" height="812"/>
         <image name="uowhiheiBaker" width="48" height="48"/>
         <systemColor name="systemBackgroundColor">

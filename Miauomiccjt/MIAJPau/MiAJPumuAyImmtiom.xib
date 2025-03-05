@@ -15,6 +15,7 @@
                 <outlet property="aiopBlance" destination="yb0-Pl-QZq" id="pPG-mW-aNR"/>
                 <outlet property="gomiun" destination="Vax-lc-qSV" id="dl0-V7-bUK"/>
                 <outlet property="pinkernig" destination="GRK-NU-eG5" id="YhH-ve-AZ2"/>
+                <outlet property="trunbvButon" destination="PWA-iL-Lv5" id="WRJ-6b-AKf"/>
                 <outlet property="view" destination="OZm-0V-hHn" id="TGA-cd-2pi"/>
             </connections>
         </placeholder>

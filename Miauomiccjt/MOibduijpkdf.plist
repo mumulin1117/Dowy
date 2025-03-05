@@ -17,6 +17,8 @@
 		<string>10</string>
 		<key>isIAJnormal</key>
 		<string>truuuer</string>
+		<key>MIAJBrief</key>
+		<string>Aspiring actress, loves comedy and improv performances.</string>
 	</dict>
 	<dict>
 		<key>MIAJID</key>
@@ -33,6 +35,8 @@
 		<string>1</string>
 		<key>isIAJnormal</key>
 		<string>truuuer</string>
+		<key>MIAJBrief</key>
+		<string>Voice actor with a flair for character impersonations.</string>
 	</dict>
 	<dict>
 		<key>MIAJID</key>
@@ -49,6 +53,8 @@
 		<string>6</string>
 		<key>isIAJnormal</key>
 		<string>truuuer</string>
+		<key>MIAJBrief</key>
+		<string> Passionate about dramatic readings; enjoys sharing life stories.</string>
 	</dict>
 	<dict>
 		<key>MIAJID</key>
@@ -65,6 +71,8 @@
 		<string>5</string>
 		<key>isIAJnormal</key>
 		<string>falllserr</string>
+		<key>MIAJBrief</key>
+		<string>Enthusiastic performer, exploring various acting styles daily.</string>
 	</dict>
 	<dict>
 		<key>MIAJID</key>
@@ -81,6 +89,8 @@
 		<string>1</string>
 		<key>isIAJnormal</key>
 		<string>falllserr</string>
+		<key>MIAJBrief</key>
+		<string>Creative mind, inspired by classic films and unique expressions.</string>
 	</dict>
 	<dict>
 		<key>MIAJID</key>
@@ -97,22 +107,8 @@
 		<string>2</string>
 		<key>isIAJnormal</key>
 		<string>falllserr</string>
-	</dict>
-	<dict>
-		<key>MIAJID</key>
-		<string>106</string>
-		<key>MIAJNbbme</key>
-		<string>Cuboe</string>
-		<key>MIAJphotl</key>
-		<string>MIAJ_6</string>
-		<key>MIAJViocovbr</key>
-		<string></string>
-		<key>MIAJvioeoTexvct</key>
-		<string></string>
-		<key>MIAJLikeCaunt</key>
-		<string></string>
-		<key>isIAJnormal</key>
-		<string>falllserr</string>
+		<key>MIAJBrief</key>
+		<string>Dance enthusiast, blends music with acting for captivating videos.</string>
 	</dict>
 	<dict>
 		<key>MIAJID</key>
@@ -129,6 +125,8 @@
 		<string>4</string>
 		<key>isIAJnormal</key>
 		<string>falllserr</string>
+		<key>MIAJBrief</key>
+		<string></string>
 	</dict>
 </array>
 </plist>

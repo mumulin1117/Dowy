@@ -2,7 +2,7 @@
 //  MIAJcollImmtion.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/3.
+//  Created by Miauomiccjt on 2025/3/3.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
@@ -29,7 +29,16 @@ class MIAJcollImmtion: UIViewController {
     @IBOutlet weak var functionuad1: UIImageView!
     
     @IBOutlet weak var functionuad2: UIImageView!
+    var uiBinh:Dictionary<String,String>
+    init(uiBinh: Dictionary<String, String>) {
+       
+        self.uiBinh = uiBinh
+        super.init(nibName: nil, bundle: nil)
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

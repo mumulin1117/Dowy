@@ -2,7 +2,7 @@
 //  BucueEluaiTruber.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/2/28.
+//  Created by Miauomiccjt on 2025/2/28.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
@@ -14,11 +14,12 @@ class BucueEluaiTruber: UIViewController {
    
     lazy var shoingindicatoer:UITextView  = {
       let bshoingindicatoer = UITextView.init()
-      bshoingindicatoer.contentInset = UIEdgeInsets(top: 30, left: 20, bottom: 97, right: 20)
+      bshoingindicatoer.contentInset = UIEdgeInsets(top: 30, left: 20, bottom: 12, right: 20)
       bshoingindicatoer.textColor = .black
       bshoingindicatoer.isEditable = false
       bshoingindicatoer.isScrollEnabled = true
       bshoingindicatoer.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        bshoingindicatoer.backgroundColor = .clear
       return bshoingindicatoer
    }()
    
@@ -72,14 +73,15 @@ class BucueEluaiTruber: UIViewController {
       }
       
       shoingindicatoer.snp.makeConstraints { make in
-         make.edges.equalToSuperview()
+          make.top.leading.trailing.equalToSuperview()
+          make.bottom.equalTo(agbreenButtonMIAJ.snp.top)
       }
       
       view.addSubview(gosouButtonMIAJ)
       gosouButtonMIAJ.snp.makeConstraints { make in
          make.width.height.equalTo(18)
          make.centerX.equalToSuperview()
-         make.bottom.equalToSuperview()
+          make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 26)
       }
    }
 

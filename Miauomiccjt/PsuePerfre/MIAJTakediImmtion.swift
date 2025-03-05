@@ -2,16 +2,17 @@
 //  MIAJTakediImmtion.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/2/26.
+//  Created by Miauomiccjt on 2025/2/26.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
 import UIKit
 import SnapKit
+import SVProgressHUD
 class MIAJTakediImmtion: UIViewController {
     var cbinMIAJ = Array<Dictionary<String,String>>()
     
-    
+    @IBOutlet weak var gomiun: UIButton!
     
    @IBOutlet weak var upGuessShaizi: UIImageView!
    
@@ -22,18 +23,34 @@ class MIAJTakediImmtion: UIViewController {
    lazy var coper2MITA = MIAJQuView.init()
    lazy var coper3MITA = MIAJQuView.init()
    
+    @objc func MJAIfsender()  {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
    override func viewDidLoad() {
         super.viewDidLoad()
       centrupdateMITA.setImage(UIImage.init(named: "shuXinNerlu"), for: .normal)
       centrupdateMITA.addTarget(self, action: #selector(updateselmaploviw), for: .touchUpInside)
       let cooperwid = (UIScreen.main.bounds.width - 27)/2
       let cooperhei = ((UIScreen.main.bounds.height - upGuessShaizi.frame.maxY) - 94.0 - 24 - 26*2)/2
+       
+       gomiun.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
+       
       view.addSubview(coper0MITA)
       view.addSubview(coper1MITA)
       
       view.addSubview(centrupdateMITA)
       view.addSubview(coper2MITA)
       view.addSubview(coper3MITA)
+       coper0MITA.tag = 100
+       coper1MITA.tag = 101
+       coper2MITA.tag = 102
+       coper3MITA.tag = 103
+       coper0MITA.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(touchIntagp)))
+       coper1MITA.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(touchIntagp)))
+       coper2MITA.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(touchIntagp)))
+       coper3MITA.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(touchIntagp)))
+       
       coper0MITA.snp.makeConstraints { make in
          make.width.equalTo(cooperwid)
          make.leading.equalToSuperview().inset(7)
@@ -65,11 +82,16 @@ class MIAJTakediImmtion: UIViewController {
          make.height.equalTo(cooperhei)
          make.top.equalTo(centrupdateMITA.snp.bottom).offset(12)
       }
-       
+       coper0MITA.appreoi.addTarget(self, action: #selector(RepoiuINteing), for: .touchUpInside)
+       coper1MITA.appreoi.addTarget(self, action: #selector(RepoiuINteing), for: .touchUpInside)
+       coper2MITA.appreoi.addTarget(self, action: #selector(RepoiuINteing), for: .touchUpInside)
+       coper3MITA.appreoi.addTarget(self, action: #selector(RepoiuINteing), for: .touchUpInside)
        updateselmaploviw()
     }
    
-  
+    @objc func RepoiuINteing() {
+        
+    }
     
     
     @objc func updateselmaploviw()  {
@@ -104,14 +126,21 @@ class MIAJTakediImmtion: UIViewController {
     }
     
     
+    @objc func touchIntagp(Refji:UITapGestureRecognizer)  {
+        
+        let Buter = (Refji.view?.tag ?? 100) - 100
+        
+        self.navigationController?.pushViewController( MiAJAFetaiolCPImmpo.init(_tdastaMiAJ: cbinMIAJ[Buter], _pageMIAITypeL: 0), animated: true)
+    }
+   
     
     private func congfiheurationndata()  {
         
        
         
        if self.cbinMIAJ.count == 0 {
-           
-           "提示：没有更多数据展示"
+           SVProgressHUD.showInfo(withStatus: "No more data displayed!")
+          
            coper0MITA.isHidden = true
             coper1MITA.isHidden = true
             coper2MITA.isHidden = true
@@ -231,7 +260,12 @@ class MIAJQuView: UIView {
        return coverview
     }()
     
-    
+    lazy var appreoi: UIButton = {
+        let appreoi = UIButton()
+        
+        appreoi.setImage(UIImage.init(named: "repoutinUser"), for: .normal)
+        return appreoi
+    }()
     
    override init(frame: CGRect) {
       super.init(frame: frame)
@@ -268,6 +302,12 @@ class MIAJQuView: UIView {
        centrolaplaima.snp.makeConstraints { make in
            make.center.equalToSuperview()
            make.width.height.equalTo(50)
+       }
+       
+       addSubview(appreoi)
+       appreoi.snp.makeConstraints { make in
+           make.width.height.equalTo(32)
+           make.top.trailing.equalToSuperview().inset(6)
        }
    }
    

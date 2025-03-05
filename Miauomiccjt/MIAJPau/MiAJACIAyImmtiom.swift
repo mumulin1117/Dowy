@@ -2,12 +2,12 @@
 //  MiAJACIAyImmtiom.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/3.
+//  Created by Miauomiccjt on 2025/3/3.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
 import UIKit
-
+import SVProgressHUD
 class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
     
     var pikingAHI:Int = 0
@@ -59,13 +59,17 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        trunbvButon.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
         AnimationConfig()
         cikdgrt.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
         
         trauilLabelio()
     }
 
+    
+    @objc func MJAIfsender()  {
+        self.navigationController?.popViewController(animated: true)
+    }
     private func AnimationConfig() {
         cikdgrt.layer.cornerRadius = 16
         cikdgrt.layer.masksToBounds = true
@@ -73,11 +77,6 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
         ebtruDesbMIAJ.layer.cornerRadius = 16
         ebtruDesbMIAJ.contentInset = UIEdgeInsets.init(top: 20, left: 16, bottom: 12, right: 16)
         ebtruDesbMIAJ.layer.masksToBounds = true
-        
-        
-        
-        
-        
         
         
         cikdgrt.delegate = self
@@ -101,4 +100,50 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
         descvtnum.layer.cornerRadius = 16
         descvtnum.layer.masksToBounds = true
     }
+    
+    
+    
+    @IBAction func MIAJOkayHaolo(_ sender: UIButton) {
+        if let allContable = ebtruDesbMIAJ.text, allContable.isEmpty == false {
+            //email 作为ID 对应dic
+            //获取当前的ID 对一金币
+            var Currency:Int = 0
+            if Currency < 300 {
+                let Zjiu = MiAJPumuAyImmtiom.init()
+                self.navigationController?.pushViewController(Zjiu, animated: true)
+                
+                return
+            }
+            
+            
+            Currency -= 300
+            
+            var sugeetypr :MiAJSuguesstionType = .TVroles
+            switch pikingAHI {
+            case 0:
+                sugeetypr = .TVroles
+            case 1:
+                sugeetypr = .Singer
+            case 2:
+                sugeetypr = .Anime
+            case 3:
+                sugeetypr = .Vintage
+            case 4:
+                sugeetypr = .FairyTale
+            default:
+                break
+            }
+            
+            self.navigationController?.pushViewController(MiAJACPiReslit.init(SuguesstionType: sugeetypr, roleplayDesc: allContable), animated: true)
+            
+            return
+        }
+        SVProgressHUD.showInfo(withStatus: "Please enter the keywords you want describe!")
+        
+        
+        
+    }
+    
+    
+    
 }

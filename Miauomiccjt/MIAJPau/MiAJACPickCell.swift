@@ -2,7 +2,7 @@
 //  MiAJACPickCell.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/3.
+//  Created by Miauomiccjt on 2025/3/3.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
@@ -63,7 +63,7 @@ class MiAJACPickCell: UICollectionViewCell {
         coverviewMIAJ.layer.masksToBounds = true
         
         coverviewMIAJ.layer.borderColor =  UIColor(red: 0.94, green: 0.55, blue: 1, alpha: 1).cgColor
-        coverviewMIAJ.layer.borderWidth = 2
+        coverviewMIAJ.layer.borderWidth = 0
         contentView.addSubview(coverviewMIAJ)
         
         coverviewMIAJ.snp.makeConstraints { make in

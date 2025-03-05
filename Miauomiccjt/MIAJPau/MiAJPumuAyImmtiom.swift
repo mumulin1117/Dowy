@@ -2,13 +2,19 @@
 //  MiAJPumuAyImmtiom.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/3.
+//  Created by Miauomiccjt on 2025/3/3.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
 import UIKit
-
+import SwiftyStoreKit
+import SVProgressHUD
 class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    @IBOutlet weak var trunbvButon: UIButton!
+    
+    
+    var alpubleMiAJ:Array<(Int,String,String)> = Array<(Int,String,String)>()
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -17,13 +23,62 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let biopp = collectionView.dequeueReusableCell(withReuseIdentifier: "MiAJBolanvecID", for: indexPath) as! MiAJBolanvec
-       
+        biopp.thinketitlMIAJ.text = "+\(alpubleMiAJ[indexPath.row].0)"
+        biopp.olaplaima.setTitle(alpubleMiAJ[indexPath.row].2, for: .normal)
         return biopp
         
     }
     
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let payingIds = alpubleMiAJ[indexPath.row]
+        
+        self.view.isUserInteractionEnabled = false
+        SVProgressHUD.show(withStatus: "Paying...")
+        SwiftyStoreKit.purchaseProduct(payingIds.1, atomically: true) { psResult in
+         
+            self.view.isUserInteractionEnabled = true
+            SVProgressHUD.dismiss()
+            if case .success(let psPurch) = psResult {
+               
+              
+                let psdownloads = psPurch.transaction.downloads
+                if !psdownloads.isEmpty {
+                    SwiftyStoreKit.start(psdownloads)
+                }
+                
+                if psPurch.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
+                }
+            
+               
+                
+                var remainglNERT =  Int( "0") ?? 0
+                
+                remainglNERT = remainglNERT + payingIds.0
+                
+//                DSORPujertLoafmuiner.shmured.mineDattarDS?.blanceds  = "\(remainglNERT)"
+                
+                self.aiopBlance.text = "\(remainglNERT)"
+              
+                SVProgressHUD.showSuccess(withStatus: "Successful payment!")
+
+          
+            }else if case .error(let error) = psResult {
+             
+                if error.code == .paymentCancelled {
+                  
+                    return
+                }
+           
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+               
+            }
+        }
+        
+        
+        
+    }
     
     
     @IBOutlet weak var gomiun: UIImageView!
@@ -31,17 +86,44 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     @IBOutlet weak var pinkernig: UIView!
     @IBOutlet weak var aiopBlance: UILabel!
     
-    
+    @objc func MJAIfsender()  {
+        self.navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        trunbvButon.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
+        trnbcdsdm()
+        alpubleMiAJ = [(400,"sneufalxrsvdezhs","$0.99"),
+                       (800,"nwptwfzqdadbblei","$1.99"),
+                       (2450,"hhkximdsbflyvucx","$4.99"),
+                       (4900,"xpnayttqrxzmhjkk","$9.99"),
+                       (9800,"fhcjqodkgartaqph","$19.99"),
+                       (24500,"vprqykjiylpzlpof","$49.99"),
+                       (49000,"doiodwkldcnnlnfo","$99.99"),
+                       
+                       (10500,"dowynmcvbnbjfu","$29.99"),
+                       (34500,"dowyzowieguhdr","$69.99"),
+                       (45500,"dowyaowmmvieuu","$89.99")]
         aiopAllopBmalces.register(MiAJBolanvec.self, forCellWithReuseIdentifier: "MiAJBolanvecID")
         aiopAllopBmalces.dataSource = self
         aiopAllopBmalces.contentInset = UIEdgeInsets(top: 30, left: 12, bottom: 100, right: 12)
        
+        aiopAllopBmalces.backgroundColor = UIColor(red: 1, green: 0.89, blue: 0.92, alpha: 1)
+        aiopAllopBmalces.layer.cornerRadius = 30
+        aiopAllopBmalces.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         ainsertbnh()
     }
     
     
+    
+    func trnbcdsdm()  {
+        let lauout = UICollectionViewFlowLayout.init()
+        lauout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 48)/3, height: 150)
+        lauout.minimumLineSpacing = 12
+        lauout.minimumInteritemSpacing = 12
+        aiopAllopBmalces.collectionViewLayout = lauout
+        aiopAllopBmalces.delegate = self
+    }
     
     func ainsertbnh()  {
         
@@ -95,12 +177,16 @@ class MiAJBolanvec: UICollectionViewCell {
        lalbl.numberOfLines  = 1
         lalbl.font = UIFont(name: "☞Gilroy-Bold", size: 20)
        lalbl.textAlignment = .center
+        
        return lalbl
     }()
     
     lazy var olaplaima: UIButton = {
        let coverview = UIButton.init()
-        coverview.setBackgroundImage(UIImage.init(named: ""), for: .normal)
+        coverview.layer.cornerRadius = 16
+        coverview.layer.masksToBounds = true
+        coverview.isUserInteractionEnabled = false
+        coverview.backgroundColor =  UIColor(red: 0.63, green: 0.03, blue: 0.73, alpha: 1)
         coverview.setTitleColor(.white, for: .normal)
         coverview.titleLabel?.font =  UIFont(name: "☞Gilroy-Bold", size: 15)
        return coverview
@@ -134,7 +220,7 @@ class MiAJBolanvec: UICollectionViewCell {
     fileprivate func adreag()  {
         self.backgroundColor = .clear
         contentView.addSubview(coverviewMIAJ)
-        coverviewMIAJ.addSubview(coverviewMIAJ)
+       
         coverviewMIAJ.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

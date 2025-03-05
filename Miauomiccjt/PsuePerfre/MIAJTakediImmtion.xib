@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MIAJTakediImmtion" customModule="Miauomiccjt" customModuleProvider="target">
             <connections>
+                <outlet property="gomiun" destination="Mph-1t-aXS" id="bfB-w7-Rz9"/>
                 <outlet property="upGuessShaizi" destination="zvp-aT-gU4" id="uSe-HZ-T8Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
