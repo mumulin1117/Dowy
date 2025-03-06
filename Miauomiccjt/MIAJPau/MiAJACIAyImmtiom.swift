@@ -8,7 +8,13 @@
 
 import UIKit
 import SVProgressHUD
-class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
+class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate{
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = nil
+    }
+    
+   
     
     var pikingAHI:Int = 0
     
@@ -25,6 +31,7 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let bumnjcell = collectionView.dequeueReusableCell(withReuseIdentifier: "MiAJACPickCellID", for: indexPath) as! MiAJACPickCell
         bumnjcell.coverviewMIAJ.image = UIImage(named: pickinghSoiuce[indexPath.row].1)
+        bumnjcell.thinketitlMIAJ.text = pickinghSoiuce[indexPath.row].2
         return bumnjcell
     }
     
@@ -59,6 +66,9 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        ebtruDesbMIAJ.delegate = self
         trunbvButon.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
         AnimationConfig()
         cikdgrt.selectItem(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
@@ -83,11 +93,13 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
         let soulayout = UICollectionViewFlowLayout.init()
         
         cikdgrt.dataSource = self
-        cikdgrt.collectionViewLayout = soulayout
-        soulayout.itemSize = CGSize.init(width: (UIScreen.main.bounds.width - 26)/3, height: 140)
+        soulayout.itemSize = CGSize.init(width: (UIScreen.main.bounds.width - 26)/3, height: 170)
         soulayout.minimumLineSpacing = 15
         soulayout.minimumInteritemSpacing = 0
         soulayout.scrollDirection = .vertical
+        cikdgrt.collectionViewLayout = soulayout
+        cikdgrt.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
+        
         cikdgrt.register(MiAJACPickCell.self, forCellWithReuseIdentifier: "MiAJACPickCellID")
         
         
@@ -101,22 +113,72 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
         descvtnum.layer.masksToBounds = true
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.aiopBlance.text = inguserBlance
+//    }
     
     
     @IBAction func MIAJOkayHaolo(_ sender: UIButton) {
-        if let allContable = ebtruDesbMIAJ.text, allContable.isEmpty == false {
+        if let allContable = ebtruDesbMIAJ.text, allContable.isEmpty == false,allContable != "Please enter the keywords you want describe" {
             //email 作为ID 对应dic
             //获取当前的ID 对一金币
-            var Currency:Int = 0
+           
+            let inguser = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? Dictionary<String,String> ?? [:]
+         
+            let inguserBlance =  inguser["MIAJCoinB"] ?? "0"
+            var Currency =  Int( inguserBlance) ?? 0
+            
+           
+
+           
             if Currency < 300 {
-                let Zjiu = MiAJPumuAyImmtiom.init()
-                self.navigationController?.pushViewController(Zjiu, animated: true)
+                
+                let alert = UIAlertController(
+                        title: "Insufficient Coins",
+                        message: "AI Creative Inspiration requires 300 coins. Please purchase more coins to continue.",
+                        preferredStyle: .alert
+                    )
+                let cancelAction = UIAlertAction(
+                       title: "Cancel",
+                       style: .cancel,
+                       handler: nil
+                   )
+                let purchaseAction = UIAlertAction(
+                        title: "Purchase Coins",
+                        style: .destructive) { _ in
+                            
+                            let Zjiu = MiAJPumuAyImmtiom.init()
+                            self.navigationController?.pushViewController(Zjiu, animated: true)
+                           
+                            
+                        }
+                alert.addAction(cancelAction)
+
+                alert.addAction(purchaseAction)
+                alert.setValue(NSAttributedString(
+                    string: "Insufficient Coins",
+                    attributes: [.foregroundColor: UIColor.systemOrange]
+                ), forKey: "attributedTitle")
+               
+                
+                // 4. 显示弹窗
+                present(alert, animated: true)
+                
+               
+                
                 
                 return
             }
             
             
+            
+          
             Currency -= 300
+
+            MiAJEisditImmtiom.updaterudeingfowithNew(naem: nil, bnhbrief: nil, blancefpoi: "\(Currency)")
+            
+            
             
             var sugeetypr :MiAJSuguesstionType = .TVroles
             switch pikingAHI {

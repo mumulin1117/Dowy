@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BucueCarstarTruber" customModule="Miauomiccjt" customModuleProvider="target">
             <connections>
                 <outlet property="indicaterAgree" destination="DGe-cx-ZUe" id="gi5-jq-Hl5"/>
-                <outlet property="lerbelBottom" destination="t7J-Op-18L" id="dZV-tx-wM9"/>
                 <outlet property="shuldAJ" destination="zzS-nQ-LQL" id="WFp-tw-gTy"/>
                 <outlet property="toeEamillMAKl" destination="HaI-4T-WbI" id="6fr-fE-2Dn"/>
                 <outlet property="toemailLablMAKl" destination="fFm-vo-wTA" id="Gbk-wm-iqC"/>
@@ -34,12 +33,6 @@
                         <constraint firstAttribute="height" constant="25" id="jdb-mo-Ski"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logging in represents your agreement to  the Terms of Service and Privacy Policy." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7J-Op-18L" customClass="ActiveLabel" customModule="Miauomiccjt" customModuleProvider="target">
-                    <rect key="frame" x="49.666666666666657" y="773" width="331.33333333333337" height="43.333333333333371"/>
-                    <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="13"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFm-vo-wTA">
                     <rect key="frame" x="20" y="690" width="294" height="56"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,7 +40,7 @@
                         <constraint firstAttribute="height" constant="56" id="rCE-Qz-xUz"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yx_miaj" translatesAutoresizingMaskIntoConstraints="NO" id="HaI-4T-WbI">
@@ -75,8 +68,6 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t7J-Op-18L" secondAttribute="trailing" constant="12" id="408-bq-EUg"/>
-                <constraint firstItem="t7J-Op-18L" firstAttribute="top" secondItem="DGe-cx-ZUe" secondAttribute="top" id="Gno-Sj-6G0"/>
                 <constraint firstItem="zzS-nQ-LQL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="HP0-7o-tn2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HaI-4T-WbI" secondAttribute="trailing" constant="20" id="I06-qD-NuB"/>
                 <constraint firstItem="HaI-4T-WbI" firstAttribute="leading" secondItem="fFm-vo-wTA" secondAttribute="trailing" constant="3" id="PsK-Q1-Nb1"/>
@@ -89,7 +80,6 @@
                 <constraint firstItem="5mc-9V-ZQH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lYz-uA-Q1U"/>
                 <constraint firstItem="fFm-vo-wTA" firstAttribute="top" secondItem="TqJ-nl-hlE" secondAttribute="bottom" constant="25" id="nCO-5O-M0t"/>
                 <constraint firstAttribute="bottom" secondItem="5mc-9V-ZQH" secondAttribute="bottom" id="sQ5-An-odr"/>
-                <constraint firstItem="t7J-Op-18L" firstAttribute="leading" secondItem="DGe-cx-ZUe" secondAttribute="trailing" constant="9" id="t6S-fq-zG3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DGe-cx-ZUe" secondAttribute="bottom" constant="20" id="tgN-zl-Pja"/>
                 <constraint firstItem="fFm-vo-wTA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vRJ-dQ-1wV"/>
                 <constraint firstItem="zzS-nQ-LQL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zxe-lY-9WD"/>

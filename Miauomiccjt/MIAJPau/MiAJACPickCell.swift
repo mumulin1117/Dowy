@@ -21,20 +21,20 @@ class MiAJACPickCell: UICollectionViewCell {
     
     
       lazy var diomewMIAJ: UIImageView = {
-       let coverview = UIImageView.init()
-        coverview.image = UIImage(named: "mxzdys")
-       coverview.contentMode = .scaleAspectFill
-       return coverview
+       let MIAJ = UIImageView.init()
+        MIAJ.image = UIImage(named: "mxzdys")
+       MIAJ.contentMode = .scaleAspectFill
+       return MIAJ
     }()
     
     
     lazy var thinketitlMIAJ: UILabel = {
-       let lalbl = UILabel.init()
-        lalbl.textColor = .black
-       lalbl.numberOfLines  = 1
-        lalbl.font = UIFont(name: "☞Gilroy-Bold", size: 14)
-       lalbl.textAlignment = .center
-       return lalbl
+       let MIAJ = UILabel.init()
+        MIAJ.textColor = .black
+       MIAJ.numberOfLines  = 1
+        MIAJ.font = UIFont(name: "☞Gilroy-Bold", size: 14)
+       MIAJ.textAlignment = .center
+       return MIAJ
     }()
     
    

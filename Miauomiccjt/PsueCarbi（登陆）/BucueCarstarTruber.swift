@@ -24,13 +24,20 @@ class BucueCarstarTruber: UIViewController {
    @IBOutlet weak var toeEamillMAKl: UIImageView!
    
    
-   @IBOutlet weak var lerbelBottom: ActiveLabel!
+    private var lerbelBottom: ActiveLabel =  ActiveLabel.init()
    
+    var shioldPre:Bool = false
+    
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       
       indicaterAgree.image = UIImage(named: (agreenAready == 1) ? "xzdys" : "mxzdys")
       
+       if shioldPre == false && agreenAready == 0 {
+           ElaiolErbian()
+           shioldPre = true
+       }
+       
    }
    
    override func viewDidLoad() {
@@ -47,25 +54,41 @@ class BucueCarstarTruber: UIViewController {
       
       toeEamillMAKl.isUserInteractionEnabled = true
       toeEamillMAKl.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(tapclivktouxck(tapMal:))))
-//      addNoerbuiol()
+     
        toemailLablMAKl.layer.cornerRadius = 28
        toemailLablMAKl.layer.masksToBounds = true
+       
+       lerbelBottom.numberOfLines = 0
+       lerbelBottom.textColor = .lightGray
+       view.addSubview(self.lerbelBottom)
+       lerbelBottom.snp.makeConstraints { make in
+           make.left.equalTo(indicaterAgree.snp.right).offset(8)
+           make.right.equalToSuperview().inset(20)
+           make.top.equalTo(indicaterAgree)
+       }
+       
+       addNoerbuiol()
     }
    
    func addNoerbuiol()  {
-      let customTypeTErm = ActiveType.custom(pattern: "Terms of Service")
-      let customTypePri = ActiveType.custom(pattern: "Privacy Policy")
+       lerbelBottom.isUserInteractionEnabled = true
+       lerbelBottom.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+       
+      let customTypeTErm = ActiveType.custom(pattern: "\\bTerms of Service\\b")
+      let customTypePri = ActiveType.custom(pattern: "\\bPrivacy Policy\\b")
       lerbelBottom.enabledTypes = [customTypeTErm,customTypePri]
-      lerbelBottom.customColor = [customTypeTErm:.darkGray,customTypePri:.darkGray]
+       lerbelBottom.customColor = [customTypeTErm:.white,customTypePri:.white]
+       
+       lerbelBottom.text = "Logging in represents your agreement to  the Terms of Service and Privacy Policy."
       lerbelBottom.handleCustomTap(for: customTypeTErm) { element in
          let eluaijg = BucueEluaiTruber.init()
-         eluaijg.shoingindicatoer.text = self.showirResturnContenu(which: 1)
+          eluaijg.shoingindicatoer.text = BucueCarstarTruber.showirResturnContenu(which: 1)
          eluaijg.modalPresentationStyle = .overCurrentContext
          self.present(eluaijg, animated: true)
       }
-      lerbelBottom.handleCustomTap(for: customTypeTErm) { element in
+      lerbelBottom.handleCustomTap(for: customTypePri) { element in
          let eluaijg = BucueEluaiTruber.init()
-         eluaijg.shoingindicatoer.text = self.showirResturnContenu(which: 2)
+          eluaijg.shoingindicatoer.text = BucueCarstarTruber.showirResturnContenu(which: 2)
          eluaijg.modalPresentationStyle = .overCurrentContext
          self.present(eluaijg, animated: true)
       }
@@ -73,24 +96,26 @@ class BucueCarstarTruber: UIViewController {
    }
 
    
-   
+    func ElaiolErbian()  {
+        //ELUA
+        let eluaijg = BucueEluaiTruber.init()
+         eluaijg.shoingindicatoer.text = BucueCarstarTruber.showirResturnContenu(which: 0)
+         eluaijg.bloakMIAJ = { iug in
+             self.agreenAready = iug ? 1 : 0
+             self.indicaterAgree.image = UIImage(named: iug ? "xzdys" : "mxzdys")
+         }
+         
+         
+        eluaijg.modalPresentationStyle = .overCurrentContext
+        self.present(eluaijg, animated: true)
+    }
    
    
    @objc func tapclivktouxck(tapMal:UITapGestureRecognizer) {
       
       let tapview = tapMal.view
       if tapview ==  shuldAJ {
-         //ELUA
-         let eluaijg = BucueEluaiTruber.init()
-         eluaijg.shoingindicatoer.text = showirResturnContenu(which: 0)
-          eluaijg.bloakMIAJ = { iug in
-              self.agreenAready = iug ? 1 : 0
-              self.indicaterAgree.image = UIImage(named: iug ? "xzdys" : "mxzdys")
-          }
-          
-          
-         eluaijg.modalPresentationStyle = .overCurrentContext
-         self.present(eluaijg, animated: true)
+          ElaiolErbian()
       }
       
     
@@ -119,10 +144,11 @@ class BucueCarstarTruber: UIViewController {
    
    
    
-   func showirResturnContenu(which:Int) -> String {
+  class func showirResturnContenu(which:Int) -> String {
       if which == 0 {
          return """
-Dowy End User License Agreement (EULA)
+EULA
+
 Effective Date: February 28, 2025
 Latest Update: February 28, 2025
 
@@ -221,6 +247,7 @@ By using Dowy, you agree to empower creativity while respecting artistic integri
       if which == 1 {
          return """
 Dowy Terms of Service
+
 Effective Date: February 28, 2025
 
 1. Acceptance of Terms
@@ -229,23 +256,27 @@ By using Dowy, you agree to:
 
 Comply with all community guidelines and copyright laws.
 Assume full liability for uploaded content.
+
 2. Account Management
 
 2.1 Requirements
 
 Use a valid email and unique username (no impersonation).
 Maintain account security; report breaches immediately.
+
 2.2 Termination
 We may suspend accounts for:
 
 Posting illegal content (e.g., deepfakes).
 Evading bans via multiple accounts.
+
 3. Content Rules
 
 3.1 Prohibited Content
 
 Imitation Videos: Must credit original creators and avoid defamation.
 AI Content: Label AI-generated clips with #AICreated hashtag.
+
 3.2 Licensing
 You grant Dowy a non-exclusive license to display, modify, and distribute your content.
 
@@ -253,6 +284,7 @@ You grant Dowy a non-exclusive license to display, modify, and distribute your c
 
 Governing Law: Disputes resolved under California law.
 Class Action Waiver: Claims must be filed individually.
+
 5. Modifications
 
 We may update these terms with 30 days’ notice via email or in-app banner.
@@ -277,6 +309,7 @@ Publish a Transparency Report biannually detailing content removals.
       
       return """
 Privacy Policy for Dowy
+
 Effective Date: February 28, 2025
 Latest Update: February 28, 2025
 
@@ -287,15 +320,18 @@ Latest Update: February 28, 2025
 Account Data: Username, email, profile bio, and social media links (optional).
 Content: Videos, comments, voice recordings, and AI-generated inspiration prompts.
 Verification Data: Facial scans (for imitation effects) and device fingerprints (for security).
+
 1.2 Automatically Collected Data
 
 Usage Data: Watch history, engagement metrics (likes/shares), and in-app search queries.
 Technical Data: IP address, device model, OS version, and crash logs.
 Location Data: Approximate location derived from IP (non-precise).
+
 1.3 Third-Party Data
 
 Social Media: If you link accounts (e.g., Instagram), we collect public profile information.
 Analytics: Aggregated data via Firebase and Mixpanel.
+
 2. How We Use Data
 
 Core Functionality: Deliver imitation tools, AI suggestions, and personalized recommendations.
@@ -309,14 +345,17 @@ We never sell your data. Limited sharing occurs with:
 Moderation Partners: Third-party AI filters (e.g., Google Perspective API) to detect hate speech.
 Cloud Services: AWS for encrypted storage.
 Legal Authorities: When required by subpoena or to prevent harm.
+
 4. Your Rights
 
 Access & Portability: Download your videos and interaction history via Settings > Privacy.
 Deletion: Permanently erase your account and data (7-day processing time).
 Opt-Out: Disable AI training contributions in Settings > Data Preferences.
+
 5. Children’s Privacy
 
 Dowy is strictly for users aged 13+. Accounts suspected of underage use will be terminated.
+
 6. Security Measures
 
 End-to-end encryption for direct messages.

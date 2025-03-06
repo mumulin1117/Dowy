@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 enum MiAJSuguesstionType:String {
 
     case TVroles = "TV roles"
@@ -67,10 +68,11 @@ class MiAJACPiReslit: UIViewController {
     }
 
     func gbunsdg() {
-
+        let allQuestion = "I need you as an AI creative inspiration type robot. My type of inspiration is " + SuguesstionType.rawValue + ",and my description is:" + roleplayDesc + ".Please give me some cosplay inspiration based on the above"
+        
         SVProgressHUD.show(withStatus: "Generating creative ideas.....")
-            
-            AF.request("http://www.wertyu6543z.xyz/talktwo/askQuestionv2", method: .post, parameters: ["question": SuguesstionType,"questionType": 1,"eqNo":"5555"], encoding: JSONEncoding.default, headers: nil)
+    
+            AF.request("http://www.wertyu6543z.xyz/talktwo/askQuestionv2", method: .post, parameters: ["question": allQuestion,"questionType": 1,"eqNo":"5555"], encoding: JSONEncoding.default, headers: nil)
                 .responseJSON { response in
                     SVProgressHUD.dismiss()
                     switch response.result {
@@ -94,11 +96,11 @@ class MiAJACPiReslit: UIViewController {
                     }
                     
                 }
-            return
+          
        
     }
 
-    
+
     
     @IBAction func Quiocxerymui(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
@@ -107,7 +109,8 @@ class MiAJACPiReslit: UIViewController {
     
     
     @IBAction func aGopdgerAlert(_ sender: UIButton) {
-        
+        self.aGopdgerAlert(withihTITLe: "Report AI Content",resonsongall: ["Inappropriate Content","False Information","Copyright Issue","Other Reason"])
+
     }
     
     

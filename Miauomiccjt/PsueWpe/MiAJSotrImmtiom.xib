@@ -19,6 +19,7 @@
                 <outlet property="louiegnout" destination="hzd-KL-wrg" id="B1U-xd-DK7"/>
                 <outlet property="talbemanber" destination="ch8-lx-N95" id="QjJ-21-ObP"/>
                 <outlet property="view" destination="U5Y-fa-Xng" id="s2n-eU-RYl"/>
+                <outlet property="wutoWwhiei" destination="vsn-YQ-nav" id="XWc-yD-WLe"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -68,10 +69,6 @@
                         <constraint firstAttribute="trailing" secondItem="f7j-Bg-evE" secondAttribute="trailing" constant="20" symbolic="YES" id="lR3-Vx-eGm"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ch8-lx-N95">
-                    <rect key="frame" x="0.0" y="244" width="393" height="458"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMT-uL-qZ4">
                     <rect key="frame" x="0.0" y="748" width="393" height="104"/>
                     <subviews>
@@ -111,13 +108,17 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ch8-lx-N95">
+                    <rect key="frame" x="13" y="244" width="367" height="458"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="X3h-91-eIZ"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="TMT-uL-qZ4" secondAttribute="bottom" id="0jH-Yh-hGs"/>
                 <constraint firstItem="TMT-uL-qZ4" firstAttribute="leading" secondItem="X3h-91-eIZ" secondAttribute="leading" id="0z4-Lz-ffC"/>
-                <constraint firstItem="ch8-lx-N95" firstAttribute="trailing" secondItem="X3h-91-eIZ" secondAttribute="trailing" id="3sq-Me-w9A"/>
+                <constraint firstItem="ch8-lx-N95" firstAttribute="trailing" secondItem="X3h-91-eIZ" secondAttribute="trailing" constant="-13" id="3sq-Me-w9A"/>
                 <constraint firstItem="jAc-Kf-Egw" firstAttribute="top" secondItem="X3h-91-eIZ" secondAttribute="top" constant="1" id="7c7-uP-Vhg"/>
                 <constraint firstItem="oIw-VA-dQ8" firstAttribute="centerY" secondItem="jAc-Kf-Egw" secondAttribute="centerY" id="DoN-3U-cEJ"/>
                 <constraint firstItem="jAc-Kf-Egw" firstAttribute="leading" secondItem="X3h-91-eIZ" secondAttribute="leading" constant="16" id="Icd-Dd-k87"/>
@@ -127,7 +128,7 @@
                 <constraint firstItem="X3h-91-eIZ" firstAttribute="trailing" secondItem="vsn-YQ-nav" secondAttribute="trailing" constant="16" id="gF1-im-Axj"/>
                 <constraint firstItem="ch8-lx-N95" firstAttribute="top" secondItem="jAc-Kf-Egw" secondAttribute="bottom" constant="140" id="gSg-qh-rPr"/>
                 <constraint firstItem="vsn-YQ-nav" firstAttribute="top" secondItem="jAc-Kf-Egw" secondAttribute="bottom" constant="20" id="hxe-Ib-ITX"/>
-                <constraint firstItem="ch8-lx-N95" firstAttribute="leading" secondItem="X3h-91-eIZ" secondAttribute="leading" id="iNQ-PK-tXW"/>
+                <constraint firstItem="ch8-lx-N95" firstAttribute="leading" secondItem="X3h-91-eIZ" secondAttribute="leading" constant="13" id="iNQ-PK-tXW"/>
                 <constraint firstItem="vsn-YQ-nav" firstAttribute="leading" secondItem="X3h-91-eIZ" secondAttribute="leading" constant="16" id="voA-gd-gIU"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>

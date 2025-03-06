@@ -40,12 +40,17 @@ class MIAJPubyaImmtion: UIViewController {
         }
         
         if tauo.view == guessUploafinh {
-            self.dismiss(animated: true)
+           
+            let uploading = MIAJPubImmtion.init()
+            uploading.typrTag = 1
+            self.navigationController?.pushViewController(uploading, animated: true)
         }
         
         
         if tauo.view == guessnomalafinh {
-            self.dismiss(animated: true)
+            let uploading = MIAJPubImmtion.init()
+            uploading.typrTag = 0
+            self.navigationController?.pushViewController(uploading, animated: true)
         }
     }
 }

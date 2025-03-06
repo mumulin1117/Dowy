@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import AVFAudio
+import AVFoundation
+import SVProgressHUD
 class MIAJMeiwnuImmtion: UIViewController {
     
     var uiBinh:Dictionary<String,String>
@@ -72,7 +74,7 @@ class MIAJMeiwnuImmtion: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        centeplauINgk.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
         conttntPOst.isUserInteractionEnabled = true
         conttntPOst.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
         ainsertbnh()
@@ -92,12 +94,15 @@ class MIAJMeiwnuImmtion: UIViewController {
         
         pinkernig.layer.cornerRadius = 16
         bottmiWjhite.layer.cornerRadius = 16
+       
         bottmiWjhite.layer.masksToBounds = true
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateselmaploviw), name: NSNotification.Name.init("remobesomnerUser"), object: nil)
         
     }
     
-    
+    @objc func updateselmaploviw() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
  
     
@@ -131,11 +136,31 @@ class MIAJMeiwnuImmtion: UIViewController {
         
         
         if tgmni.view == replopiun {
+            let userig = uiBinh["MIAJID"] ?? ""
             
+            self.remoLaredeleterAlert(withujiUsed: userig)
         }
         
         if tgmni.view == toeFollowering {
             
+            SVProgressHUD.show()
+            self.view.isUserInteractionEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7, execute: DispatchWorkItem(block: {
+                SVProgressHUD.dismiss()
+                self.view.isUserInteractionEnabled = true
+                if MIAJWuoeImmtion.lognfolloweing.contains(self.uiBinh) {
+                    MIAJWuoeImmtion.lognfolloweing = MIAJWuoeImmtion.lognfolloweing.filter { $0["MIAJID"] != self.uiBinh["MIAJID"] }
+                    
+                    self.toeFollowering.image = UIImage(named: "bunmiosun")
+                }else{
+                    
+                    MIAJWuoeImmtion.lognfolloweing.insert(self.uiBinh, at: 0)
+                    self.toeFollowering.image = UIImage(named: "bunmio")
+                }
+            }))
+            
+           
+      
         }
         
        
@@ -143,17 +168,24 @@ class MIAJMeiwnuImmtion: UIViewController {
         
         
         if tgmni.view == videoggGreen  {
-            
+            AVAudioSession.sharedInstance().requestRecordPermission { granted in
+              
+            }
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+               
+               
+            }
+            self.navigationController?.pushViewController(MIAJcollImmtion.init(uiBinh: uiBinh), animated: true)
         }
         
       
         
         if tgmni.view == meassGreen  {
-            
+            self.navigationController?.pushViewController(MIAJSendingImmtion.init(uiBinh: uiBinh), animated: true)
         }
         
-        if tgmni.view == conttntPOst  {
-            
+        if tgmni.view == conttntPOst || tgmni.view == centeplauINgk {
+            self.navigationController?.pushViewController(MiAJAFetaiolCPImmpo.init(_tdastaMiAJ: uiBinh, _pageMIAITypeL: 0), animated: true)
         }
         
     }
@@ -168,6 +200,7 @@ class MIAJMeiwnuImmtion: UIViewController {
         bottmiWjhite.layer.masksToBounds = true
     }
 
+    @IBOutlet weak var centeplauINgk: UIImageView!
     
     func ainsertbnhUpdate()  {
         if  MIAJWuoeImmtion.lognfolloweing.contains(uiBinh){
@@ -184,7 +217,9 @@ class MIAJMeiwnuImmtion: UIViewController {
         self.aiopfance.text = "\(Int.random(in: 0...4))"
         
         self.aiopfollort.text = "\(Int.random(in: 0...5))"
-        
+        if uiBinh["MIAJViocovbr"] != nil {
+            conttntPOst.image = UIImage.init(named: uiBinh["MIAJViocovbr"] ?? "")
+        }
         
       
        

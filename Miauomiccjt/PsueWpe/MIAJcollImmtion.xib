@@ -21,6 +21,7 @@
                 <outlet property="gohngguad" destination="EgC-UD-QEZ" id="U4H-cn-DUq"/>
                 <outlet property="replopiun" destination="b8O-x8-daw" id="HMa-Rh-KmY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vvonerBgd" destination="GLj-J5-E7Z" id="B9c-wQ-Efx"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

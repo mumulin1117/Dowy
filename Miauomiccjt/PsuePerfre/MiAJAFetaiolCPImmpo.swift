@@ -8,6 +8,7 @@
 
 import UIKit
 import Player
+import SVProgressHUD
 class MiAJAFetaiolCPImmpo: UIViewController {
     var viderplayet: Player?
     
@@ -40,17 +41,14 @@ class MiAJAFetaiolCPImmpo: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    //举报
-    @objc func MJAIfReportin()  {
-       
-    }
+
     
     
     @IBOutlet weak var tousercentertPUnMIADi: UIImageView!
     
     //个人中心
     @objc func addtTapiserunincenter()  {
-        
+        self.navigationController?.pushViewController(MIAJMeiwnuImmtion.init(uiBinh: tdastaMiAJ), animated: true)
     }
     
     override func viewDidLoad() {
@@ -66,7 +64,7 @@ class MiAJAFetaiolCPImmpo: UIViewController {
         enterToplayerAuto()
         gomiun.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
         
-        replopiun.addTarget(self, action: #selector(MJAIfReportin), for: .touchUpInside)
+        replopiun.addTarget(self, action: #selector(juiaGopdgerAlert), for: .touchUpInside)
         self.viderplayet?.playFromBeginning()
         
         if pageMIAITypeL == 1 {
@@ -78,10 +76,41 @@ class MiAJAFetaiolCPImmpo: UIViewController {
         }
     }
     
+    
+    @IBOutlet weak var centerPlainmghrStatus: UIImageView!
+    
+    @objc func juiaGopdgerAlert() {
+        self.aGopdgerAlert()
+         
+     }
+    
+    @objc func tapVideoStatusChange()  {
+    
+        
+        switch self.viderplayet?.playbackState {
+        case .stopped:
+            viderplayet?.playFromBeginning()
+            centerPlainmghrStatus.isHidden = true
+        case .paused:
+            viderplayet?.playFromCurrentTime()
+            centerPlainmghrStatus.isHidden = true
+            
+        case .playing:
+            viderplayet?.pause()
+            centerPlainmghrStatus.isHidden = false
+        case .failed:
+            viderplayet?.pause()
+            centerPlainmghrStatus.isHidden = false
+            
+        case .none:
+            break
+        }
+    }
     func enterToplayerAuto()  {
         self.viderplayet?.playerView.playerBackgroundColor = .clear
         self.addChild(self.viderplayet!)
         
+        self.celcovervvMIAJ.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapVideoStatusChange)))
         
         self.celcovervvMIAJ.insertSubview(self.viderplayet!.view, at: 0)
         viderplayet?.didMove(toParent: self)
@@ -99,7 +128,7 @@ class MiAJAFetaiolCPImmpo: UIViewController {
         self.viderplayet?.url = urlPathname
         
         self.viderplayet?.playbackLoops = true
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(MJAIfsender), name: NSNotification.Name.init("remobesomnerUser"), object: nil)
     }
 
     @IBOutlet weak var pubuserAvtMIAJ: UIImageView!
@@ -117,19 +146,40 @@ class MiAJAFetaiolCPImmpo: UIViewController {
     @IBOutlet weak var heabetCouny: UIImageView!
     
   
-
+    private var runerrvc:UIViewController?
+    
   
     @IBOutlet weak var enterGueeredue: UITextField!
     
     
     @IBAction func sureGuedeG(_ sender: UIButton) {
         
+        guard let resultGued =  enterGueeredue.text,resultGued.count > 0 else {
+            SVProgressHUD.showInfo(withStatus: "Please enter your guess result!")
+            return
+        }
+        let resultingshouvc = UIViewController.init()
+        resultingshouvc.view.backgroundColor = UIColor.init(white: 0.3, alpha: 0.5)
+        let errorimg = UIImageView.init(image: UIImage.init(named: "erroslertinh"))
+        resultingshouvc.view.addSubview(errorimg)
+        errorimg.isUserInteractionEnabled = true
+        errorimg.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalTo(260)
+            make.height.equalTo(340)
+        }
+        resultingshouvc.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismisnigRun)))
+        resultingshouvc.modalPresentationStyle = .overCurrentContext
+        runerrvc = resultingshouvc
         
-        
-        
-        
+        self.present(resultingshouvc, animated: true)
     }
-    
+   @objc func dismisnigRun()  {
+        runerrvc?.dismiss(animated: true)
+       runerrvc = nil
+       enterGueeredue.text = nil
+       
+    }
     
     func Cunmifhj() {
         bottmmMJAI.layer.cornerRadius = 15
@@ -141,8 +191,43 @@ class MiAJAFetaiolCPImmpo: UIViewController {
         titkolppppMIAJ.text = tdastaMiAJ["MIAJvioeoTexvct"]
         
         usernnameNIAJ.text = "@" + (tdastaMiAJ["MIAJNbbme"] ?? "")
-        heabetCouny.image = UIImage(named: "nothathuiop")
+       
+        
+        if tdastaMiAJ["likeingThis"] == "1" {
+            self.heabetCouny.image = UIImage(named: "thathuiop")
+        }else{
+            self.heabetCouny.image = UIImage(named: "nothathuiop")
+        }
+        heabetCouny.isUserInteractionEnabled = true
+        heabetCouny.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapingkToAvchole)))
     }
     
+    
+   @objc func tapingkToAvchole()  {
+       
+       SVProgressHUD.show()
+       self.view.isUserInteractionEnabled = false
+       DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7, execute: DispatchWorkItem(block: {
+           SVProgressHUD.dismiss()
+           self.view.isUserInteractionEnabled = true
+           self.tdastaMiAJ["likeingThis"] = (  (self.tdastaMiAJ["likeingThis"] == "1") ? "0" : "1")
+           
+           if self.tdastaMiAJ["likeingThis"] == "1" {
+               self.heabetCouny.image = UIImage(named: "thathuiop")
+           }else{
+               self.heabetCouny.image = UIImage(named: "nothathuiop")
+           }
+           
+           
+           for (oiu,shgy) in MIAJPerdforemImmtion.momomicMIAJ.enumerated() {
+               if shgy["MIAJID"] == self.tdastaMiAJ["MIAJID"] {
+                   MIAJPerdforemImmtion.momomicMIAJ[oiu] = self.tdastaMiAJ
+               }
+           }
+       }))
+      
+       
+   
+   }
     
 }

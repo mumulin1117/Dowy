@@ -63,17 +63,26 @@ class UserPauioellViewImmitation: UITabBarController {
       
    }
    @objc private func publiVideoToMIAJnTapped() {
-          
-      let publishVC = MIAJPubyaImmtion()
-      present(publishVC, animated: true, completion: nil)
+       let Abnavir = UINavigationController.init(rootViewController: MIAJPubyaImmtion())
+       
+       Abnavir.navigationBar.isHidden = true
+       Abnavir.modalPresentationStyle = .overFullScreen
+       present(Abnavir, animated: true, completion: nil)
       
    }
    
    private func configurationTabBarUIMIAJAppearance() {
+       let appearance = UITabBarAppearance()
+               
+       appearance.configureWithOpaqueBackground()
+       appearance.backgroundColor = UIColor(red: 0.09, green: 0.05, blue: 0.11, alpha: 1)
+       appearance.shadowColor = .purple
+      
+       tabBar.standardAppearance = appearance
+       tabBar.scrollEdgeAppearance = appearance
      
-      tabBar.backgroundColor = UIColor(red: 0.09, green: 0.05, blue: 0.11, alpha: 1)
-     
-     
+       tabBar.isTranslucent = false
+
    }
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MIAJcollImmtion: UIViewController {
     @IBOutlet weak var alipoMineIcon: UIImageView!
@@ -46,7 +47,7 @@ class MIAJcollImmtion: UIViewController {
         functionuad2.isUserInteractionEnabled = true
         functionuad2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
         
-        
+        ainsertbnhUpdate()
         ainsertbnh()
         gohngguad.isUserInteractionEnabled = true
         gohngguad.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
@@ -54,7 +55,15 @@ class MIAJcollImmtion: UIViewController {
         setinguistutl()
     }
     
-    
+    func ainsertbnhUpdate()  {
+       
+        
+        aiopHIsiconf.image = UIImage(named: uiBinh["MIAJphotl"]!)
+        aiopHIsenamf.text = uiBinh["MIAJNbbme"]
+       
+        backgomiun.image = UIImage(named: uiBinh["MIAJphotl"]!)
+        alipoMineIcon.image = MIAJWuoeImmtion.lognCacheing
+   }
     
     func ainsertbnh()  {
         replopiun.isUserInteractionEnabled = true
@@ -66,8 +75,11 @@ class MIAJcollImmtion: UIViewController {
         
         replopiun.isUserInteractionEnabled = true
         replopiun.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
-        
-        
+        SVProgressHUD.show(withStatus: "Connecting.....")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 8, execute: DispatchWorkItem(block: {
+            SVProgressHUD.showInfo(withStatus: "The user you dialed is not online. Please try again later！")
+            self.updateselmaploviw()
+        }))
         
         functionuad1.isUserInteractionEnabled = true
         functionuad1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
@@ -76,7 +88,9 @@ class MIAJcollImmtion: UIViewController {
     @objc func mkobduim(tgmni:UITapGestureRecognizer)  {
         
         if tgmni.view == replopiun {
+            let userig = uiBinh["MIAJID"] ?? ""
             
+            self.remoLaredeleterAlert(withujiUsed: userig)
         }
         
         
@@ -88,20 +102,30 @@ class MIAJcollImmtion: UIViewController {
         
         
         if tgmni.view == functionuad ||  tgmni.view == functionuad1 ||  tgmni.view == functionuad2  {
-            
+            SVProgressHUD.showInfo(withStatus: "Wait for the phone to be connected and try again！")
         }
         
       
     }
 
-
+    @IBOutlet weak var vvonerBgd: UIView!
+    
 
     fileprivate func setinguistutl() {
         aiopHIsiconf.layer.cornerRadius = 20
         aiopHIsiconf.layer.masksToBounds = true
         
-        alipoMineIcon.layer.cornerRadius = 20
+        vvonerBgd.layer.cornerRadius = 10
+        vvonerBgd.layer.masksToBounds = true
+        
+        
         alipoMineIcon.layer.masksToBounds = true
+        NotificationCenter.default.addObserver(self, selector: #selector(updateselmaploviw), name: NSNotification.Name.init("remobesomnerUser"), object: nil)
+        
+    }
+    
+    @objc func updateselmaploviw() {
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

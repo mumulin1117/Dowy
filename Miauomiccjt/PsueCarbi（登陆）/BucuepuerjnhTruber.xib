@@ -61,6 +61,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="V3g-1M-FrX"/>
                     </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -85,6 +86,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="G22-W3-Mri"/>
                     </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>

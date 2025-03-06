@@ -8,6 +8,9 @@
 
 import UIKit
 import MJRefresh
+import SVProgressHUD
+
+
 class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSource {
    
     var cbinMIAJ = Array<Dictionary<String,String>>()
@@ -15,17 +18,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
     
     static var momomicMIAJ = Array<Dictionary<String,String>>()
    
-    private  func loooodinhhhhMIAJ()  {
-        
-        guard let patPlisth = Bundle.main.path(forResource: "MOibduijpkdf", ofType: "plist"),
-        let relaop = FileManager.default.contents(atPath: patPlisth) else {
-            return
-        }
-        if let dictArray = try? PropertyListSerialization.propertyList(from: relaop, options: [], format: nil) as? [[String: String]]  {
-            MIAJPerdforemImmtion.momomicMIAJ = dictArray
-        }
-        
-    }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         cbinMIAJ.count
@@ -41,10 +34,16 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
         bapi.celcovervvMIAJ.image = UIImage.init(named: sckio["MIAJViocovbr"] ?? "")
         
         bapi.titkolppppMIAJ.text = sckio["MIAJvioeoTexvct"]
-        
+        bapi.refpiutry.addTarget(self, action: #selector(juiaGopdgerAlert), for: .touchUpInside)
         bapi.usernnameNIAJ.text = sckio["MIAJNbbme"]
         bapi.heabetCouny.text = "❤️ " + (sckio["MIAJLikeCaunt"] ?? "0")
         return bapi
+    }
+    
+    
+   @objc func juiaGopdgerAlert() {
+       self.aGopdgerAlert()
+        
     }
     
 
@@ -55,7 +54,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loooodinhhhhMIAJ()
+        
         maploviw.isScrollEnabled = true
         maploviw.rowHeight = 354 + 15
         maploviw.backgroundColor = .clear
@@ -77,6 +76,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
     private func conginwerCop()  {
         maploviw.dataSource = self
         maploviw.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(updateselmaploviw), name: NSNotification.Name.init("remobesomnerUser"), object: nil)
         maploviw.showsVerticalScrollIndicator = false
         maploviw.mj_header?.beginRefreshing()
        
@@ -103,7 +103,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
     
     //chat
     @IBAction func poteMeassge(_ sender: UIButton) {
-        
+        self.navigationController?.pushViewController(MiAJAMessagrerPImmpo.init(), animated: true)
     }
 
     //guess

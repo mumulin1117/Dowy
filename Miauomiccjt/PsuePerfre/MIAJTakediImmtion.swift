@@ -10,12 +10,31 @@ import UIKit
 import SnapKit
 import SVProgressHUD
 class MIAJTakediImmtion: UIViewController {
+    
+   
+    
+   
+    
     var cbinMIAJ = Array<Dictionary<String,String>>()
     
     @IBOutlet weak var gomiun: UIButton!
-    
+    private var countdownMIAJTimer: Timer?
+       
+    private var blanceMIAJSeconds: Int = 8
    @IBOutlet weak var upGuessShaizi: UIImageView!
    
+    private lazy var timeBlancelMIAJ: UILabel = {
+        
+       let MIAJ = UILabel.init()
+        MIAJ.textAlignment = .center
+        MIAJ.textColor = .white
+       MIAJ.numberOfLines  = 1
+        MIAJ.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        MIAJ.text = "00:00"
+        
+       return MIAJ
+    }()
+    
    lazy var centrupdateMITA: UIButton = UIButton.init()
    
    lazy var coper0MITA = MIAJQuView.init()
@@ -24,22 +43,25 @@ class MIAJTakediImmtion: UIViewController {
    lazy var coper3MITA = MIAJQuView.init()
    
     @objc func MJAIfsender()  {
+        endTimeMIAKCountdown()
         self.navigationController?.popViewController(animated: true)
     }
     
    override func viewDidLoad() {
         super.viewDidLoad()
+       beginTinmingShortCountdown()
       centrupdateMITA.setImage(UIImage.init(named: "shuXinNerlu"), for: .normal)
       centrupdateMITA.addTarget(self, action: #selector(updateselmaploviw), for: .touchUpInside)
       let cooperwid = (UIScreen.main.bounds.width - 27)/2
       let cooperhei = ((UIScreen.main.bounds.height - upGuessShaizi.frame.maxY) - 94.0 - 24 - 26*2)/2
        
        gomiun.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
-       
+      
       view.addSubview(coper0MITA)
       view.addSubview(coper1MITA)
       
       view.addSubview(centrupdateMITA)
+       centrupdateMITA.addSubview(timeBlancelMIAJ)
       view.addSubview(coper2MITA)
       view.addSubview(coper3MITA)
        coper0MITA.tag = 100
@@ -82,20 +104,44 @@ class MIAJTakediImmtion: UIViewController {
          make.height.equalTo(cooperhei)
          make.top.equalTo(centrupdateMITA.snp.bottom).offset(12)
       }
-       coper0MITA.appreoi.addTarget(self, action: #selector(RepoiuINteing), for: .touchUpInside)
-       coper1MITA.appreoi.addTarget(self, action: #selector(RepoiuINteing), for: .touchUpInside)
-       coper2MITA.appreoi.addTarget(self, action: #selector(RepoiuINteing), for: .touchUpInside)
-       coper3MITA.appreoi.addTarget(self, action: #selector(RepoiuINteing), for: .touchUpInside)
-       updateselmaploviw()
+       coper0MITA.appreoi.addTarget(self, action: #selector(juiaGopdgerAlert), for: .touchUpInside)
+       coper1MITA.appreoi.addTarget(self, action: #selector(juiaGopdgerAlert), for: .touchUpInside)
+       coper2MITA.appreoi.addTarget(self, action: #selector(juiaGopdgerAlert), for: .touchUpInside)
+       coper3MITA.appreoi.addTarget(self, action: #selector(juiaGopdgerAlert), for: .touchUpInside)
+       updateselmaploviw(isfirst: true)
+       NotificationCenter.default.addObserver(self, selector: #selector(updateselmaploviw), name: NSNotification.Name.init("remobesomnerUser"), object: nil)
+       
+       
+       timeBlancelMIAJ.snp.makeConstraints { make in
+           make.centerX.equalToSuperview()
+           make.bottom.equalToSuperview().offset(-16)
+           
+       }
     }
+    @objc func juiaGopdgerAlert() {
+        self.aGopdgerAlert()
+     }
    
-    @objc func RepoiuINteing() {
+    private func endTimeMIAKCountdown() {
+        countdownMIAJTimer?.invalidate()
+       
         
+        timeBlancelMIAJ.text = "00:00"
+        
+        countdownMIAJTimer = nil
     }
-    
-    
-    @objc func updateselmaploviw()  {
         
+       
+  
+    
+    @objc func updateselmaploviw(isfirst:Bool = true)  {
+        
+        if blanceMIAJSeconds > 0 && isfirst == false {
+            SVProgressHUD.showInfo(withStatus: "Please wait for the countdown to end before proceeding!")
+            return
+        }
+        
+        self.beginTinmingShortCountdown()
         let alldataCounty = MIAJPerdforemImmtion.momomicMIAJ.count
         
        
@@ -125,7 +171,15 @@ class MIAJTakediImmtion: UIViewController {
         }))
     }
     
-    
+    @objc private func updateMyDownNJTimer() {
+        blanceMIAJSeconds -= 1
+        renewTimeing_mjamLabel()
+        
+        if blanceMIAJSeconds <= 0 {
+            endTimeMIAKCountdown()
+
+        }
+    }
     @objc func touchIntagp(Refji:UITapGestureRecognizer)  {
         
         let Buter = (Refji.view?.tag ?? 100) - 100
@@ -133,7 +187,25 @@ class MIAJTakediImmtion: UIViewController {
         self.navigationController?.pushViewController( MiAJAFetaiolCPImmpo.init(_tdastaMiAJ: cbinMIAJ[Buter], _pageMIAITypeL: 0), animated: true)
     }
    
-    
+    private func beginTinmingShortCountdown() {
+        timeBlancelMIAJ.text = "00:00"
+           
+        blanceMIAJSeconds = 8
+        renewTimeing_mjamLabel()
+        
+        countdownMIAJTimer?.invalidate()
+        countdownMIAJTimer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(updateMyDownNJTimer),
+            userInfo: nil,
+            repeats: true
+        )
+           
+          
+       }
+  
+   
     private func congfiheurationndata()  {
         
        
@@ -211,6 +283,14 @@ class MIAJTakediImmtion: UIViewController {
         
         
     }
+    
+    private func renewTimeing_mjamLabel() {
+        let minutes = blanceMIAJSeconds / 60
+        let seconds = blanceMIAJSeconds % 60
+        timeBlancelMIAJ.text = String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+  
     
 }
 

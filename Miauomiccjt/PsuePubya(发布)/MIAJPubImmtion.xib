@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="deleteReloadNu" destination="VgP-FO-soL" id="diT-PI-fcP"/>
                 <outlet property="mindenter" destination="gYV-m0-YDF" id="QSI-6v-DWQ"/>
+                <outlet property="pingkaLayer" destination="kSp-8k-Wx3" id="txJ-Ui-R72"/>
+                <outlet property="pubyou" destination="Mxj-3a-tEi" id="cRM-CI-eY3"/>
                 <outlet property="reakUp" destination="gNd-0M-sfd" id="XRL-CJ-i0V"/>
                 <outlet property="retkBack" destination="1I1-JM-T2g" id="mEc-8t-9rx"/>
                 <outlet property="typeViddeotMIAJ" destination="9Ab-WS-EXw" id="e2Q-kp-sQy"/>
@@ -40,6 +42,7 @@
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Who are you imitating？Please enter." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBi-n9-AOO">
                             <rect key="frame" x="15" y="18" width="345" height="60"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="PPt-Cy-Ggc"/>
                             </constraints>
@@ -49,7 +52,7 @@
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="🤔 What's on your mind?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gYV-m0-YDF">
                             <rect key="frame" x="15" y="93" width="345" height="160"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -67,14 +70,14 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNd-0M-sfd">
                     <rect key="frame" x="15" y="406" width="140" height="180"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="KJA-Rk-Per"/>
                         <constraint firstAttribute="height" constant="180" id="p7W-lW-UEb"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Upload  your video">
+                    <state key="normal" backgroundImage="Muonkert_vio">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -141,6 +144,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Muonkert_vio" width="140" height="180"/>
         <image name="colofulanniu" width="321" height="62"/>
         <image name="heisechadef" width="60" height="60"/>
         <image name="menbaugussse" width="375" height="812"/>

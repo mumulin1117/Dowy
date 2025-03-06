@@ -30,6 +30,8 @@
 		0465C2092D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C2062D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift */; };
 		0465C20E2D7852630040B698 /* MiAJAMiunConterPImmpo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C20C2D7852630040B698 /* MiAJAMiunConterPImmpo.swift */; };
 		0465C20F2D7852630040B698 /* MiAJAMiunConterPImmpo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C20D2D7852630040B698 /* MiAJAMiunConterPImmpo.xib */; };
+		0465C2122D79BAEA0040B698 /* MiAJAMessagrerPImmpo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C2112D79BAEA0040B698 /* MiAJAMessagrerPImmpo.xib */; };
+		0465C2132D79BAEA0040B698 /* MiAJAMessagrerPImmpo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C2102D79BAEA0040B698 /* MiAJAMessagrerPImmpo.swift */; };
 		0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047218982D71555D0028B44D /* BucueCarstarTruber.swift */; };
 		0472189B2D71555D0028B44D /* BucueCarstarTruber.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047218992D71555D0028B44D /* BucueCarstarTruber.xib */; };
 		0472189D2D715E980028B44D /* BucueEluaiTruber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472189C2D715E980028B44D /* BucueEluaiTruber.swift */; };
@@ -84,6 +86,8 @@
 		0465C2072D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJAFetaiolCPImmpo.xib; sourceTree = "<group>"; };
 		0465C20C2D7852630040B698 /* MiAJAMiunConterPImmpo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJAMiunConterPImmpo.swift; sourceTree = "<group>"; };
 		0465C20D2D7852630040B698 /* MiAJAMiunConterPImmpo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJAMiunConterPImmpo.xib; sourceTree = "<group>"; };
+		0465C2102D79BAEA0040B698 /* MiAJAMessagrerPImmpo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJAMessagrerPImmpo.swift; sourceTree = "<group>"; };
+		0465C2112D79BAEA0040B698 /* MiAJAMessagrerPImmpo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJAMessagrerPImmpo.xib; sourceTree = "<group>"; };
 		047218982D71555D0028B44D /* BucueCarstarTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucueCarstarTruber.swift; sourceTree = "<group>"; };
 		047218992D71555D0028B44D /* BucueCarstarTruber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BucueCarstarTruber.xib; sourceTree = "<group>"; };
 		0472189C2D715E980028B44D /* BucueEluaiTruber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucueEluaiTruber.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				0465C1F12D75903C0040B698 /* MiAJEisditImmtiom.xib */,
 				0465C20C2D7852630040B698 /* MiAJAMiunConterPImmpo.swift */,
 				0465C20D2D7852630040B698 /* MiAJAMiunConterPImmpo.xib */,
+				0465C2102D79BAEA0040B698 /* MiAJAMessagrerPImmpo.swift */,
+				0465C2112D79BAEA0040B698 /* MiAJAMessagrerPImmpo.xib */,
 			);
 			path = PsueWpe;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				04A8E02F2D6F1F2A00876DCD /* MIAJTakediImmtion.xib in Resources */,
 				0465C2082D75ACA10040B698 /* MiAJAFetaiolCPImmpo.xib in Resources */,
 				0465C1FE2D75A3940040B698 /* MiAJACIAyImmtiom.xib in Resources */,
+				0465C2122D79BAEA0040B698 /* MiAJAMessagrerPImmpo.xib in Resources */,
 				0465C1F62D7593C60040B698 /* MiAJPumuAyImmtiom.xib in Resources */,
 				04A8E0222D6F10C800876DCD /* MIAJWuoeImmtion.xib in Resources */,
 				047218A32D71A8F80028B44D /* MOibduijpkdf.plist in Resources */,
@@ -418,6 +425,7 @@
 				0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */,
 				04A8E01C2D6F081000876DCD /* MIAJPerdforemImmtion.swift in Sources */,
 				0465C2092D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift in Sources */,
+				0465C2132D79BAEA0040B698 /* MiAJAMessagrerPImmpo.swift in Sources */,
 				0465C2012D75A6F20040B698 /* MiAJACPickCell.swift in Sources */,
 				04A8E02B2D6F1AC200876DCD /* MIAJOudiyouCell.swift in Sources */,
 				04A8E0212D6F10C800876DCD /* MIAJWuoeImmtion.swift in Sources */,
@@ -459,6 +467,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Miauomiccjt/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dowy;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Dowy requires access to your camera to capture profile photos and enable video calls.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Dowy requires microphone permission to support audio calls.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Dowy needs access to your photo library to upload and publish local videos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -495,6 +506,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Miauomiccjt/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dowy;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Dowy requires access to your camera to capture profile photos and enable video calls.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Dowy requires microphone permission to support audio calls.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Dowy needs access to your photo library to upload and publish local videos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

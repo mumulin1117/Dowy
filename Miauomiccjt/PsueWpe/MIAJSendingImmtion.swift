@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SVProgressHUD
+import AVFAudio
+import AVFoundation
 
 class MIAJSendingImmtion: UIViewController {
     var gsddBuilding:Array<String> = Array<String>()
@@ -66,23 +69,43 @@ class MIAJSendingImmtion: UIViewController {
         sendignm.isUserInteractionEnabled = true
         sendignm.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateselmaploviw), name: NSNotification.Name.init("remobesomnerUser"), object: nil)
+        
     }
+    
+    @objc func updateselmaploviw() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @objc func mkobduim(tgmni:UITapGestureRecognizer)  {
         if tgmni.view == gomiun {
             self.navigationController?.popViewController(animated: true)
         }
         
         if tgmni.view == replopiun {
+            let userig = uiBinh["MIAJID"] ?? ""
             
+            self.remoLaredeleterAlert(withujiUsed: userig)
         }
         
         
         if tgmni.view == callBiudeo {
+            AVAudioSession.sharedInstance().requestRecordPermission { granted in
+              
+            }
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+               
+               
+            }
+            DispatchQueue.main.async{
+                self.navigationController?.pushViewController(MIAJcollImmtion.init(uiBinh: self.uiBinh), animated: true)
+            }
             
         }
         
         if tgmni.view == sendignm {
             if baozhnesure.text?.isEmpty  == true || baozhnesure.text == nil {
+                SVProgressHUD.showInfo(withStatus: "Send message is empty!")
                 return
             }
             gsddBuilding.append( baozhnesure.text!)
@@ -99,6 +122,9 @@ class MIAJSendingImmtion: UIViewController {
         baozhnesure.rightView = UIView(frame: CGRect.init(x: 0, y: 0, width: 70, height: 50))
         baozhnesure.rightViewMode = .always
         talbemanber.delegate = self
+        
+        ainsertbnhUpdate()
+        
         talbemanber.separatorStyle = .none
         talbemanber.register(MIAJSendcelkll.self, forCellReuseIdentifier: "MIAJSendcelkllID")
         talbemanber.estimatedRowHeight = 120
@@ -107,7 +133,16 @@ class MIAJSendingImmtion: UIViewController {
        
     }
     
-    
+    func ainsertbnhUpdate()  {
+       
+        alipoMineIcon.layer.cornerRadius = 50.5
+        alipoMineIcon.layer.masksToBounds = true
+        alipoMineIcon.image = UIImage(named: uiBinh["MIAJphotl"]!)
+        aiopMInenamf.text = uiBinh["MIAJNbbme"]
+       
+      
+       
+   }
     
     
     

@@ -14,6 +14,12 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     @IBOutlet weak var trunbvButon: UIButton!
     
     
+    
+    var inguserBlance:String{
+        let inguser = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? Dictionary<String,String> ?? [:]
+        return inguser["MIAJCoinB"] ?? "0"
+    }
+    
     var alpubleMiAJ:Array<(Int,String,String)> = Array<(Int,String,String)>()
     
     
@@ -31,6 +37,10 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        
+        
         let payingIds = alpubleMiAJ[indexPath.row]
         
         self.view.isUserInteractionEnabled = false
@@ -53,16 +63,15 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
             
                
                 
-                var remainglNERT =  Int( "0") ?? 0
+                var mianLop =  Int( self.inguserBlance) ?? 0
                 
-                remainglNERT = remainglNERT + payingIds.0
-                
-//                DSORPujertLoafmuiner.shmured.mineDattarDS?.blanceds  = "\(remainglNERT)"
-                
-                self.aiopBlance.text = "\(remainglNERT)"
+                mianLop = mianLop + payingIds.0
+
+                self.aiopBlance.text = "\(mianLop)"
               
                 SVProgressHUD.showSuccess(withStatus: "Successful payment!")
 
+                MiAJEisditImmtiom.updaterudeingfowithNew(naem: nil, bnhbrief: nil, blancefpoi: "\(mianLop)")
           
             }else if case .error(let error) = psResult {
              
@@ -91,6 +100,8 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.aiopBlance.text = self.inguserBlance
+        
         trunbvButon.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
         trnbcdsdm()
         alpubleMiAJ = [(400,"sneufalxrsvdezhs","$0.99"),
@@ -98,12 +109,14 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
                        (2450,"hhkximdsbflyvucx","$4.99"),
                        (4900,"xpnayttqrxzmhjkk","$9.99"),
                        (9800,"fhcjqodkgartaqph","$19.99"),
-                       (24500,"vprqykjiylpzlpof","$49.99"),
-                       (49000,"doiodwkldcnnlnfo","$99.99"),
-                       
                        (10500,"dowynmcvbnbjfu","$29.99"),
+                       (24500,"vprqykjiylpzlpof","$49.99"),
                        (34500,"dowyzowieguhdr","$69.99"),
-                       (45500,"dowyaowmmvieuu","$89.99")]
+                       (45500,"dowyaowmmvieuu","$89.99"),
+                       (49000,"doiodwkldcnnlnfo","$99.99")
+                       
+                      
+                      ]
         aiopAllopBmalces.register(MiAJBolanvec.self, forCellWithReuseIdentifier: "MiAJBolanvecID")
         aiopAllopBmalces.dataSource = self
         aiopAllopBmalces.contentInset = UIEdgeInsets(top: 30, left: 12, bottom: 100, right: 12)

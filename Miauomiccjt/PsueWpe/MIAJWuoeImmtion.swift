@@ -50,7 +50,7 @@ class MIAJWuoeImmtion: MIAJTopImmtinu {
     static var lognFacing:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
     static var lognfolloweing:Array<Dictionary<String,String>>  = Array<Dictionary<String,String>>()
     
-    var currentusedInfo:Dictionary<String,String>{
+    var currMIAJentusedInfo:Dictionary<String,String>{
         return UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ") as? Dictionary<String,String> ?? [:]
     }
     
@@ -64,14 +64,15 @@ class MIAJWuoeImmtion: MIAJTopImmtinu {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        ainsertbnh()
+        aiopBlance.text = currMIAJentusedInfo["MIAJCoinB"]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
       
-        ainsertbnh()
+        
         bnmUpfate()
         
         setinguistutl()
@@ -101,10 +102,10 @@ class MIAJWuoeImmtion: MIAJTopImmtinu {
      func ainsertbnh()  {
         
          alipoMineIcon.image = MIAJWuoeImmtion.lognCacheing
-         aiopMInenamf.text = currentusedInfo["MIAJNbbme"]
+         aiopMInenamf.text = currMIAJentusedInfo["MIAJNbbme"]
         
        
-         aiopbrtiufd.text = currentusedInfo["MIAJBrief"]
+         aiopbrtiufd.text = currMIAJentusedInfo["MIAJBrief"]
          self.aiopfance.text = "\(MIAJWuoeImmtion.lognFacing.count)"
          
          self.aiopfollort.text = "\(MIAJWuoeImmtion.lognfolloweing.count)"
@@ -131,8 +132,6 @@ class MIAJWuoeImmtion: MIAJTopImmtinu {
 
 
     fileprivate func setinguistutl() {
-        pinkernig.layer.cornerRadius = 20
-        pinkernig.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMinYCorner]
         
         bottmiWjhite.layer.cornerRadius = 20
         bottmiWjhite.layer.masksToBounds = true

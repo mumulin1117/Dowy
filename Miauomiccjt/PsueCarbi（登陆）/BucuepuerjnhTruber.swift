@@ -67,9 +67,9 @@ class BucuepuerjnhTruber: UIViewController {
             guard let indfo = UserDefaults.standard.object(forKey: condition.1) else {
                 ////如果邮箱id，对应的值不存在。则是注册
                 let Adbop = ["MIAJID":condition.1,
-                             "MIAJNbbme":"NULL",
+                             "MIAJNbbme":"No name",
                             
-                             "MIAJBrief":"NULL",
+                             "MIAJBrief":"No Signature",
                              "MIAJCoinB":"0"]
                 
                 UserDefaults.standard.set(Adbop, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
@@ -86,7 +86,7 @@ class BucuepuerjnhTruber: UIViewController {
             
             //如果邮箱id，对应的值存在。则是登陆
             UserDefaults.standard.set(indfo, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
-            
+           
             
             SVProgressHUD.show(withStatus: "login.....")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
