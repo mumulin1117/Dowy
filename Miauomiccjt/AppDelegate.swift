@@ -161,7 +161,7 @@ extension UIViewController{
     
     func restobuingd(Cubecm:String) -> String {
         var empwd = ""
-        var trbsla = false
+        var trbsla = true
         for Xcd in Cubecm {
             if trbsla {
                 empwd.append(Xcd)
