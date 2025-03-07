@@ -10,10 +10,19 @@ import SVProgressHUD
 import SwiftyStoreKit
 
 @main
+
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 //    AI
    var window: UIWindow?
-
+    func purMIAKchase() {
+        
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
+               self.handleFunction_MIAJTransactions(resultPaying)
+           }
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -66,13 +75,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     class  func loooodinhhhhMIAJ()  {
-        
-        guard let patPlisth = Bundle.main.path(forResource: "MOibduijpkdf", ofType: "plist"),
+        var baibai = (23,"plist","numbertw")
+        baibai.0 += 88
+        guard let patPlisth = Bundle.main.path(forResource: "MOibduijpkdf", ofType: baibai.1),
         let relaop = FileManager.default.contents(atPath: patPlisth) else {
+            baibai.0 += 88
+            
             return
         }
+        baibai.0 += 88
         if let dictArray = try? PropertyListSerialization.propertyList(from: relaop, options: [], format: nil) as? [[String: String]]  {
-            MIAJPerdforemImmtion.momomicMIAJ = dictArray
+            if baibai.0 > 2 {
+                MIAJPerdforemImmtion.momomicMIAJ = dictArray
+            }
+           
         }
         
     }
@@ -106,7 +122,7 @@ extension UIViewController{
              
          }
         typeAlert.setValue(NSAttributedString(
-            string: withihTITLe ?? "",
+            string: withihTITLe,
             attributes: [.foregroundColor: UIColor.systemOrange]
         ), forKey: "attributedTitle")
         let candelelTile = self.restobuingd(Cubecm: "Cuasntcpeol")
@@ -157,19 +173,35 @@ extension UIViewController{
         typeAlert.addAction(UIAlertAction(title: candelelTile, style: .default))
          self.present(typeAlert, animated: true)
      }
+ 
     
     
     func restobuingd(Cubecm:String) -> String {
+        var ggolr:Bool = false
+        
+        var orighanme:String = Cubecm
+        
         var empwd = ""
+        
         var trbsla = true
+        if orighanme.count == 0 {
+            ggolr = false
+        }
+       
         for Xcd in Cubecm {
             if trbsla {
                 empwd.append(Xcd)
             }
-            trbsla.toggle()
+            if ggolr == false {
+                trbsla.toggle()
+            }
+           
         }
         return empwd
     }
+    
+    
+   
 }
 
 
@@ -177,28 +209,30 @@ extension UIViewController{
 
 extension AppDelegate {
     
-    func purMIAKchase() {
-        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
-           
-            for aitmt in resultPaying {
-                switch aitmt.transaction.transactionState {
-                case .purchased, .restored:
-                   
-                    let miaj = aitmt.transaction.downloads
-                    
-                    if !miaj.isEmpty  {
-                   
-                        SwiftyStoreKit.start(miaj)
-                    } else if aitmt.needsFinishTransaction {
-                      
-                        SwiftyStoreKit.finishTransaction(aitmt.transaction)
-                    }
-                case .failed, .purchasing, .deferred:
-                    break
-                @unknown default:
-                  break
-                }
+    
+   
+    
+    
+    private func handleFunction_MIAJTransactions(_ transactions: [Purchase]) {
+        for transaction in transactions {
+            sure_MIAJTransaction(transaction)
+        }
+    }
+    
+    private func sure_MIAJTransaction(_ transaction: Purchase) {
+        var ggolr:Bool = false
+        let statuspur = transaction.transaction.transactionState
+        if statuspur == .purchased || statuspur == .restored {
+            let downloads = transaction.transaction.downloads
+            
+            if !downloads.isEmpty {
+                SwiftyStoreKit.start(downloads)
+            } else if transaction.needsFinishTransaction {
+                SwiftyStoreKit.finishTransaction(transaction.transaction)
             }
         }
+            
+       
+        
     }
 }

@@ -20,7 +20,7 @@ class MiAJSotrImmtiom: UIViewController ,UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celop = tableView.dequeueReusableCell(withIdentifier: "UITableViewCellUIOid", for: indexPath)
         celop.selectionStyle  = .none
-        celop.accessoryType = .detailDisclosureButton
+        celop.accessoryType = .disclosureIndicator
         celop.backgroundColor = .white
         celop.textLabel?.textColor = .black
         let OkseeMIAJ0 =  self.restobuingd(Cubecm: "Umsvefrn zAhgurnexeumoekndt!")

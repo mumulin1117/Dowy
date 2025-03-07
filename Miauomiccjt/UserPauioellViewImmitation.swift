@@ -22,31 +22,30 @@ class UserPauioellViewImmitation: UITabBarController {
 
    private func congigMIAJViewControllers() {
           
-      let homeVC = MIAJPerdforemImmtion()
-      homeVC.tabBarItem = UITabBarItem.init(title: nil, image:UIImage(named: "tab_uo_diyi")!.withRenderingMode(.alwaysOriginal),selectedImage: UIImage(named: "tab_uo_diyi_sel")!.withRenderingMode(.alwaysOriginal))
+      let numberoneVC = MIAJPerdforemImmtion()
+      numberoneVC.tabBarItem = UITabBarItem.init(title: nil, image:UIImage(named: "tab_uo_diyi")!.withRenderingMode(.alwaysOriginal),selectedImage: UIImage(named: "tab_uo_diyi_sel")!.withRenderingMode(.alwaysOriginal))
 
          
-      let emptyVC = MIAJTopImmtinu() // 占位
-      emptyVC.tabBarItem = UITabBarItem.init(title: "", image: nil, tag: 1)
-      emptyVC.tabBarItem.isEnabled = false
+      let emp_derVC = MIAJTopImmtinu() // 占位
+      emp_derVC.tabBarItem = UITabBarItem.init(title: "", image: nil, tag: 1)
+      emp_derVC.tabBarItem.isEnabled = false
 
-      let profileVC = MIAJWuoeImmtion()
+      let minefolerC = MIAJWuoeImmtion()
       
-      profileVC.tabBarItem = UITabBarItem.init(title: nil, image: UIImage(named: "tab_uo_wo")!.withRenderingMode(.alwaysOriginal),selectedImage: UIImage(named: "tab_uo_wo_sel")!.withRenderingMode(.alwaysOriginal))
+      minefolerC.tabBarItem = UITabBarItem.init(title: nil, image: UIImage(named: "tab_uo_wo")!.withRenderingMode(.alwaysOriginal),selectedImage: UIImage(named: "tab_uo_wo_sel")!.withRenderingMode(.alwaysOriginal))
 
-       viewControllers = [MIAJNaibhuContio.init(rootViewController: homeVC),
-                          MIAJNaibhuContio.init(rootViewController: emptyVC),
-                          MIAJNaibhuContio.init(rootViewController: profileVC)]
+       viewControllers = [MIAJNaibhuContio.init(rootViewController: numberoneVC),
+                          MIAJNaibhuContio.init(rootViewController: emp_derVC),
+                          MIAJNaibhuContio.init(rootViewController: minefolerC)]
      
    }
    
    
    private func configMIAJPublishButton() {
-          
-      let buttonSize: CGFloat = 60
-      pubVideoMIAJBuon.frame = CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize)
+    
+      pubVideoMIAJBuon.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
       
-      pubVideoMIAJBuon.layer.cornerRadius = buttonSize / 2
+      pubVideoMIAJBuon.layer.cornerRadius = 30
     
       pubVideoMIAJBuon.setBackgroundImage(UIImage.init(named: "takBartutu"), for: .normal)
     
@@ -57,8 +56,8 @@ class UserPauioellViewImmitation: UITabBarController {
       NSLayoutConstraint.activate([
           pubVideoMIAJBuon.centerXAnchor.constraint(equalTo: tabBar.centerXAnchor),
           pubVideoMIAJBuon.centerYAnchor.constraint(equalTo: tabBar.topAnchor, constant: 10),
-          pubVideoMIAJBuon.widthAnchor.constraint(equalToConstant: buttonSize),
-          pubVideoMIAJBuon.heightAnchor.constraint(equalToConstant: buttonSize)
+          pubVideoMIAJBuon.widthAnchor.constraint(equalToConstant: 60),
+          pubVideoMIAJBuon.heightAnchor.constraint(equalToConstant: 60)
       ])
       
    }
@@ -72,14 +71,14 @@ class UserPauioellViewImmitation: UITabBarController {
    }
    
    private func configurationTabBarUIMIAJAppearance() {
-       let appearance = UITabBarAppearance()
+       let MIAJApp = UITabBarAppearance()
                
-       appearance.configureWithOpaqueBackground()
-       appearance.backgroundColor = UIColor(red: 0.09, green: 0.05, blue: 0.11, alpha: 1)
-       appearance.shadowColor = .purple
+       MIAJApp.configureWithOpaqueBackground()
+       MIAJApp.backgroundColor = UIColor(red: 0.09, green: 0.05, blue: 0.11, alpha: 1)
+       MIAJApp.shadowColor = .purple
       
-       tabBar.standardAppearance = appearance
-       tabBar.scrollEdgeAppearance = appearance
+       tabBar.standardAppearance = MIAJApp
+       tabBar.scrollEdgeAppearance = MIAJApp
      
        tabBar.isTranslucent = false
 
@@ -99,28 +98,6 @@ extension UserPauioellViewImmitation: TransitionableTab {
     }
 }
 
-class MIAJNaibhuContio: UINavigationController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationBar.isHidden = true
-    }
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        
-        let labeSiop = UILabel(frame: CGRect.init(x: 0, y: 20, width: 30, height: 0))
-        labeSiop.text = self.title
-        
-        if children.count > 0   {
-            if !viewController.isMember(of:MIAJTopImmtinu.self) {
-                viewController.hidesBottomBarWhenPushed = true
-            }
-           
-        }
-      
-        super.pushViewController(viewController, animated: false)
-    }
-}
 
 
-class MIAJTopImmtinu: UIViewController {
-    
-}
+

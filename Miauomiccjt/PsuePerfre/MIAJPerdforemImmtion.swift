@@ -10,7 +10,9 @@ import UIKit
 import MJRefresh
 import SVProgressHUD
 
-
+class MIAJTopImmtinu: UIViewController {
+    
+}
 class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSource {
    
     var cbinMIAJ = Array<Dictionary<String,String>>()
@@ -32,7 +34,8 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
         bapi.pubuserAvtMIAJ.image = UIImage.init(named: sckio["MIAJphotl"] ?? "")
         bapi.backgroundColor = .clear
         bapi.celcovervvMIAJ.image = UIImage.init(named: sckio["MIAJViocovbr"] ?? "")
-        
+        bapi.pubuserAvtMIAJ.tag = indexPath.row
+        bapi.pubuserAvtMIAJ.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addtTapiserunincenter(vatui: ))))
         bapi.titkolppppMIAJ.text = sckio["MIAJvioeoTexvct"]
         bapi.refpiutry.addTarget(self, action: #selector(juiaGopdgerAlert), for: .touchUpInside)
         bapi.usernnameNIAJ.text = sckio["MIAJNbbme"]
@@ -45,7 +48,11 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
        self.aGopdgerAlert()
         
     }
-    
+    @objc func addtTapiserunincenter(vatui:UITapGestureRecognizer)  {
+        let infokocvd = cbinMIAJ[vatui.view?.tag ?? 0]
+        
+        self.navigationController?.pushViewController(MIAJMeiwnuImmtion.init(uiBinh: infokocvd), animated: true)
+    }
 
     @IBOutlet weak var maploviw: UITableView!
     
@@ -112,14 +119,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    private struct AnimationConfig {
-            
-        static let beatDuration: CFTimeInterval = 3 // 完整心跳周期
-        static let keyframeTimes: [NSNumber] = [0.0, 0.1, 0.3, 0.5, 0.7, 1.0]
-        static let scaleValues: [CGFloat] = [1.0, 1.2, 0.9, 1.15, 0.95, 1.0]
-        static let opacityValues: [Float] = [1.0, 0.8, 1.0, 0.9, 1.0, 1.0]
-    }
-    
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -128,26 +128,26 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
     }
     class func startHeartbeatAnimation(WiujhiView:UIView) {
             
-        let animationGroup = CAAnimationGroup()
+        let anim_MIAJGroup = CAAnimationGroup()
         
         // 缩放动画
        
-        let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        scaleAnimation.values = AnimationConfig.scaleValues
-        scaleAnimation.keyTimes = AnimationConfig.keyframeTimes
-        scaleAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        let scale_MIAJtion = CAKeyframeAnimation(keyPath: "transform.scale")
+        scale_MIAJtion.values = [1.0, 1.2, 0.9, 1.15, 0.95, 1.0]
+        scale_MIAJtion.keyTimes = [0.0, 0.1, 0.3, 0.5, 0.7, 1.0]
+        scale_MIAJtion.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         
         // 透明度动画（模拟血压效果）
-        let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
-        opacityAnimation.values = AnimationConfig.opacityValues
-        opacityAnimation.keyTimes = AnimationConfig.keyframeTimes
+        let opac_MIAJmation = CAKeyframeAnimation(keyPath: "opacity")
+        opac_MIAJmation.values = [1.0, 0.8, 1.0, 0.9, 1.0, 1.0]
+        opac_MIAJmation.keyTimes = [0.0, 0.1, 0.3, 0.5, 0.7, 1.0]
         
         // 组合动画
-        animationGroup.animations = [scaleAnimation, opacityAnimation]
-        animationGroup.duration = AnimationConfig.beatDuration
-        animationGroup.repeatCount = .infinity // 无限循环
+        anim_MIAJGroup.animations = [scale_MIAJtion, opac_MIAJmation]
+        anim_MIAJGroup.duration = 3
+        anim_MIAJGroup.repeatCount = .infinity // 无限循环
         
-        WiujhiView.layer.add(animationGroup, forKey: "heartbeat")
+        WiujhiView.layer.add(anim_MIAJGroup, forKey: "heartbeat")
       
     }
 }

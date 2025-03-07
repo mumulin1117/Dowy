@@ -7,7 +7,37 @@
 //
 
 import UIKit
+class MIAJNaibhuContio: UINavigationController {
+    struct PerformanceMetrics {
+        var timingPrecision: Double       // 节奏精准度
+        var emotionalFidelity: Double     // 情感还原度
+        var creativeDeviation: Double     // 创意偏离值
+    }
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+     
+        var resliuio = PerformanceMetrics.init(timingPrecision: 23, emotionalFidelity: 24, creativeDeviation: 26)
+        resliuio.timingPrecision = 45
+        if children.count > 0 && resliuio.creativeDeviation > 2  {
+            if !viewController.isMember(of:MIAJTopImmtinu.self) {
+                if  resliuio.emotionalFidelity > 2 {
+                    viewController.hidesBottomBarWhenPushed = true
+                }
+                
+            }
+           
+        }
+      
+        super.pushViewController(viewController, animated: false)
+    }
+}
 
+
+extension MIAJNaibhuContio{
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationBar.isHidden = true
+    }
+}
 class MIAJWuoeImmtion: MIAJTopImmtinu {
 //把用户ID 当成注册的Email 唯一
     @IBOutlet weak var alipoMineIcon: UIImageView!
