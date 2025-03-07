@@ -148,7 +148,7 @@
 			path = MIAJPau;
 			sourceTree = "<group>";
 		};
-		047218972D7155400028B44D /* PsueCarbi（登陆） */ = {
+		047218972D7155400028B44D /* PsueCarbi */ = {
 			isa = PBXGroup;
 			children = (
 				047218982D71555D0028B44D /* BucueCarstarTruber.swift */,
@@ -157,7 +157,7 @@
 				0472189E2D7194410028B44D /* BucuepuerjnhTruber.swift */,
 				0472189F2D7194410028B44D /* BucuepuerjnhTruber.xib */,
 			);
-			path = "PsueCarbi（登陆）";
+			path = PsueCarbi;
 			sourceTree = "<group>";
 		};
 		04A8DFE52D6F01DB00876DCD = {
@@ -191,8 +191,8 @@
 				047218A82D71AE0B0028B44D /* MIAJ_fugai2.mp4 */,
 				047218A62D71AE020028B44D /* MIAJ_fugai1.mp4 */,
 				047218A42D71ADF60028B44D /* MIAJ_fugai0.mp4 */,
-				047218972D7155400028B44D /* PsueCarbi（登陆） */,
-				04A8E0232D6F120E00876DCD /* PsuePubya(发布) */,
+				047218972D7155400028B44D /* PsueCarbi */,
+				04A8E0232D6F120E00876DCD /* PsuePubya */,
 				04A8E01E2D6F109F00876DCD /* PsueWpe */,
 				04A8E0192D6F079F00876DCD /* PsuePerfre */,
 				04A8E0062D6F01E800876DCD /* AppDelegate.swift */,
@@ -243,7 +243,7 @@
 			path = PsueWpe;
 			sourceTree = "<group>";
 		};
-		04A8E0232D6F120E00876DCD /* PsuePubya(发布) */ = {
+		04A8E0232D6F120E00876DCD /* PsuePubya */ = {
 			isa = PBXGroup;
 			children = (
 				04A8E0242D6F122200876DCD /* MIAJPubyaImmtion.swift */,
@@ -251,7 +251,7 @@
 				0406F57E2D753DF10021498C /* MIAJPubImmtion.swift */,
 				0406F57F2D753DF10021498C /* MIAJPubImmtion.xib */,
 			);
-			path = "PsuePubya(发布)";
+			path = PsuePubya;
 			sourceTree = "<group>";
 		};
 		20922096D3781E06836D1569 /* Pods */ = {

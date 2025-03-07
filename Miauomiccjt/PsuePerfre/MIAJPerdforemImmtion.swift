@@ -123,7 +123,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.navigationController?.pushViewController( MiAJAFetaiolCPImmpo.init(_tdastaMiAJ: cbinMIAJ[indexPath.row], _pageMIAITypeL: 1), animated: true)
+        self.navigationController?.pushViewController( MiAJAFetaiolCPImmpo.init(_tdastaMiAJ: cbinMIAJ[indexPath.row], _pageMIAITypeL:(indexPath.row == 1) ?  1 : 0), animated: true)
        
     }
     class func startHeartbeatAnimation(WiujhiView:UIView) {
