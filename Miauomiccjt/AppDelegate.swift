@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import SwiftyStoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
  
         let loginstatud = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ")//是否登陆
-        
+        purMIAKchase()
         AppDelegate.initRootCnotrollerAppWind(ifsignin: loginstatud != nil)
       
       
@@ -157,4 +158,35 @@ extension UIViewController{
          self.present(typeAlert, animated: true)
      }
     
+}
+
+
+
+
+extension AppDelegate {
+    
+    func purMIAKchase() {
+        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
+           
+            for aitmt in resultPaying {
+                switch aitmt.transaction.transactionState {
+                case .purchased, .restored:
+                   
+                    let miaj = aitmt.transaction.downloads
+                    
+                    if !miaj.isEmpty  {
+                   
+                        SwiftyStoreKit.start(miaj)
+                    } else if aitmt.needsFinishTransaction {
+                      
+                        SwiftyStoreKit.finishTransaction(aitmt.transaction)
+                    }
+                case .failed, .purchasing, .deferred:
+                    break
+                @unknown default:
+                  break
+                }
+            }
+        }
+    }
 }
