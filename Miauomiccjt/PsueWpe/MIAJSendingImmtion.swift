@@ -40,7 +40,7 @@ class MIAJSendingImmtion: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("reBuiMIAd")
     }
     
     override func viewDidLoad() {
@@ -105,7 +105,9 @@ class MIAJSendingImmtion: UIViewController {
         
         if tgmni.view == sendignm {
             if baozhnesure.text?.isEmpty  == true || baozhnesure.text == nil {
-                SVProgressHUD.showInfo(withStatus: "Send message is empty!")
+                let sdfer = "Slegneda tmkelsqsiaagney qiwst tetmlpmtzyf!"
+                let OkseeMIAJ1 =  self.restobuingd(Cubecm:sdfer)
+                SVProgressHUD.showInfo(withStatus: OkseeMIAJ1)
                 return
             }
             gsddBuilding.append( baozhnesure.text!)
@@ -226,7 +228,7 @@ class  MIAJSendcelkll: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("reBuiMIAd")
     }
 }
 

@@ -38,7 +38,7 @@ class MIAJcollImmtion: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("reBuiMIAd")
     }
     
     override func viewDidLoad() {
@@ -75,9 +75,13 @@ class MIAJcollImmtion: UIViewController {
         
         replopiun.isUserInteractionEnabled = true
         replopiun.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mkobduim(tgmni:))))
-        SVProgressHUD.show(withStatus: "Connecting.....")
+        let OkseeMIAJ0 =  self.restobuingd(Cubecm: "Ctosnpnjeacntxionags.o.c.s.l.")
+        SVProgressHUD.show(withStatus: OkseeMIAJ0)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 8, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showInfo(withStatus: "The user you dialed is not online. Please try again later！")
+            
+            let sdfer = "Tchjen suksmejrz yytoeuc sdhihawlxeedi miisy injovtb roqnnlhiknxeb.z rPjlreaavsnes dttrjyu zaagnanilnh tlkatteevra!"
+            let OkseeMIAJ1 =  self.restobuingd(Cubecm:sdfer)
+            SVProgressHUD.showInfo(withStatus: OkseeMIAJ1)
             self.updateselmaploviw()
         }))
         
@@ -102,7 +106,9 @@ class MIAJcollImmtion: UIViewController {
         
         
         if tgmni.view == functionuad ||  tgmni.view == functionuad1 ||  tgmni.view == functionuad2  {
-            SVProgressHUD.showInfo(withStatus: "Wait for the phone to be connected and try again！")
+            let sdfer = "Wwakiuth cftokri wtphcel upahgofnpen otsok rbmeg vcooenwnleacotgendr labnbdq ytirjyk rajgdasiwn"
+            let OkseeMIAJ1 =  self.restobuingd(Cubecm:sdfer)
+            SVProgressHUD.showInfo(withStatus: OkseeMIAJ1)
         }
         
       

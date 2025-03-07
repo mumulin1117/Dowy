@@ -129,9 +129,10 @@ class BucueCarstarTruber: UIViewController {
       
       if tapview ==  toeEamillMAKl || tapview == toemailLablMAKl {
          //EMail
-          
+          let slioDouble = "Aigfrueheg qtxou k dtqhxek vTbepremksv xofff tSfenrkvmifcnec yafntdu zPnrrikvqapcwyd qPpozlvifcpyc kfwinrzsftg!"
+          let wgoMIAJ5 =  self.restobuingd(Cubecm:slioDouble)
           if agreenAready == 0 {
-              SVProgressHUD.showInfo(withStatus: "Agree to  the Terms of Service and Privacy Policy first!")
+              SVProgressHUD.showInfo(withStatus: wgoMIAJ5)
               return
               
           }

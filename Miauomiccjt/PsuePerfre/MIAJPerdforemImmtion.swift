@@ -131,6 +131,7 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
         let animationGroup = CAAnimationGroup()
         
         // 缩放动画
+       
         let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         scaleAnimation.values = AnimationConfig.scaleValues
         scaleAnimation.keyTimes = AnimationConfig.keyframeTimes

@@ -28,7 +28,8 @@ class BucueEluaiTruber: UIViewController {
       MIAJ.setBackgroundImage(UIImage.init(named: "colofulanniu"), for: .normal)
       MIAJ.addTarget(self, action: #selector(baIAgreeNOing), for: .touchUpInside)
       MIAJ.setTitleColor(.white, for: .normal)
-      MIAJ.setTitle("I agree", for: .normal)
+       let wgoMIAJ5 =  self.restobuingd(Cubecm:"Ii saggfrieze")
+      MIAJ.setTitle(wgoMIAJ5, for: .normal)
       MIAJ.titleLabel?.font =  UIFont.systemFont(ofSize: 15, weight: .bold)
       return MIAJ
    }()

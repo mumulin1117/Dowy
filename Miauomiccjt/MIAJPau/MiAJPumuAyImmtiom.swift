@@ -20,7 +20,7 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
         return inguser["MIAJCoinB"] ?? "0"
     }
     
-    var alpubleMiAJ:Array<(Int,String,String)> = Array<(Int,String,String)>()
+    var alpubleMiAJ:Array<(String,String,String)> = Array<(String,String,String)>()
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,8 +64,9 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
                
                 
                 var mianLop =  Int( self.inguserBlance) ?? 0
+                var newBuy = Int( payingIds.0) ?? 0
                 
-                mianLop = mianLop + payingIds.0
+                mianLop = mianLop +  newBuy
 
                 self.aiopBlance.text = "\(mianLop)"
               
@@ -104,16 +105,16 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
         
         trunbvButon.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
         trnbcdsdm()
-        alpubleMiAJ = [(400,"sneufalxrsvdezhs","$0.99"),
-                       (800,"nwptwfzqdadbblei","$1.99"),
-                       (2450,"hhkximdsbflyvucx","$4.99"),
-                       (4900,"xpnayttqrxzmhjkk","$9.99"),
-                       (9800,"fhcjqodkgartaqph","$19.99"),
-                       (10500,"dowynmcvbnbjfu","$29.99"),
-                       (24500,"vprqykjiylpzlpof","$49.99"),
-                       (34500,"dowyzowieguhdr","$69.99"),
-                       (45500,"dowyaowmmvieuu","$89.99"),
-                       (49000,"doiodwkldcnnlnfo","$99.99")
+        alpubleMiAJ = [(self.restobuingd(Cubecm:"4h0q0"),"sneufalxrsvdezhs",self.restobuingd(Cubecm:"$v0e.a9h9")),
+                       (self.restobuingd(Cubecm:"8v0f0"),"nwptwfzqdadbblei",self.restobuingd(Cubecm:"$s1j.p9r9")),
+                       (self.restobuingd(Cubecm:"2h4x5c0"),"hhkximdsbflyvucx",self.restobuingd(Cubecm:"$o4h.d9a9")),
+                       (self.restobuingd(Cubecm:"4e9y0f0"),"xpnayttqrxzmhjkk",self.restobuingd(Cubecm:"$c9f.d9q9")),
+                       (self.restobuingd(Cubecm:"9v8s0b0"),"fhcjqodkgartaqph",self.restobuingd(Cubecm:"$r1r9f.l9e9")),
+                       (self.restobuingd(Cubecm:"1r0e5m0v0"),"dowynmcvbnbjfu",self.restobuingd(Cubecm:"$z2h9c.z9a9")),
+                       (self.restobuingd(Cubecm:"2e4y5k0b0"),"vprqykjiylpzlpof",self.restobuingd(Cubecm:"$g4z9u.b9m9")),
+                       (self.restobuingd(Cubecm:"3s4l5a0u0"),"dowyzowieguhdr",self.restobuingd(Cubecm:"$z6v9p.n9l9")),
+                       (self.restobuingd(Cubecm:"4r5v5i0s0"),"dowyaowmmvieuu",self.restobuingd(Cubecm:"$y8v9y.n9i9")),
+                       (self.restobuingd(Cubecm:"4s9t0r0b0"),"doiodwkldcnnlnfo",self.restobuingd(Cubecm:"$l9f9v.x9h9"))
                        
                       
                       ]
@@ -247,6 +248,6 @@ class MiAJBolanvec: UICollectionViewCell {
         
     }
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("reBuiMIAd")
     }
 }

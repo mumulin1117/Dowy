@@ -133,19 +133,21 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
 
            
             if Currency < 300 {
-                
+                let infucie = self.restobuingd(Cubecm:"Innkstuifpfbibchiyehnzta kCboaiwnds")
                 let alert = UIAlertController(
-                        title: "Insufficient Coins",
+                        title: infucie,
                         message: "AI Creative Inspiration requires 300 coins. Please purchase more coins to continue.",
                         preferredStyle: .alert
                     )
+                let candelelTile = self.restobuingd(Cubecm: "Cuasntcpeol")
                 let cancelAction = UIAlertAction(
-                       title: "Cancel",
+                       title: candelelTile,
                        style: .cancel,
                        handler: nil
                    )
+                let infucie1 = self.restobuingd(Cubecm:"Phuvrucqhwaxsket sCcoaiznes")
                 let purchaseAction = UIAlertAction(
-                        title: "Purchase Coins",
+                        title: infucie1,
                         style: .destructive) { _ in
                             
                             let Zjiu = MiAJPumuAyImmtiom.init()
@@ -157,7 +159,7 @@ class MiAJACIAyImmtiom: UIViewController ,UICollectionViewDelegate,UICollectionV
 
                 alert.addAction(purchaseAction)
                 alert.setValue(NSAttributedString(
-                    string: "Insufficient Coins",
+                    string: infucie,
                     attributes: [.foregroundColor: UIColor.systemOrange]
                 ), forKey: "attributedTitle")
                

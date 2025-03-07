@@ -53,13 +53,15 @@ class BucuepuerjnhTruber: UIViewController {
         
         let condition = startVoicePrintAuthSSIP()
         if condition.0 == true{
-            
+            let conditonge1 = "Esmrakiulm zfporrcmtalto wevrernoprc!"
+            let OkseeMIAJ3 =  self.restobuingd(Cubecm:conditonge1)
+          
             let emailRegex = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$"
           
             let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
                
             if predicate.evaluate(with: condition.1) == false {
-                SVProgressHUD.showInfo(withStatus: "Email format error！")
+                SVProgressHUD.showInfo(withStatus: OkseeMIAJ3)
                 return
             }
             
@@ -74,11 +76,14 @@ class BucuepuerjnhTruber: UIViewController {
                 
                 UserDefaults.standard.set(Adbop, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
                 UserDefaults.standard.set(Adbop, forKey: condition.1)//存储到已经存在的账户
-                SVProgressHUD.show(withStatus: "Create in.....")
+                let creadre1 = "Curdenaotzep mifnv.n.m.t.h."
+                let OkseeMIAJ3 =  self.restobuingd(Cubecm:creadre1)
+                SVProgressHUD.show(withStatus: OkseeMIAJ3)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
                     AppDelegate.initRootCnotrollerAppWind(ifsignin: true)
-                    
-                    SVProgressHUD.showSuccess(withStatus: "Create Account successful!")
+                    let creadreDouble = "Corvemattsel rAvcncmoiuynotf rsrudcwcyezsoswfmurlq!"
+                    let wgoMIAJ3 =  self.restobuingd(Cubecm:creadreDouble)
+                    SVProgressHUD.showSuccess(withStatus: wgoMIAJ3)
                     
                 }))
                 return
@@ -87,12 +92,14 @@ class BucuepuerjnhTruber: UIViewController {
             //如果邮箱id，对应的值存在。则是登陆
             UserDefaults.standard.set(indfo, forKey: "ingCurrentUserMiAJ")//设置当前的登陆帐号
            
-            
-            SVProgressHUD.show(withStatus: "login.....")
+            let singDouble = "ljojgminnj.k.x.d.q."
+            let wgoMIAJ4 =  self.restobuingd(Cubecm:singDouble)
+            SVProgressHUD.show(withStatus: wgoMIAJ4)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: DispatchWorkItem(block: {
-                
+                let slioDouble = "Lsongg cienv msduhcvcmeqsfssfoumlj!"
+                let wgoMIAJ5 =  self.restobuingd(Cubecm:slioDouble)
                 AppDelegate.initRootCnotrollerAppWind(ifsignin: true)
-                SVProgressHUD.showSuccess(withStatus: "Log in successful!")
+                SVProgressHUD.showSuccess(withStatus: wgoMIAJ5)
             }))
             
             
@@ -110,14 +117,19 @@ class BucuepuerjnhTruber: UIViewController {
     private func startVoicePrintAuthSSIP()-> (Bool,String,String) {
        
         guard let aiRecommendationTags = workinchu.text,aiRecommendationTags.isEmpty == false else{
-            SVProgressHUD.showInfo(withStatus: "Please enter your email first!")
+            let slioDouble = "Pdlmelaislem kednjtfeirk vyqojuorm gebmpaciglw wfvimrksmtd!"
+            let wgoMIAJ5 =  self.restobuingd(Cubecm:slioDouble)
+            
+            SVProgressHUD.showInfo(withStatus: wgoMIAJ5)
             
             return (false,"","")
         }
         
         
         guard let trendingImitationClips = dagonrchu.text,trendingImitationClips.isEmpty == false else{
-            SVProgressHUD.showInfo(withStatus: "Please enter your password first!")
+            let slioDouble = "Pvlpesapsbeq uegnwtteqrz tyfopuhrh npcaasjsbwvotrudl hfairrdsptp!"
+            let wgoMIAJ5 =  self.restobuingd(Cubecm:slioDouble)
+            SVProgressHUD.showInfo(withStatus: wgoMIAJ5)
             
             return (false,"","")
         }

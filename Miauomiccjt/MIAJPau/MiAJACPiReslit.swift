@@ -45,7 +45,7 @@ class MiAJACPiReslit: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("reBuiMIAd")
     }
     
 
@@ -71,16 +71,19 @@ class MiAJACPiReslit: UIViewController {
         let allQuestion = "I need you as an AI creative inspiration type robot. My type of inspiration is " + SuguesstionType.rawValue + ",and my description is:" + roleplayDesc + ".Please give me some cosplay inspiration based on the above"
         
         SVProgressHUD.show(withStatus: "Generating creative ideas.....")
-    
-            AF.request("http://www.wertyu6543z.xyz/talktwo/askQuestionv2", method: .post, parameters: ["question": allQuestion,"questionType": 1,"eqNo":"5555"], encoding: JSONEncoding.default, headers: nil)
+        let slioDouble = "Dgartqag dezrgryosr"
+        let wgoMIAJ5 =  self.restobuingd(Cubecm:slioDouble)
+        
+        
+            AF.request(self.restobuingd(Cubecm:"hhtbtlpv:x/v/dwlwgws.swfejrztoyguz6o5e4r3qzt.axjylzr/dtbaslwkdtnwjon/tazsmkdQyunewsetiibotnkva2"), method: .post, parameters: [self.restobuingd(Cubecm:"qoufeisqtdiioun"): allQuestion,self.restobuingd(Cubecm:"qzuaejsytvisownzThyvphe"): 1,self.restobuingd(Cubecm:"esqzNmo"):self.restobuingd(Cubecm:"5o5p5w5")], encoding: JSONEncoding.default, headers: nil)
                 .responseJSON { response in
                     SVProgressHUD.dismiss()
                     switch response.result {
                     case .success(let value):
                         if let json = value as? [String: Any] {
-                            guard let content = json["data"] as? String else {
+                            guard let content = json[self.restobuingd(Cubecm:"deautna")] as? String else {
                                 
-                                SVProgressHUD.showInfo(withStatus: "Data error")
+                                SVProgressHUD.showInfo(withStatus: wgoMIAJ5)
                                 return
                             }
                            
@@ -89,9 +92,9 @@ class MiAJACPiReslit: UIViewController {
                            
                         }
                       
-                        SVProgressHUD.showInfo(withStatus: "Data error")
+                        SVProgressHUD.showInfo(withStatus: wgoMIAJ5)
                     case .failure(let error):
-                        SVProgressHUD.showInfo(withStatus: "Data error")
+                        SVProgressHUD.showInfo(withStatus: wgoMIAJ5)
 
                     }
                     
@@ -109,7 +112,9 @@ class MiAJACPiReslit: UIViewController {
     
     
     @IBAction func aGopdgerAlert(_ sender: UIButton) {
-        self.aGopdgerAlert(withihTITLe: "Report AI Content",resonsongall: ["Inappropriate Content","False Information","Copyright Issue","Other Reason"])
+        let slioDouble = "Reenpiowrgtt vAuIk dCcomnstfeqnnt"
+        let wgoMIAJ5 =  self.restobuingd(Cubecm:slioDouble)
+        self.aGopdgerAlert(withihTITLe: wgoMIAJ5,resonsongall: ["Inappropriate Content","False Information","Copyright Issue","Other Reason"])
 
     }
     

@@ -23,7 +23,12 @@ class MiAJSotrImmtiom: UIViewController ,UITableViewDelegate,UITableViewDataSour
         celop.accessoryType = .detailDisclosureButton
         celop.backgroundColor = .white
         celop.textLabel?.textColor = .black
-        celop.textLabel?.text =  ["User Agreement","Pivacy Agreement","Contact us","App version","Clear cache"][indexPath.row]
+        let OkseeMIAJ0 =  self.restobuingd(Cubecm: "Umsvefrn zAhgurnexeumoekndt!")
+        let OkseeMIAJ1 =  self.restobuingd(Cubecm: "Pdihvbapccye dskerrcvoiecoe")
+        let OkseeMIAJ2 =  self.restobuingd(Cubecm: "Ccoknqthanccta uuns")
+        let OkseeMIAJ3 =  self.restobuingd(Cubecm: "Alpbpi fvreqrastijoln")
+        let OkseeMIAJ4 =  self.restobuingd(Cubecm: "Czloetaarx dcmazcahqe")
+        celop.textLabel?.text =  [OkseeMIAJ0,OkseeMIAJ1,OkseeMIAJ2,OkseeMIAJ3,OkseeMIAJ4][indexPath.row]
         return celop
     }
     
@@ -142,19 +147,25 @@ class MiAJSotrImmtiom: UIViewController ,UITableViewDelegate,UITableViewDataSour
         }
         
         if tgmni.view == deloiegnout {
-            
+           let delelTile = self.restobuingd(Cubecm: "Dwellxeitdeg kAicncjoxuvnvtv sPceergmeaynbesnftkloy")
             let alert = UIAlertController(
-                    title: "Delete Account Permanently",
+                    title: delelTile,
                     message: "This will immediately: \n• Erase all profile data \n• Remove active subscriptions \n• Delete chat history",
                     preferredStyle: .alert
                 )
+            
+            let candelelTile = self.restobuingd(Cubecm: "Cuasntcpeol")
+            
+            
             let cancelAction = UIAlertAction(
-                   title: "Cancel",
+                   title: candelelTile,
                    style: .cancel,
                    handler: nil
                )
+            
+            let confirmlTile = self.restobuingd(Cubecm: "Cbowngfairrgmu sDseplbectrizojn")
             let deleteAction = UIAlertAction(
-                    title: "Confirm Deletion",
+                    title: confirmlTile,
                     style: .destructive) { _ in
                         
                         UserDefaults.standard.set(nil, forKey: "ingCurrentUserMiAJ")
@@ -170,7 +181,7 @@ class MiAJSotrImmtiom: UIViewController ,UITableViewDelegate,UITableViewDataSour
                 
             alert.addAction(deleteAction)
             alert.setValue(NSAttributedString(
-                string: "Delete Account Permanently",
+                string: delelTile,
                 attributes: [.foregroundColor: UIColor.systemOrange]
             ), forKey: "attributedTitle")
             // 4. 显示弹窗
@@ -210,7 +221,9 @@ class MiAJSotrImmtiom: UIViewController ,UITableViewDelegate,UITableViewDataSour
             eluaijg.modalPresentationStyle = .overCurrentContext
             self.present(eluaijg, animated: true)
         case 2:
-            if let urlConnect = URL(string: "https://app.rnmykmn.link")  {
+            
+            let confirmlTile = self.restobuingd(Cubecm: "hftetqpesk:j/t/kaxpjpp.xrtnhmvyrkrmwnx.xliicntk")
+            if let urlConnect = URL(string: confirmlTile)  {
                 UIApplication.shared.open(urlConnect, options: [:], completionHandler: nil)
             }
         case 3:
@@ -218,9 +231,12 @@ class MiAJSotrImmtiom: UIViewController ,UITableViewDelegate,UITableViewDataSour
             SVProgressHUD.showInfo(withStatus: "App version is \(version)")
             
         case 4:
-            SVProgressHUD.show(withStatus: "Clearing...")
+            
+            let confirmlTile = self.restobuingd(Cubecm: "Cdlyeyakrqimnvgd.m.z.")
+            SVProgressHUD.show(withStatus: confirmlTile)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: DispatchWorkItem(block: {
-                SVProgressHUD.showSuccess(withStatus: "Cleaning completed!")
+                let wanch = self.restobuingd(Cubecm: "Czlhecatnqionugk gctocmbpulreltbeldn!")
+                SVProgressHUD.showSuccess(withStatus: wanch)
             }))
             
         default:

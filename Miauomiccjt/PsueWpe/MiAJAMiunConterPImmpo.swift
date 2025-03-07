@@ -29,7 +29,7 @@ class MiAJAMiunConterPImmpo: UIViewController {
     @IBOutlet weak var bagimage: UIImageView!
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("reBuiMIAd")
     }
     
     

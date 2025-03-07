@@ -125,8 +125,10 @@ class MIAJPubImmtion: UIViewController ,UITextViewDelegate, UIImagePickerControl
     
     @IBAction func finnalyMIAG(_ sender: Any) {
         if typrTag == 1 {
+            let sdfer = "Phlzejausuel meinvtqehru cWyhwoz sazrden ryhoxud ciomwibtsaztyianlgq!"
+            let OkseeMIAJ1 =  self.restobuingd(Cubecm:sdfer)
             guard let imitaion = whoareyouenter.text,imitaion.isEmpty == false else {
-                SVProgressHUD.showInfo(withStatus: "Please enter Who are you imitating!")
+                SVProgressHUD.showInfo(withStatus: OkseeMIAJ1)
                 return
             }
         }
@@ -134,19 +136,29 @@ class MIAJPubImmtion: UIViewController ,UITextViewDelegate, UIImagePickerControl
         
         
         guard let mind = mindenter.text,mind.isEmpty == false,mind != "🤔 What's on your mind?" else {
-            SVProgressHUD.showInfo(withStatus: "Please enter What's on your mind!")
+            let sdfer = "Pmlteyaascep weunsthexrf vWfhmactg'hsr oohnv fyrosunri jmoiwnkdk!"
+            let OkseeMIAJ1 =  self.restobuingd(Cubecm:sdfer)
+            SVProgressHUD.showInfo(withStatus: OkseeMIAJ1)
             return
         }
         
+        let sdferwe = "Palmesarsbeh guppultolaedj vyvokufrq cvnipdfexox!"
+        let OkseeMIAJ1 =  self.restobuingd(Cubecm:sdferwe)
         guard self.ifUploadinged else {
-            SVProgressHUD.showInfo(withStatus: "Please upload your video !")
+            SVProgressHUD.showInfo(withStatus: OkseeMIAJ1)
             return
         }
         
         
-        SVProgressHUD.show(withStatus: "uploading.....")
+        let sdferwloadinge = "ukpbloooardriynxgd.n.o.c.b."
+        let OkseeMIAJ2 =  self.restobuingd(Cubecm:sdferwloadinge)
+        
+        SVProgressHUD.show(withStatus: OkseeMIAJ2)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showSuccess(withStatus: "Upload successful, the video will be displayed after review!")
+            let sdferwloadinge1 = "Ucpblrokaldw xsvugcccnegsxskfouklq,d vtbhved vvsiudweyou owniklxli cbiet wdxilsapllwacypepdb navfvtjexrs groewvpiqefwq!"
+            let OkseeMIAJ3 =  self.restobuingd(Cubecm:sdferwloadinge1)
+            
+            SVProgressHUD.showSuccess(withStatus: OkseeMIAJ3)
             self.navigationController?.popViewController(animated: true)
         }))
         
@@ -174,8 +186,10 @@ class MIAJPubImmtion: UIViewController ,UITextViewDelegate, UIImagePickerControl
                     self.present(imagePickerController, animated: true)
                     return
                 }
-                
-                SVProgressHUD.showInfo(withStatus: "Photo library access denied")
+                let sdferwloadinge1 = "Pmhvoqtxot kleiubhrualryyb yawcicieksrsn wdxebnbipexd"
+                let OkseeMIAJ3 =  self.restobuingd(Cubecm:sdferwloadinge1)
+               
+                SVProgressHUD.showInfo(withStatus: OkseeMIAJ3)
             }))
            
         }

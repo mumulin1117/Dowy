@@ -116,8 +116,10 @@ class MiAJAFetaiolCPImmpo: UIViewController {
         viderplayet?.didMove(toParent: self)
         viderplayet?.fillMode = .resizeAspectFill
         
+        let formatermiaj = self.restobuingd(Cubecm: "mcpf4")
+        
         guard let uripath = tdastaMiAJ["MIAJViocovbr"] ,
-        let path = Bundle.main.path(forResource: uripath, ofType: "mp4")
+        let path = Bundle.main.path(forResource: uripath, ofType: formatermiaj)
         else {
             return
         }
@@ -155,7 +157,8 @@ class MiAJAFetaiolCPImmpo: UIViewController {
     @IBAction func sureGuedeG(_ sender: UIButton) {
         
         guard let resultGued =  enterGueeredue.text,resultGued.count > 0 else {
-            SVProgressHUD.showInfo(withStatus: "Please enter your guess result!")
+          let OkseeMIAJ =  self.restobuingd(Cubecm: "Pmluejamsaef wewnntsevrh iyposumrz fgcuwefslsv prceqszuhlxtg!")
+            SVProgressHUD.showInfo(withStatus: OkseeMIAJ)
             return
         }
         let resultingshouvc = UIViewController.init()

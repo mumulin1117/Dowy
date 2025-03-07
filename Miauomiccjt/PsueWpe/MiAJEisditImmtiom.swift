@@ -75,7 +75,8 @@ class MiAJEisditImmtiom: UIViewController, UIImagePickerControllerDelegate & UIN
         
         SVProgressHUD.show()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            SVProgressHUD.showSuccess(withStatus: "Edit Successful!")
+            let OkseeMIAJ0 =  self.restobuingd(Cubecm: "Eodgifty lSbujcpcjeqshstfduhlp!")
+            SVProgressHUD.showSuccess(withStatus: OkseeMIAJ0)
             self.dismiss(animated: true)
             
             self.bloakMIAJ?(true)
@@ -139,7 +140,8 @@ class MiAJEisditImmtiom: UIViewController, UIImagePickerControllerDelegate & UIN
                         picker.delegate = self
                         self.present(picker, animated: true)
                     }else{
-                        SVProgressHUD.showInfo(withStatus: "No camera permission currently available!")
+                        let OkseeMIAJ0 =  self.restobuingd(Cubecm: "Nqob hcvacmdeqreaa bpmesrbmeiuscsfisoenm bcbulrdruetnmtqlcyp farvjahixloalbklmea!")
+                        SVProgressHUD.showInfo(withStatus: OkseeMIAJ0)
                     }
                 }
                 

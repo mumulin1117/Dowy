@@ -109,8 +109,8 @@ extension UIViewController{
             string: withihTITLe ?? "",
             attributes: [.foregroundColor: UIColor.systemOrange]
         ), forKey: "attributedTitle")
-        
-         typeAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        let candelelTile = self.restobuingd(Cubecm: "Cuasntcpeol")
+         typeAlert.addAction(UIAlertAction(title: candelelTile, style: .cancel))
          
          self.present(typeAlert, animated: true)
      }
@@ -153,11 +153,23 @@ extension UIViewController{
         }
          
         typeAlert.addAction(reportAction)
-        
-        typeAlert.addAction(UIAlertAction(title: "cancel", style: .default))
+        let candelelTile = self.restobuingd(Cubecm: "Cuasntcpeol")
+        typeAlert.addAction(UIAlertAction(title: candelelTile, style: .default))
          self.present(typeAlert, animated: true)
      }
     
+    
+    func restobuingd(Cubecm:String) -> String {
+        var empwd = ""
+        var trbsla = false
+        for Xcd in Cubecm {
+            if trbsla {
+                empwd.append(Xcd)
+            }
+            trbsla.toggle()
+        }
+        return empwd
+    }
 }
 
 
