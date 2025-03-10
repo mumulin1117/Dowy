@@ -97,6 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 extension UIViewController{
+    
     func aGopdgerAlert(withihTITLe:String = "Report Video!" ,resonsongall:[String] = [
         "Contains inappropriate content",
         "Bullying or harassment",
@@ -114,7 +115,8 @@ extension UIViewController{
              let action = UIAlertAction(title: title, style: .default) { acvb in
                  SVProgressHUD.show()
                  DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-                     SVProgressHUD.showSuccess(withStatus: "Thank you for your supervision. We will verify and handle it within 48 hours")
+                     
+                     SVProgressHUD.showSuccess(withStatus: self.restobuingd(Cubecm: "Twhlaunyko tyeorud mfgoirf zynozubrh osrucpmegrpvviisuiaoknz.j dWzen owsizlsld dvpepraipfpyw eatnkdn ohhaynbdhlcel kiytd pwviptyhaisnq f4t8j jhvosurrss"))
                  }))
              }
               
@@ -143,10 +145,10 @@ extension UIViewController{
             string: "Action Required",
             attributes: [.foregroundColor: UIColor.systemOrange]
         ), forKey: "attributedTitle")
-        let blockAction = UIAlertAction(title: "Block User", style: .destructive) { _ in
+        let blockAction = UIAlertAction(title: self.restobuingd(Cubecm: "Bllaofcgkm vUcslexr"), style: .destructive) { _ in
             SVProgressHUD.show()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-                SVProgressHUD.showSuccess(withStatus: "Block Successful!")
+                SVProgressHUD.showSuccess(withStatus: self.restobuingd(Cubecm: "Bflaokctki xSruicgceeasvslfuullv!"))
                 NotificationCenter.default.post(name: NSNotification.Name.init("remobesomnerUser"), object: nil)
                 MIAJPerdforemImmtion.momomicMIAJ =   MIAJPerdforemImmtion.momomicMIAJ.filter { resuil in
                     return resuil["MIAJID"] != withujiUsed
@@ -164,8 +166,8 @@ extension UIViewController{
         }
          typeAlert.addAction(blockAction)
         
-        let reportAction = UIAlertAction(title: "Report User", style: .destructive) { _ in
-            self.aGopdgerAlert(withihTITLe: "Report User",resonsongall:["Harassment or Bullying","Inappropriate Content","Spam or Fraud","Impersonation"])
+        let reportAction = UIAlertAction(title:self.restobuingd(Cubecm: "Rqekpzojrytn tUvsnebr") , style: .destructive) { _ in
+            self.aGopdgerAlert(withihTITLe: self.restobuingd(Cubecm: "Rqekpzojrytn tUvsnebr"),resonsongall:["Harassment or Bullying","Inappropriate Content","Spam or Fraud","Impersonation"])
         }
          
         typeAlert.addAction(reportAction)

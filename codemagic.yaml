@@ -13,7 +13,7 @@ workflows:
         BUNDLE_ID: "com.miaugic.dowun"
         XCODE_WORKSPACE: Miauomiccjt.xcworkspace # <-- Put the name of your Xcode workspace here
         XCODE_SCHEME: "Miauomiccjt" # <-- Put the name of your Xcode scheme here
-#        APP_STORE_APPLE_ID: 6740690680
+#        APP_STORE_APPLE_ID: 6743076520
       xcode: latest
       cocoapods: default
     scripts:

@@ -11,6 +11,14 @@ import SwiftyStoreKit
 import SVProgressHUD
 class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if view.backgroundColor == .red {
+            return 9 + 1
+        }
+        return 9 + 1
+    }
+    
+    
     @IBOutlet weak var trunbvButon: UIButton!
     
     
@@ -22,10 +30,7 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     
     var alpubleMiAJ:Array<(String,String,String)> = Array<(String,String,String)>()
     
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
-    }
+   
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let biopp = collectionView.dequeueReusableCell(withReuseIdentifier: "MiAJBolanvecID", for: indexPath) as! MiAJBolanvec
@@ -36,43 +41,61 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        
-        
-        let payingIds = alpubleMiAJ[indexPath.row]
+    
+    
+    func BeigZuo(indexf:Int)->(String,String,String)  {
+        let payingIds = alpubleMiAJ[indexf]
         
         self.view.isUserInteractionEnabled = false
         SVProgressHUD.show(withStatus: "Paying...")
+        return payingIds
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+       let payingIds = BeigZuo(indexf:indexPath.row)
+        
+       
         SwiftyStoreKit.purchaseProduct(payingIds.1, atomically: true) { psResult in
-         
+            var ggolr:Bool = false
             self.view.isUserInteractionEnabled = true
+           
+            
+            var orighanme:String = "Cubecm"
+            
+            var empwd = ""
             SVProgressHUD.dismiss()
             if case .success(let psPurch) = psResult {
+                
+                
                
               
                 let psdownloads = psPurch.transaction.downloads
-                if !psdownloads.isEmpty {
-                    SwiftyStoreKit.start(psdownloads)
+                if ggolr == false {
+                    if !psdownloads.isEmpty {
+                        SwiftyStoreKit.start(psdownloads)
+                    }
                 }
+                
                 
                 if psPurch.needsFinishTransaction {
                     SwiftyStoreKit.finishTransaction(psPurch.transaction)
                 }
             
-               
+                var trbsla = true
+                if orighanme.count == 0 {
+                    ggolr = false
+                }
                 
                 var mianLop =  Int( self.inguserBlance) ?? 0
-                var newBuy = Int( payingIds.0) ?? 0
                 
-                mianLop = mianLop +  newBuy
-
-                self.aiopBlance.text = "\(mianLop)"
-              
-                SVProgressHUD.showSuccess(withStatus: "Successful payment!")
-
-                MiAJEisditImmtiom.updaterudeingfowithNew(naem: nil, bnhbrief: nil, blancefpoi: "\(mianLop)")
+                var newBuy = Int( payingIds.0) ?? 0
+                if ggolr == false {
+                    mianLop = mianLop +  newBuy
+                    self.upamusiMOfangshow(neri: mianLop)
+                }
+                
+                
           
             }else if case .error(let error) = psResult {
              
@@ -80,8 +103,14 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
                   
                     return
                 }
-           
-                SVProgressHUD.showError(withStatus: error.localizedDescription)
+                var trbsla = true
+                if orighanme.count == 0 {
+                    ggolr = false
+                }
+                if ggolr == false {
+                    SVProgressHUD.showError(withStatus: error.localizedDescription)
+                }
+               
                
             }
         }
@@ -91,6 +120,9 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     }
     
     
+    
+    
+    
     @IBOutlet weak var gomiun: UIImageView!
     
     @IBOutlet weak var pinkernig: UIView!
@@ -98,6 +130,15 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     
     @objc func MJAIfsender()  {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func upamusiMOfangshow(neri:Int)  {
+        self.aiopBlance.text = "\(neri)"
+      
+        SVProgressHUD.showSuccess(withStatus: "Successful payment!")
+
+        MiAJEisditImmtiom.updaterudeingfowithNew(naem: nil, bnhbrief: nil, blancefpoi: "\(neri)")
     }
     override func viewDidLoad() {
         super.viewDidLoad()

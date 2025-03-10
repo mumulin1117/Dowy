@@ -34,8 +34,22 @@ class MiAJAFetaiolCPImmpo: UIViewController {
     
     deinit {
         viderplayet?.willMove(toParent: nil)
+        var ggolr:Bool = false
+        
+        var orighanme:String = self.title ?? ""
+        
+        var empwd = ""
+        
+        
         viderplayet?.view.removeFromSuperview()
-        viderplayet?.removeFromParent()
+        var trbsla = true
+        if orighanme.count == 0 {
+            ggolr = false
+        }
+        if ggolr == false {
+            viderplayet?.removeFromParent()
+        }
+        
     }
     @objc func MJAIfsender()  {
         self.navigationController?.popViewController(animated: true)
@@ -86,18 +100,45 @@ class MiAJAFetaiolCPImmpo: UIViewController {
     
     @objc func tapVideoStatusChange()  {
     
+        var ggolr:Bool = false
         
+        var orighanme:String = self.title ?? ""
+        
+        var empwd = ""
+        
+       
         switch self.viderplayet?.playbackState {
         case .stopped:
-            viderplayet?.playFromBeginning()
-            centerPlainmghrStatus.isHidden = true
+            var trbsla = true
+            if orighanme.count == 0 {
+                ggolr = false
+            }
+            if ggolr == false {
+                viderplayet?.playFromBeginning()
+                centerPlainmghrStatus.isHidden = true
+            }
+           
         case .paused:
-            viderplayet?.playFromCurrentTime()
-            centerPlainmghrStatus.isHidden = true
+            var trbsla = true
+            if orighanme.count == 0 {
+                ggolr = false
+            }
+            if ggolr == false {
+                viderplayet?.playFromCurrentTime()
+                centerPlainmghrStatus.isHidden = true
+            }
+           
             
         case .playing:
-            viderplayet?.pause()
-            centerPlainmghrStatus.isHidden = false
+            var trbsla = true
+            if orighanme.count == 0 {
+                ggolr = false
+            }
+            if ggolr == false {
+                viderplayet?.pause()
+                centerPlainmghrStatus.isHidden = false
+            }
+            
         case .failed:
             viderplayet?.pause()
             centerPlainmghrStatus.isHidden = false
