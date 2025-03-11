@@ -98,7 +98,91 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension UIViewController{
     
-    func aGopdgerAlert(withihTITLe:String = "Report Video!" ,resonsongall:[String] = [
+    func videoTilretty(withujiUsed:String)  {
+        let typeAlert = UIAlertController(
+                    title: "Action Required",
+                    message: nil,
+                    preferredStyle: .actionSheet
+                )
+        
+       typeAlert.setValue(NSAttributedString(
+           string: "Action Required",
+           attributes: [.foregroundColor: UIColor.systemOrange]
+       ), forKey: "attributedTitle")
+        
+        
+        let blockAction = UIAlertAction(title: self.restobuingd(Cubecm: "Bllaofcgkm vUcslexr"), style: .destructive) { _ in
+            
+            
+            
+            self.BdlornnUsetINfo(withujiUsed:withujiUsed)
+            
+            
+            
+           
+            
+        }
+         typeAlert.addAction(blockAction)
+        
+        let reportVideoAction = UIAlertAction(title:"Report Video!" , style: .default) { _ in
+            self.aGopdgerCCCUIAlert()
+        }
+        
+        typeAlert.addAction(reportVideoAction)
+        
+        let reportAction = UIAlertAction(title:self.restobuingd(Cubecm: "Rqekpzojrytn tUvsnebr") , style: .default) { _ in
+            self.aGopdgerCCCUIAlert(withihTITLe: self.restobuingd(Cubecm: "Rqekpzojrytn tUvsnebr"),resonsongall:["Harassment or Bullying","Inappropriate Content","Spam or Fraud","Impersonation"])
+        }
+         
+        typeAlert.addAction(reportAction)
+        
+      
+       
+        
+        
+      
+       let candelelTile = self.restobuingd(Cubecm: "Cuasntcpeol")
+       typeAlert.addAction(UIAlertAction(title: candelelTile, style: .default))
+        self.present(typeAlert, animated: true)
+    }
+    
+    
+    private func BdlornnUsetINfo(withujiUsed:String) {
+        let typeAlert = UIAlertController(
+                    title: self.restobuingd(Cubecm: "Bllaofcgkm vUcslexr"),
+                    message: "After blocking the user, you will no longer receive any push notifications or messages related to that user",
+                    preferredStyle: .alert
+                )
+      
+        let action = UIAlertAction(title: " Sure ", style: .default) { acvb in
+            SVProgressHUD.show()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+                SVProgressHUD.showSuccess(withStatus: self.restobuingd(Cubecm: "Bflaokctki xSruicgceeasvslfuullv!"))
+                NotificationCenter.default.post(name: NSNotification.Name.init("remobesomnerUser"), object: nil)
+                MIAJPerdforemImmtion.momomicMIAJ =   MIAJPerdforemImmtion.momomicMIAJ.filter { resuil in
+                    return resuil["MIAJID"] != withujiUsed
+                }
+                MIAJWuoeImmtion.lognFacing =  MIAJWuoeImmtion.lognFacing.filter { resuil in
+                    return resuil["MIAJID"] != withujiUsed
+                }
+                MIAJWuoeImmtion.lognfolloweing = MIAJWuoeImmtion.lognfolloweing.filter { resuil in
+                    return resuil["MIAJID"] != withujiUsed
+                }
+            }))
+        }
+         
+        typeAlert.addAction(action)
+        
+       typeAlert.setValue(NSAttributedString(
+           string: self.restobuingd(Cubecm: "Bllaofcgkm vUcslexr"),
+           attributes: [.foregroundColor: UIColor.systemOrange]
+       ), forKey: "attributedTitle")
+       let candelelTile = self.restobuingd(Cubecm: "Cuasntcpeol")
+        typeAlert.addAction(UIAlertAction(title: candelelTile, style: .cancel))
+        
+        self.present(typeAlert, animated: true)
+    }
+    func aGopdgerCCCUIAlert(withihTITLe:String = "Report Video!" ,resonsongall:[String] = [
         "Contains inappropriate content",
         "Bullying or harassment",
         "Copyright Issue",
@@ -167,7 +251,7 @@ extension UIViewController{
          typeAlert.addAction(blockAction)
         
         let reportAction = UIAlertAction(title:self.restobuingd(Cubecm: "Rqekpzojrytn tUvsnebr") , style: .destructive) { _ in
-            self.aGopdgerAlert(withihTITLe: self.restobuingd(Cubecm: "Rqekpzojrytn tUvsnebr"),resonsongall:["Harassment or Bullying","Inappropriate Content","Spam or Fraud","Impersonation"])
+            self.aGopdgerCCCUIAlert(withihTITLe: self.restobuingd(Cubecm: "Rqekpzojrytn tUvsnebr"),resonsongall:["Harassment or Bullying","Inappropriate Content","Spam or Fraud","Impersonation"])
         }
          
         typeAlert.addAction(reportAction)

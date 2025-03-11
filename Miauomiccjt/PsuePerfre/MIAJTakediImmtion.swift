@@ -119,7 +119,7 @@ class MIAJTakediImmtion: UIViewController {
        }
     }
     @objc func juiaGopdgerAlert() {
-        self.aGopdgerAlert()
+        self.aGopdgerCCCUIAlert()
      }
    
     private func endTimeMIAKCountdown() {

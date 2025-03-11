@@ -94,7 +94,7 @@ class MiAJAFetaiolCPImmpo: UIViewController {
     @IBOutlet weak var centerPlainmghrStatus: UIImageView!
     
     @objc func juiaGopdgerAlert() {
-        self.aGopdgerAlert()
+        self.videoTilretty(withujiUsed: tdastaMiAJ["MIAJID"] ?? "")
          
      }
     

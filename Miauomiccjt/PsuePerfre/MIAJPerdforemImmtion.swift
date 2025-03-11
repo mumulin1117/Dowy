@@ -37,15 +37,18 @@ class MIAJPerdforemImmtion: MIAJTopImmtinu,UITableViewDelegate,UITableViewDataSo
         bapi.pubuserAvtMIAJ.tag = indexPath.row
         bapi.pubuserAvtMIAJ.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addtTapiserunincenter(vatui: ))))
         bapi.titkolppppMIAJ.text = sckio["MIAJvioeoTexvct"]
-        bapi.refpiutry.addTarget(self, action: #selector(juiaGopdgerAlert), for: .touchUpInside)
+        bapi.refpiutry.tag = indexPath.row
+        bapi.refpiutry.addTarget(self, action: #selector(juiaGopdgerAlert(Buibn:)), for: .touchUpInside)
         bapi.usernnameNIAJ.text = sckio["MIAJNbbme"]
         bapi.heabetCouny.text = "❤️ " + (sckio["MIAJLikeCaunt"] ?? "0")
         return bapi
     }
     
     
-   @objc func juiaGopdgerAlert() {
-       self.aGopdgerAlert()
+    @objc func juiaGopdgerAlert(Buibn:UIButton) {
+        let UhifData = cbinMIAJ[Buibn.tag]
+        
+       self.videoTilretty(withujiUsed: UhifData["MIAJID"] ?? "")
         
     }
     @objc func addtTapiserunincenter(vatui:UITapGestureRecognizer)  {

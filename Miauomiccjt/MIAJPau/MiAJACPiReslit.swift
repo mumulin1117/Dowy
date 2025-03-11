@@ -114,7 +114,7 @@ class MiAJACPiReslit: UIViewController {
     @IBAction func aGopdgerAlert(_ sender: UIButton) {
         let slioDouble = "Reenpiowrgtt vAuIk dCcomnstfeqnnt"
         let wgoMIAJ5 =  self.restobuingd(Cubecm:slioDouble)
-        self.aGopdgerAlert(withihTITLe: wgoMIAJ5,resonsongall: ["Inappropriate Content","False Information","Copyright Issue","Other Reason"])
+        self.aGopdgerCCCUIAlert(withihTITLe: wgoMIAJ5,resonsongall: ["Inappropriate Content","False Information","Copyright Issue","Other Reason"])
 
     }
     
