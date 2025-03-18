@@ -15,6 +15,10 @@
 		0406F58B2D7560BD0021498C /* MIAJSendingImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0406F5892D7560BD0021498C /* MIAJSendingImmtion.xib */; };
 		0406F58E2D7560D80021498C /* MIAJcollImmtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F58C2D7560D80021498C /* MIAJcollImmtion.swift */; };
 		0406F58F2D7560D80021498C /* MIAJcollImmtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0406F58D2D7560D80021498C /* MIAJcollImmtion.xib */; };
+		042C51112D893E0200880678 /* MIAJLaungchWpert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C51102D893E0200880678 /* MIAJLaungchWpert.swift */; };
+		042C51132D893E7000880678 /* MIAJAsigninWpert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C51122D893E7000880678 /* MIAJAsigninWpert.swift */; };
+		042C51152D893EAB00880678 /* MIAJAWeadingWpert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C51142D893EAB00880678 /* MIAJAWeadingWpert.swift */; };
+		042C51172D893EE500880678 /* MIAJAgonSgkol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C51162D893EE500880678 /* MIAJAgonSgkol.swift */; };
 		0465C1EE2D75890D0040B698 /* MiAJSotrImmtiom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C1ED2D75890D0040B698 /* MiAJSotrImmtiom.xib */; };
 		0465C1EF2D75890D0040B698 /* MiAJSotrImmtiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465C1EC2D75890D0040B698 /* MiAJSotrImmtiom.swift */; };
 		0465C1F22D75903C0040B698 /* MiAJEisditImmtiom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465C1F12D75903C0040B698 /* MiAJEisditImmtiom.xib */; };
@@ -71,6 +75,10 @@
 		0406F5892D7560BD0021498C /* MIAJSendingImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJSendingImmtion.xib; sourceTree = "<group>"; };
 		0406F58C2D7560D80021498C /* MIAJcollImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJcollImmtion.swift; sourceTree = "<group>"; };
 		0406F58D2D7560D80021498C /* MIAJcollImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJcollImmtion.xib; sourceTree = "<group>"; };
+		042C51102D893E0200880678 /* MIAJLaungchWpert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJLaungchWpert.swift; sourceTree = "<group>"; };
+		042C51122D893E7000880678 /* MIAJAsigninWpert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJAsigninWpert.swift; sourceTree = "<group>"; };
+		042C51142D893EAB00880678 /* MIAJAWeadingWpert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJAWeadingWpert.swift; sourceTree = "<group>"; };
+		042C51162D893EE500880678 /* MIAJAgonSgkol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJAgonSgkol.swift; sourceTree = "<group>"; };
 		0465C1EC2D75890D0040B698 /* MiAJSotrImmtiom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJSotrImmtiom.swift; sourceTree = "<group>"; };
 		0465C1ED2D75890D0040B698 /* MiAJSotrImmtiom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiAJSotrImmtiom.xib; sourceTree = "<group>"; };
 		0465C1F02D75903C0040B698 /* MiAJEisditImmtiom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiAJEisditImmtiom.swift; sourceTree = "<group>"; };
@@ -183,6 +191,10 @@
 		04A8E00F2D6F01E800876DCD /* Miauomiccjt */ = {
 			isa = PBXGroup;
 			children = (
+				042C51102D893E0200880678 /* MIAJLaungchWpert.swift */,
+				042C51122D893E7000880678 /* MIAJAsigninWpert.swift */,
+				042C51142D893EAB00880678 /* MIAJAWeadingWpert.swift */,
+				042C51162D893EE500880678 /* MIAJAgonSgkol.swift */,
 				0465C1F82D7593CF0040B698 /* MIAJPau */,
 				047218B02D71AE260028B44D /* MIAJ_fugai7.mp4 */,
 				047218AE2D71AE1F0028B44D /* MIAJ_fugai5.mp4 */,
@@ -419,11 +431,14 @@
 				0406F5812D753DF10021498C /* MIAJPubImmtion.swift in Sources */,
 				0406F58A2D7560BD0021498C /* MIAJSendingImmtion.swift in Sources */,
 				0465C1F72D7593C60040B698 /* MiAJPumuAyImmtiom.swift in Sources */,
+				042C51172D893EE500880678 /* MIAJAgonSgkol.swift in Sources */,
+				042C51132D893E7000880678 /* MIAJAsigninWpert.swift in Sources */,
 				04A8E02E2D6F1F2A00876DCD /* MIAJTakediImmtion.swift in Sources */,
 				0465C20E2D7852630040B698 /* MiAJAMiunConterPImmpo.swift in Sources */,
 				04A8E0262D6F122200876DCD /* MIAJPubyaImmtion.swift in Sources */,
 				0472189A2D71555D0028B44D /* BucueCarstarTruber.swift in Sources */,
 				04A8E01C2D6F081000876DCD /* MIAJPerdforemImmtion.swift in Sources */,
+				042C51152D893EAB00880678 /* MIAJAWeadingWpert.swift in Sources */,
 				0465C2092D75ACA10040B698 /* MiAJAFetaiolCPImmpo.swift in Sources */,
 				0465C2132D79BAEA0040B698 /* MiAJAMessagrerPImmpo.swift in Sources */,
 				0465C2012D75A6F20040B698 /* MiAJACPickCell.swift in Sources */,
@@ -436,6 +451,7 @@
 				0465C2052D75A9720040B698 /* MiAJACPiReslit.swift in Sources */,
 				0465C1FF2D75A3940040B698 /* MiAJACIAyImmtiom.swift in Sources */,
 				0406F58E2D7560D80021498C /* MIAJcollImmtion.swift in Sources */,
+				042C51112D893E0200880678 /* MIAJLaungchWpert.swift in Sources */,
 				04A8E0102D6F01E800876DCD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +484,7 @@
 				INFOPLIST_FILE = Miauomiccjt/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dowy;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Dowy requires access to your camera to capture profile photos and enable video calls.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Dowy needs your location permissions to make use of the iCloud camera's location functionalities";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Dowy requires microphone permission to support audio calls.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Dowy needs access to your photo library to upload and publish local videos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -507,6 +524,7 @@
 				INFOPLIST_FILE = Miauomiccjt/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dowy;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Dowy requires access to your camera to capture profile photos and enable video calls.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Dowy needs your location permissions to make use of the iCloud camera's location functionalities";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Dowy requires microphone permission to support audio calls.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Dowy needs access to your photo library to upload and publish local videos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

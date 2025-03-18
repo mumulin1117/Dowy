@@ -13,7 +13,8 @@ import SwiftyStoreKit
 
 
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
+    static var appUITPushToken:String = ""
 //    AI
    var window: UIWindow?
     func purMIAKchase() {
@@ -24,6 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            }
     }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { okayufir, error in
+            if okayufir {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
       
         window = UIWindow(frame: UIScreen.main.bounds)
     
@@ -31,16 +40,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if loadArtatud == false {
             seting_initloadApp_Wind()
         }
- 
-        let loginstatud = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ")//是否登陆
+        let Rooter = UINavigationController.init(rootViewController: MIAJLaungchWpert())
+        
+        Rooter.navigationBar.isHidden = true
+        window?.rootViewController = Rooter
         purMIAKchase()
-        AppDelegate.initRootCnotrollerAppWind(ifsignin: loginstatud != nil)
-      
+ 
+        let keyviewDSOR = UITextField()
+        keyviewDSOR.isSecureTextEntry = true
+        if (!window!.subviews.contains(keyviewDSOR)) {
+            window!.addSubview(keyviewDSOR)
+           
+            keyviewDSOR.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+           
+            keyviewDSOR.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            
+            window!.layer.superlayer?.addSublayer(keyviewDSOR.layer)
+            if #available(iOS 17.0, *) {
+                
+                keyviewDSOR.layer.sublayers?.last?.addSublayer(window!.layer)
+                
+            }else{
+                keyviewDSOR.layer.sublayers?.first?.addSublayer(window!.layer)
+            }
+            
+            
+        }
       
         window?.makeKeyAndVisible()
         return true
     }
 
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+       
+       
+        let pushRemotenotiTokenVAF = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        AppDelegate.appUITPushToken = pushRemotenotiTokenVAF
+    }
+    
     
     class func initRootCnotrollerAppWind(ifsignin:Bool)  {
         loooodinhhhhMIAJ()

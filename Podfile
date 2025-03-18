@@ -13,6 +13,7 @@ pod "IQKeyboardManager"
 pod 'SnapKit'
 pod "SwiftyStoreKit"
 pod "Player"
+pod 'FBSDKCoreKit'
 pod "SVProgressHUD"
 pod 'ActiveLabel'
 pod 'Alamofire'
