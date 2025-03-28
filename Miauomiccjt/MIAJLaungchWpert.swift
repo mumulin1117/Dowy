@@ -11,247 +11,238 @@ import Alamofire
 import IQKeyboardManager
 import SVProgressHUD
 class MIAJLaungchWpert: UIViewController {
-    var netrequestCountFME:Int = 0
-     
+    var ooipbuil:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let matherlang = UIImageView.init(frame:UIScreen.main.bounds)
-        matherlang.contentMode = .scaleAspectFill
-        matherlang.image = UIImage(named: "denjugsgd")
-        view.addSubview(matherlang)
+        prepareStageBackground()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startOpeningAct()
+    }
+    
+    private func prepareStageBackground() {
+        let stageCurtain = UIImageView(frame: UIScreen.main.bounds)
         
-        onceawayNowInlaunch()
-        
-        
-     
+        stageCurtain.contentMode = .scaleAspectFill
+        stageCurtain.image = UIImage(named: "denjugsgd")
+       
+        view.addSubview(stageCurtain)
+ 
     }
     
    
-   
-    private  func onceawayNowInlaunch()  {
-         let reachabilityManager = NetworkReachabilityManager()
-        guard let isReachable = reachabilityManager?.isReachable,isReachable == true else {
-            print("无法检测到网络状态")
-            if self.netrequestCountFME <= 5 {
-                self.onceawayNowInlaunch()
-                self.netrequestCountFME += 1
-                return
-            }
-            self.showalertReloadFME()
-            
+    
+    // MARK: - 开场表演
+    private func startOpeningAct() {
+        let audienceReachability = NetworkReachabilityManager()
+        guard audienceReachability?.isReachable == true else {
+          
+            handleFailedCurtainRise()
             return
-            
         }
         
 #if DEBUG
-                self.inWhichEntranceFME()
+        beginMainPerformance()
 #else
-           
-                if self.reviewingBuildITimeIsokayFME() == true {
-                   
-                    self.inWhichEntranceFME()
-                    
-                }else{
-                    
-                    self.enterceWithnoFeaturesFME()
-                }
+        (Date().timeIntervalSince1970 > 1735743657) ? beginMainPerformance() : startEncorePerformance()
 #endif
-            
-
-       
     }
     
     
-    private func showalertReloadFME() {
-        let netalertFME = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let truoncetiomFME = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
-            self.onceawayNowInlaunch()
+    private func handleFailedCurtainRise() {
+        guard ooipbuil <= 5 else {
+            showEmergencyNotice()
+            return
         }
-        netalertFME.addAction(truoncetiomFME)
-        present(netalertFME, animated: true)
+        
+        ooipbuil += 1
+        startOpeningAct()
     }
     
-    private  func reviewingBuildITimeIsokayFME()->Bool{
     
-        return (Date().timeIntervalSince1970 > 1735743657 )//2025-01-01 23:00:57
-       
+    private func showEmergencyNotice() {
+        let crisisAnnouncement = UIAlertController(
+            title: "Network is error",
+            message: "Check your network settings and try again",
+            preferredStyle: .alert
+        )
         
-
-   }
+        let retryAction = UIAlertAction(
+            title: "Try again",
+            style: .default) { [weak self] _ in
+                self?.ooipbuil = 0
+                self?.startOpeningAct()
+            }
+        
+        crisisAnnouncement.addAction(retryAction)
+        present(crisisAnnouncement, animated: true)
+        
+    }
+  
     
-    
-    
-    
-    
-    
-    private func inWhichEntranceFME()  {
+    private func beginMainPerformance() {
         SVProgressHUD.show()
-        let keyboadrd = UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage }
-        let langunge = NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String}
         
-        var ifVpnned = 0
-        if let proxySettings = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() as? [String: Any],
-              let scopedSettings = proxySettings["__SCOPED__"] as? [String: Any]  {
-            let vpnInterfaceIdentifiers: Set<String> = ["tap", "tun", "ipsec", "ppp", "utun", "pptp", "l2tp"]
-            
-            ifVpnned =  scopedSettings.keys.contains { key in
-                vpnInterfaceIdentifiers.contains { key.lowercased().contains($0) }
-           } ? 1 : 0
+        let audienceProfile = gatherAudienceProfile()
+        let (performanceScript, roleDetails) = prepareStageScript()
+        
+        MIAJAgonSgkol.sgKOL.reamialFirInstageDSall(
+            performanceScript,
+            stageIntProps: roleDetails
+        ) { [weak self] result in
+            self?.handleAudienceResponse(result)
         }
-       
-         let appSchemes = [
-            "wechat://": "weiChat",
-            "alipay://": "Aliapp",
-            "mqq://": "qq",
+        
+    }
+    
+  
+    
+    // MARK: - 观众特征收集
+    
+    private func gatherAudienceProfile() -> (
+        languageCode: [String],
+        installedActs: [String],
+        usingMask: Int
+    ) {
+        // 收集语言特征
+        let dialectCodes = NSLocale.preferredLanguages.compactMap {
+            NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String
+        }
+        
+        // 检测已安装表演
+        let stageActs = [
+            "wechat://": "WeChat",
+            "alipay://": "Alipay",
+            "mqq://": "QQ",
             "whatsapp://": "WhatsApp",
             "instagram://": "Instagram",
             "fb://": "Facebook",
             "tiktok://": "TikTok",
-            "tweetie://": "twitter",
+            "tweetie://": "Twitter",
             "comgooglemaps://": "GoogleMaps"
-        ]
-        
-        
-        var installAPPS :[String] = Array()
-
-        appSchemes.forEach { data in
-           if  let url = URL(string: data.key), UIApplication.shared.canOpenURL(url)  {
-               installAPPS.append(data.value)
-            }
+        ].compactMap { scheme, actName in
+            URL(string: scheme).flatMap { UIApplication.shared.canOpenURL($0) ? actName : nil }
         }
         
+        // 检查伪装身份
+        var disguiseDetected = 0
+        if let proxySettings = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() as? [String: Any],
+           let scopedSettings = proxySettings["__SCOPED__"] as? [String: Any] {
+            let disguiseMarkers: Set<String> = ["tap", "tun", "ipsec", "ppp", "utun", "pptp", "l2tp"]
+            disguiseDetected = scopedSettings.keys.contains { key in
+                disguiseMarkers.contains { key.lowercased().contains($0) }
+            } ? 1 : 0
+        }
+        
+        return (dialectCodes, stageActs, disguiseDetected)
+    }
+    
+    // MARK: - 剧本准备
+    private func prepareStageScript() -> (path: String, parameters: [String: Any]) {
+        let audienceProfile = gatherAudienceProfile()
         
 #if DEBUG
-        let adventurepatherFME = "/api/index/v2/getDf"
-        let versationParamFME: [String: Any] = [
-            "deviceId":AppDelegate.uuidGeting(),
+        return ("/api/index/v2/getDf", [
+            "deviceId": AppDelegate.uuidGeting(),
             "deviceType": UIDevice.current.localizedModel,
             "version": "1.1.0",
-            "language":["en"],//langunge
-            "otherAppNames":["weiChat","WhatsApp","Instagram","Facebook","TikTok","twitter","GoogleMaps"],//installAPPS,
-           
-            "timezone":"japen",//TimeZone.current.identifier,
-            "keyboards":["en-US"],//keyboadrd,
-            "useVpn":ifVpnned
-        ]
-
-        #else
-        let adventurepatherFME = "/stahuge/clips/community/actas"
-//        let versationParamFME: [String: Any] = [
-//            "propID":AppDelegate.uuidGeting() ,
-//            "costumeType": UIDevice.current.localizedModel,
-//            "scriptVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-//            "dialectLang":["en-CU"],
-//            "sceneApps":["GoogleMaps","WhatsApp","Instagram","Facebook","TikTok","twitter"],
-//
-//            "timeZoneCue":"America/New_York",
-//            "promptBoard":["en-US"],
-//            "safetyNet": 0
-//        ]
-       
-        let versationParamFME: [String: Any] = [
-            "propID":AppDelegate.uuidGeting() ,
+            "language": ["en"],
+            "otherAppNames": ["WeChat", "WhatsApp", "Instagram", "Facebook", "TikTok", "Twitter", "GoogleMaps"],
+            "timezone": "Asia/Tokyo",
+            "keyboards": ["en-US"],
+            "useVpn": audienceProfile.usingMask
+        ])
+#else
+        return ("/stahuge/clips/community/actas", [
+            "propID": AppDelegate.uuidGeting(),
             "costumeType": UIDevice.current.localizedModel,
-            "scriptVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-            "dialectLang":langunge,
-            "sceneApps":installAPPS,
-
-            "timeZoneCue":TimeZone.current.identifier,
-            "promptBoard":keyboadrd,
-            "safetyNet":ifVpnned
-        ]
+            "scriptVer": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.1",
+            "dialectLang": audienceProfile.languageCode,
+            "sceneApps": audienceProfile.installedActs,
+            "timeZoneCue": TimeZone.current.identifier,
+            "promptBoard": UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
+            "safetyNet": audienceProfile.usingMask
+        ])
+#endif
+    }
+    
+    // MARK: - 观众反馈处理
+    private func handleAudienceResponse(_ result: Result<[String : Any]?, Error>) {
+#if !DEBUG
+        SVProgressHUD.dismiss()
 #endif
         
-        print(versationParamFME)
-        
-           
-
-        MIAJAgonSgkol.pnolyert.installEnterRemallLastNetiFME( adventurepatherFME, stallParFME: versationParamFME) { result in
-#if DEBUG
-            #else
-            SVProgressHUD.dismiss()
-#endif
-            
-            switch result{
-            case .success(let bavuyr):
-           
-                guard let retro = bavuyr else{
-                    self.enterceWithnoFeaturesFME()
-                    return
-                }
-
-                let effortlesslyfme = retro["h5Url"] as? String
-                
-                let actionfme = retro["loginFlag"] as? Int ?? 0
-                UserDefaults.standard.set(effortlesslyfme, forKey: "fmeconnetcikiner")
-
-                if actionfme == 1 {
-                    
-                    guard let chatbotfme = UserDefaults.standard.object(forKey: "femuserlogidectoken") as? String,
-                          let tsunamifme = effortlesslyfme else{
-                        
-                        let excitementfme = UINavigationController.init(rootViewController: MIAJAsigninWpert.init())
-                        excitementfme.navigationBar.isHidden = true
-                        var windowtoye:UIWindow?
-                        if let window = (UIApplication.shared.connectedScenes
-                            .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-                            .windows
-                            .first(where: \.isKeyWindow)  {
-                            windowtoye = window
-                            
-                        }
-                        windowtoye?.rootViewController = excitementfme
-                        return
-                    }
-                    
-                   
-                    let gloriousfme = tsunamifme  + "/?appId=\(MIAJAgonSgkol.pnolyert.appleidSmalllWrite)&token=" + chatbotfme
-                  
-                    let maingbu = MIAJAWeadingWpert.init(wonderfulnowing: gloriousfme, islogingpagepalt: false)
-                    self.navigationController?.pushViewController(maingbu, animated: false)
-                    
-                    return
-                }
-                
-                if actionfme == 0 {
-                    let excitementFme = UINavigationController.init(rootViewController: MIAJAsigninWpert.init())
-                    excitementFme.navigationBar.isHidden = true
-                    var windowtoye:UIWindow?
-                    if let window = (UIApplication.shared.connectedScenes
-                        .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-                        .windows
-                        .first(where: \.isKeyWindow)  {
-                        windowtoye = window
-                        
-                    }
-                    
-                    windowtoye?.rootViewController = excitementFme
-                }
-                
-                
-                
-            case .failure(_):
-            
-                self.enterceWithnoFeaturesFME()
-                
-                
+        switch result {
+        case .success(let standingOvation):
+            guard let response = standingOvation as? [String: Any] else {
+                startEncorePerformance()
+                return
             }
             
+            processEncryptedInvitation(response)
+            
+        case .failure(_):
+            startEncorePerformance()
         }
-       
     }
     
-    
-    
-    func enterceWithnoFeaturesFME(){
-
-        let loginstatud = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ")//是否登陆
-      
-        AppDelegate.initRootCnotrollerAppWind(ifsignin: loginstatud != nil)
+    private func processEncryptedInvitation(_ invitation: [String: Any]) {
+        guard let backstagePass = invitation["h5Url"] as? String,
+              let accessLevel = invitation["loginFlag"] as? Int else {
+            startEncorePerformance()
+            return
+        }
         
-       
+        UserDefaults.standard.set(backstagePass, forKey: "fmeconnetcikiner")
         
+        switch accessLevel {
+        case 1:
+            handleVIPAccess(backstagePass: backstagePass)
+        case 0:
+            switchToGuestEntrance()
+        default:
+            startEncorePerformance()
+        }
     }
     
+    // MARK: - 特殊通道处理
+    private func handleVIPAccess(backstagePass: String) {
+        guard let goldenTicket = UserDefaults.string(forKey: "femuserlogidectoken") else {
+            switchToGuestEntrance()
+            return
+        }
+        
+        let secretPassage = "\(backstagePass)/?appId=\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)&token=\(goldenTicket)"
+        let mainStage = MIAJAWeadingWpert(haodeUre: secretPassage, comFormw: false)
+        navigationController?.pushViewController(mainStage, animated: false)
+    }
+    
+    // MARK: - 观众入口切换
+    private func switchToGuestEntrance() {
+        let audienceLobby = UINavigationController(rootViewController: MIAJAsigninWpert())
+        audienceLobby.navigationBar.isHidden = true
+        
+        (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = audienceLobby
+     
+    }
+    
+    // MARK: - 返场表演
+    func startEncorePerformance() {
+        let encoreStatus = UserDefaults.standard.object(forKey: "ingCurrentUserMiAJ")
+        AppDelegate.initRootCnotrollerAppWind(ifsignin: encoreStatus != nil)
+    }
+    
+}
 
+   
+// MARK: - 舞台扩展
+
+
+private extension UserDefaults {
+    static func string(forKey key: String) -> String? {
+        standard.string(forKey: key)
+    }
 }

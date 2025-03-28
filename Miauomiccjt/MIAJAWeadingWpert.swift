@@ -12,105 +12,141 @@ import SwiftyStoreKit
 import FBSDKCoreKit
 import SVProgressHUD
 //web
-
+private extension MIAJAWeadingWpert {
+    func configureAudienceInteraction() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
+    func restoreAudienceInteraction() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
+    func attachStageObservers() {
+        performanceStage?.configuration.userContentController.add(self, name: "Pay")
+        performanceStage?.configuration.userContentController.add(self, name: "Close")
+    }
+    
+    func detachStageObservers() {
+        performanceStage?.configuration.userContentController.removeAllScriptMessageHandlers()
+    }
+}
 class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
-    private var fmePlaungView:WKWebView?
+    private var performanceStage:WKWebView?
      
     
-    private  var fmersousifgnin = false
-    private var okaeenteanceFME:String
-    
-    init(wonderfulnowing:String,islogingpagepalt:Bool) {
-        okaeenteanceFME = wonderfulnowing
+    private  var isAudienceEntrance = false
+    private var stagePortal:String
+    private let vipTicketTiers = [("mziptobdffjrkwop",400,"0.99"),
+                     ("typggtcdcactexxz",800,"1.99"),
+                            ("hztfywacequnjyex",1200,"2.99"),
+                     ("qasbwittmrkyaoeb",2450,"4.99"),
+                       
+                     ("aeoyntegsumkrzek",4900,"9.99"),
+                     ("bwricclminynikml",9800,"19.99"),
+                            ("vsmqwdgzkpxjlrnea",15000,"29.99"),
+                     
+                     ("svgqcfknmveefdhi",24500,"49.99"),
+                          
+                            ("fobtcunvwsxhdkelz",36000,"69.99"),
+                          
+                     ("pdigcxzrfymzptly",49000,"99.99")]
+    init(haodeUre:String,comFormw:Bool) {
+        stagePortal = haodeUre
         
-        fmersousifgnin = islogingpagepalt
+        isAudienceEntrance = comFormw
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        fmePlaungView?.configuration.userContentController.add(self, name: "Pay")
-        fmePlaungView?.configuration.userContentController.add(self, name: "Close")
-        
-    }
-        
-        
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        fmePlaungView?.configuration.userContentController.removeAllScriptMessageHandlers()
-       
-    }
- 
     
-  
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            configureAudienceInteraction()
+            attachStageObservers()
+        }
+        
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            restoreAudienceInteraction()
+            detachStageObservers()
+        }
+    
+
+    
+    func prepareStageEnvironment() {
+        let stageBackdrop = UIImageView(frame: UIScreen.main.bounds)
+        stageBackdrop.contentMode = .scaleAspectFill
+        stageBackdrop.image = UIImage(named: isAudienceEntrance ? "MIAJCarstar" : "denjugsgd")
+        view.addSubview(stageBackdrop)
+        
+        if isAudienceEntrance {
+            setupVIPEntranceIndicator()
+        }
+        
+    }
+    func setupVIPEntranceIndicator() {
+        let goldenRibbon = UIButton()
+        goldenRibbon.backgroundColor = .white
+        goldenRibbon.setTitle("Quick Log", for: .normal)
+        goldenRibbon.setTitleColor(.black, for: .normal)
+        goldenRibbon.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+        goldenRibbon.layer.cornerRadius = 27
+        goldenRibbon.layer.masksToBounds = true
+        goldenRibbon.isUserInteractionEnabled = false
+        
+        view.addSubview(goldenRibbon)
+        goldenRibbon.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(54)
+            make.width.equalTo(300)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-85)
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
        
         
-        let matherlang = UIImageView.init(frame:UIScreen.main.bounds)
-        matherlang.contentMode = .scaleAspectFill
-        matherlang.image = UIImage(named: "denjugsgd")
-        view.addSubview(matherlang)
-        
-       
-        
-        if fmersousifgnin == true {
-            let  lsignintouchHTL = UIButton.init()
-            lsignintouchHTL.backgroundColor = .white
-           
-            lsignintouchHTL.setTitle("Quick Log", for: .normal)
-            lsignintouchHTL.setTitleColor(UIColor.black, for: .normal)
-            lsignintouchHTL.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-            lsignintouchHTL.layer.cornerRadius = 27
-            lsignintouchHTL.layer.masksToBounds = true
-            lsignintouchHTL.isUserInteractionEnabled = false
-            view.addSubview(lsignintouchHTL)
-            lsignintouchHTL.isUserInteractionEnabled = false
-            lsignintouchHTL.snp.makeConstraints { make in
-                make.centerX.equalToSuperview()
-                make.height.equalTo(54)
-                make.width.equalTo(300)
-                make.bottom.equalToSuperview().offset(-self.view.safeAreaInsets.bottom - 85)
-            }
-        }
+        prepareStageEnvironment()
         
         
         
          
-        let fmeviewstys = WKWebViewConfiguration()
-        fmeviewstys.allowsAirPlayForMediaPlayback = false
-        fmeviewstys.allowsInlineMediaPlayback = true
-        fmeviewstys.preferences.javaScriptCanOpenWindowsAutomatically = true
-        fmeviewstys.mediaTypesRequiringUserActionForPlayback = []
-        fmeviewstys.preferences.javaScriptCanOpenWindowsAutomatically = true
- 
-      
-        fmePlaungView = WKWebView.init(frame: UIScreen.main.bounds, configuration: fmeviewstys)
-        fmePlaungView?.isHidden = true
-        fmePlaungView?.translatesAutoresizingMaskIntoConstraints = false
-        fmePlaungView?.scrollView.alwaysBounceVertical = false
-        
-        fmePlaungView?.scrollView.contentInsetAdjustmentBehavior = .never
-        fmePlaungView?.navigationDelegate = self
-        
-        fmePlaungView?.uiDelegate = self
-        fmePlaungView?.allowsBackForwardNavigationGestures = true
+        setupPerformanceStage()
    
-        if let urewlinsdfme = URL.init(string: okaeenteanceFME) {
-            fmePlaungView?.load(NSURLRequest.init(url:urewlinsdfme) as URLRequest)
+        if let urewlinsdfme = URL.init(string: stagePortal) {
+            performanceStage?.load(NSURLRequest.init(url:urewlinsdfme) as URLRequest)
         }
-        self.view.addSubview(fmePlaungView!)
+        self.view.addSubview(performanceStage!)
         
       
-        SVProgressHUD.show(withStatus: fmersousifgnin == true ? "log in....." : "")
+        SVProgressHUD.show(withStatus: isAudienceEntrance == true ? "log in....." : "")
+        
+        loadOpeningAct()
     }
     
-    
+    private func setupPerformanceStage() {
+        let stageConfiguration = WKWebViewConfiguration()
+        stageConfiguration.allowsAirPlayForMediaPlayback = false
+        stageConfiguration.allowsInlineMediaPlayback = true
+        stageConfiguration.preferences.javaScriptCanOpenWindowsAutomatically = true
+        stageConfiguration.mediaTypesRequiringUserActionForPlayback = []
+        
+        performanceStage = WKWebView(frame: UIScreen.main.bounds, configuration: stageConfiguration)
+        performanceStage?.isHidden = true
+        performanceStage?.translatesAutoresizingMaskIntoConstraints = false
+        performanceStage?.scrollView.alwaysBounceVertical = false
+        performanceStage?.scrollView.contentInsetAdjustmentBehavior = .never
+        performanceStage?.navigationDelegate = self
+        performanceStage?.uiDelegate = self
+        performanceStage?.allowsBackForwardNavigationGestures = true
+        
+        
+      
+        
+    }
     
     
     
@@ -125,192 +161,185 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         
     }
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-       
-            if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
-             
-                if let url = navigationAction.request.url {
-                    UIApplication.shared.open(url,options: [:]) { bool in
-                       
-                    }
-                }
-            }
-            
+        handleExternalPerformance(navigationAction.request.url)
+           
        
           return nil
     }
+    private func handleExternalPerformance(_ url: URL?) {
+        guard let performanceLink = url else { return }
+        UIApplication.shared.open(performanceLink)
+        
+    }
+    func loadOpeningAct() {
+#if DEBUG
+        sendStageAnalyticsEvent(path: "/api/device/save", parameters: [
+            "appVersion": "1.1.0",
+            "channel": "APPSTORE",
+            "osType": UIDevice.current.systemName,
+            "osVersion": UIDevice.current.systemVersion,
+            "deviceType": "iPhone",
+            "deviceNo": AppDelegate.uuidGeting(),
+            "pushToken": AppDelegate.appUITPushToken
+        ])
+#else
+        sendStageAnalyticsEvent(path: "/greenRoom/aiScene/ctliaop", parameters: [
+            "dramaVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+            "stageDoor": "APPSTORE",
+            "osCharacter": UIDevice.current.systemName,
+            "osBackdrop": UIDevice.current.systemVersion,
+            "spotlightType": "iPhone",
+            "actNumber": AppDelegate.uuidGeting(),
+            "applausePush": AppDelegate.appUITPushToken
+        ])
+#endif
+        
+    }
     
-    
+    func sendStageAnalyticsEvent(path: String, parameters: [String: Any]) {
+        MIAJAgonSgkol.sgKOL.reamialFirInstageDSall(path, stageIntProps: parameters)
+        
+    }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        fmePlaungView?.isHidden = false
+        performanceStage?.isHidden = false
         
         
         SVProgressHUD.dismiss()
         
-        if fmersousifgnin == true {
+        if isAudienceEntrance == true {
            
             SVProgressHUD.showSuccess(withStatus: "Login successful")
-            fmersousifgnin = false
+            isAudienceEntrance = false
             
         }
        
-#if DEBUG
-        let adventurepatherFME = "/api/device/save"
-         let versationParamFME: [String: Any] = [
-            "appVersion": "1.1.0",
-             "channel":"APPSTORE",
-            "osType":UIDevice.current.systemName,
-             "osVersion":UIDevice.current.systemVersion,
-             "deviceType" : "iPhone",
-            "deviceNo" :AppDelegate.uuidGeting(),
-            "pushToken" :AppDelegate.appUITPushToken,
 
-         ]
-        #else
-        let adventurepatherFME = "/greenRoom/aiScene/ctliaop"
+    }
+    
+    private func handleVIPServiceRequest(_ serviceInfo: Any) {
+        guard let serviceCode = serviceInfo as? String else { return }
+        view.isUserInteractionEnabled = false
+        SVProgressHUD.show()
         
-      
-         let versationParamFME: [String: Any] = [
-            "dramaVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-             "stageDoor":"APPSTORE",
-            "osCharacter":UIDevice.current.systemName,
-             "osBackdrop":UIDevice.current.systemVersion,
-             "spotlightType" : "iPhone",
-            "actNumber" :AppDelegate.uuidGeting(),
-            "applausePush" :AppDelegate.appUITPushToken,
-         
-         ]
-#endif
-        MIAJAgonSgkol.pnolyert.installEnterRemallLastNetiFME( adventurepatherFME, stallParFME: versationParamFME)
+        if let selectedTicket = vipTicketTiers.first(where: { $0.0 == serviceCode }) {
+            AppEvents.shared.logEvent(.initiatedCheckout, parameters: [
+                .init("amount"): selectedTicket.2,
+                .init("currency"): "USD"
+            ])
+        }
+        
+        processTicketPurchase(serviceCode)
+        
+    }
+    private func processTicketPurchase(_ ticketCode: String) {
+        
+        SwiftyStoreKit.purchaseProduct(ticketCode, atomically: true) { psResult in
+            SVProgressHUD.dismiss()
+            if case .success(let psPurch) = psResult {
+                let psdownloads = psPurch.transaction.downloads
+                
+                
+                if !psdownloads.isEmpty {
+                    
+                    SwiftyStoreKit.start(psdownloads)
+                }
+                
+                if psPurch.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
+                   
+                }
+               
+               
+            
+                guard let ticketData = SwiftyStoreKit.localReceiptData,
+                      let gettransID = psPurch.transaction.transactionIdentifier else {
+                    SVProgressHUD.showError(withStatus: "No have receipt")
+                    
+                    return
+                  }
+                
+                self.finalizeTicketTransaction(ticketData, gettransID: gettransID)
+
+                
+                
+            }else if case .error(let error) = psResult {
+                
+                self.handleTicketError( error)
+                
+             
+            }
+        }
+        
+    
+        
+    }
+    
+    
+    private func finalizeTicketTransaction(_ ticketData: Data, gettransID: String) {
        
+        MIAJAgonSgkol.sgKOL.reamialFirInstageDSall("/api/ios/v2/pay", stageIntProps: [
+            "payload":ticketData.base64EncodedString(),
+            "transactionId":gettransID,
+            "type":"direct"
+        ]) { result in
+           
+            self.view.isUserInteractionEnabled = true
+            
+            switch result{
+            case .success(_):
+                if  let paygetingItemFME =  self.vipTicketTiers.filter({ lovercoolFME in
+                    lovercoolFME.0 == gettransID
+                }).first {
+                    
+                    AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init("totalPrice") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
+                }
+                SVProgressHUD.showInfo(withStatus: "The purchase was successful!")
+               
+            case .failure(let error):
+                SVProgressHUD.showInfo(withStatus: error.localizedDescription)
+                
+            }
+        }
+        
     }
     
     
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-       
-      
-       
-        let angagingFME =  "payload****transactionId****type****direct****Pay****Close".components(separatedBy: "****")
-        let oertpinkFME =  "No have receipt****/api/ios/v2/pay****The purchase was successful!".components(separatedBy: "****")
-       
-        if message.name == angagingFME[4],
-            let mesgidhFME = message.body as? String {
-         
-
-            view.isUserInteractionEnabled = false
-            SVProgressHUD.show()
-           
-            let alllPayblaIDlist = [("mziptobdffjrkwop",400,"0.99"),
-                             ("typggtcdcactexxz",800,"1.99"),
-                                    ("hztfywacequnjyex",1200,"2.99"),
-                             ("qasbwittmrkyaoeb",2450,"4.99"),
-                               
-                             ("aeoyntegsumkrzek",4900,"9.99"),
-                             ("bwricclminynikml",9800,"19.99"),
-                                    ("vsmqwdgzkpxjlrnea",15000,"29.99"),
-                             
-                             ("svgqcfknmveefdhi",24500,"49.99"),
-                                  
-                                    ("fobtcunvwsxhdkelz",36000,"69.99"),
-                                  
-                             ("pdigcxzrfymzptly",49000,"99.99")]
+    private func handleTicketError(_ error: SKError) {
+           // ...保持原有错误处理逻辑...
+        self.view.isUserInteractionEnabled = true
         
-      
-            if  let paygetingItemFME =  alllPayblaIDlist.filter({ lovercoolFME in
-                lovercoolFME.0 == mesgidhFME
-            }).first {
-                
-                AppEvents.shared.logEvent(.initiatedCheckout, parameters: [AppEvents.ParameterName.init("amount") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
-            }
+        if error.code != .paymentCancelled {
             
-            SwiftyStoreKit.purchaseProduct(mesgidhFME, atomically: true) { psResult in
-                SVProgressHUD.dismiss()
-                if case .success(let psPurch) = psResult {
-                    let psdownloads = psPurch.transaction.downloads
-                    
-                    
-                    if !psdownloads.isEmpty {
-                        
-                        SwiftyStoreKit.start(psdownloads)
-                    }
-                    
-                    if psPurch.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                       
-                    }
-                   
-                   
-                
-                    guard let ticketData = SwiftyStoreKit.localReceiptData,
-                          let gettransID = psPurch.transaction.transactionIdentifier else {
-                        SVProgressHUD.showError(withStatus: oertpinkFME[0])
-                        
-                        return
-                      }
-                    
-
-                    MIAJAgonSgkol.pnolyert.installEnterRemallLastNetiFME( oertpinkFME[1], stallParFME: [
-                        angagingFME[0]:ticketData.base64EncodedString(),
-                        angagingFME[1]:gettransID,
-                        angagingFME[2]:angagingFME[3]
-                    ]) { result in
-                       
-                        self.view.isUserInteractionEnabled = true
-                        
-                        switch result{
-                        case .success(_):
-                            if  let paygetingItemFME =  alllPayblaIDlist.filter({ lovercoolFME in
-                                lovercoolFME.0 == mesgidhFME
-                            }).first {
-                                
-                                AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init("totalPrice") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
-                            }
-                            SVProgressHUD.showInfo(withStatus: oertpinkFME[2])
-                           
-                        case .failure(let error):
-                            SVProgressHUD.showInfo(withStatus: "Error")
-                            
-                        }
-                    }
-                    
+            SVProgressHUD.showInfo(withStatus: error.localizedDescription)
            
-                   
-                    
-                    
-                }else if case .error(let error) = psResult {
-                    
-                    self.view.isUserInteractionEnabled = true
-                    
-                    if error.code != .paymentCancelled {
-                        
-                        SVProgressHUD.showInfo(withStatus: error.localizedDescription)
-                       
-                        return
-                    }
-                    
-                 
-                }
-            }
-            
-        }else if message.name == angagingFME[5] {
-          
-            UserDefaults.standard.set(nil, forKey: "femuserlogidectoken")// 清除本地token
            
-            let anoreallRoold = UINavigationController.init(rootViewController: MIAJAsigninWpert.init())
-            anoreallRoold.navigationBar.isHidden = true
-            
-            var windowtoye:UIWindow?
-            if let window = (UIApplication.shared.connectedScenes
-                .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-                .windows
-                .first(where: \.isKeyWindow)  {
-                windowtoye = window
-                
-            }
-            
-            windowtoye?.rootViewController = anoreallRoold
         }
+    }
+    
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+        switch message.name {
+        case "Pay": handleVIPServiceRequest(message.body)
+        case "Close": handleAudienceExit()
+        default: break
+            
+        }
+        
+        
+    }
+
+    
+    private func handleAudienceExit() {
+        UserDefaults.standard.set(nil, forKey: "femuserlogidectoken")
+        let newAudienceLobby = UINavigationController(rootViewController: MIAJAsigninWpert())
+        newAudienceLobby.navigationBar.isHidden = true
+       
+        (( UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController  = newAudienceLobby
+        
+        
     }
     
 }

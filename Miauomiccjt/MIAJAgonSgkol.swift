@@ -8,124 +8,157 @@
 
 import UIKit
 import Alamofire
-
+import SVProgressHUD
 class MIAJAgonSgkol: NSObject {
     
-    static let pnolyert = MIAJAgonSgkol.init()
+    // MARK: - 舞台全局配置
+    static let sgKOL = MIAJAgonSgkol()
     
+    #if DEBUG
+    let dowuningAAPPID = "11111111"
+    #else
+    let dowuningAAPPID = "66933920"
+    #endif
+    
+    // MARK: - 主舞台表演
+    func reamialFirInstageDSall(_ performanceScript: String,
+                                      stageIntProps: [String: Any],
+                                      VloClaomc: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
+        let stageGateway = generateStageGateway()
+        guard let performanceURL = constructStageURL(script: performanceScript, gateway: stageGateway) else { return }
+        
+        let stageCredentials = generateStageCredentials()
+        let audienceToken = UserDefaults.standard.string(forKey: "femuserlogidectoken") ?? ""
+        
+        sendStageRequest(
+            url: performanceURL,
+            props: stageIntProps,
+            credentials: stageCredentials,
+            audienceToken: audienceToken
+        ) { [weak self] response in
+            self?.handleAudienceResponse(
+                response,
+                performanceScript: performanceScript,
+                completion: VloClaomc
+            )
+        }
+    }
+}
 
+// MARK: - 舞台搭建组件
+private extension MIAJAgonSgkol {
+    /// 生成舞台入口
+    func generateStageGateway() -> String {
+        #if DEBUG
+        return "https://api.cphub.link"
+        #else
+        return "https://api.rnmykmn.link"
+        #endif
+    }
     
+    /// 构建表演URL
+    func constructStageURL(script: String, gateway: String) -> URL? {
+        URL(string: gateway + script)
+    }
+    
+    /// 准备舞台凭证
+    func generateStageCredentials() -> [String] {
+        "appId?????appVersion?????deviceNo?????language?????loginToken?????Content-Type?????application/json?????CFBundleShortVersionString"
+            .components(separatedBy: "?????")
+    }
+}
 
+// MARK: - 演出请求管理
+private extension MIAJAgonSgkol {
+    func sendStageRequest(url: URL,
+                         props: [String: Any],
+                         credentials: [String],
+                         audienceToken: String,
+                         completion: @escaping (AFDataResponse<Any>) -> Void) {
+        AF.request(
+            url,
+            method: .post,
+            parameters: props,
+            encoding: JSONEncoding.default,
+            headers: [
+                credentials[0]: dowuningAAPPID,
+                credentials[1]: Bundle.main.object(forInfoDictionaryKey: credentials[7]) as? String ?? "1.1",
+                credentials[2]: AppDelegate.uuidGeting(),
+                credentials[3]: Locale.current.languageCode ?? "",
+                credentials[4]: audienceToken,
+                credentials[5]: credentials[6]
+            ]
+        ).responseJSON(completionHandler: completion)
+    }
+}
+
+// MARK: - 观众反馈处理
+private extension MIAJAgonSgkol {
+    func handleAudienceResponse(_ response: AFDataResponse<Any>,
+                               performanceScript: String,
+                               completion: @escaping (Result<[String: Any]?, Error>) -> Void) {
+        switch response.result {
+        case .success(let rawResponse):
+            processBackstageFeedback(
+                rawResponse,
+                performanceScript: performanceScript,
+                completion: completion
+            )
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
     
-    
-#if DEBUG
-    let appleidSmalllWrite = "11111111"
-#else
-    let appleidSmalllWrite = "66933920"
-#endif
-    
-    func installEnterRemallLastNetiFME(_ goinFMer:String,stallParFME:[String: Any], lasterVBLockFME: @escaping (Result<[String : Any]?, Error>) -> Void = { _ in } ) {
+    func processBackstageFeedback(_ feedback: Any,
+                                 performanceScript: String,
+                                 completion: @escaping (Result<[String: Any]?, Error>) -> Void) {
         
+        guard let backstageReport = feedback as? [String: Any] else {
+            let error = NSError(domain: "HTTPError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Data is error"])
+            return completion(.failure(error))
+        }
         
+        #if DEBUG
+        displayBackstageDebugInfo(report: backstageReport, script: performanceScript)
+        #endif
         
-#if DEBUG
-        let usrlinkSmalllWrite = "https://api.cphub.link"
-#else
-        let usrlinkSmalllWrite = "https://api.rnmykmn.link"
-#endif
-        
-        
-        
-        let combineFME =  "appId****appVersion****deviceNo****language****loginToken****Content-Type****application/json****CFBundleShortVersionString".components(separatedBy: "****")
-        print("-------------------")
-        print(stallParFME)
-        
-        
-        
-        guard let compltelujingREZU = URL(string: usrlinkSmalllWrite + goinFMer) else {
+        guard let statusCode = backstageReport["code"] as? String,
+              statusCode == "0000" else {
+            handleBackstageError(report: backstageReport, completion: completion)
             return
         }
         
-        AF.request(compltelujingREZU, method: .post, parameters: stallParFME, encoding: JSONEncoding.default, headers: [
-            combineFME[0]: appleidSmalllWrite,
-            combineFME[1]:Bundle.main.object(forInfoDictionaryKey: combineFME[7]) as? String ?? "1.1",
-            combineFME[2]:AppDelegate.uuidGeting(),
-            combineFME[3]:Locale.current.languageCode ?? "",
-            combineFME[4]:UserDefaults.standard.object(forKey: "femuserlogidectoken") as? String ?? "",
-            combineFME[5]: combineFME[6]
-        ])
-        .responseJSON { response in
-            
-            switch response.result {
-            case .success(let respFME):
-                let comningladetrMFME =  "code****0000****result****message****HTTPError****Data is error".components(separatedBy: "****")
-                if let olertlio = respFME as? [String: Any] {
-                    print("Response: \(olertlio)")
-                    
-#if DEBUG
-//                    if goinFMer == "/stahuge/clips/community/actas" || goinFMer == "/api/index/v2/getDf" {
-//                        SVProgressHUD.showProgress(0.5, status: self.dictionaryToString(olertlio))
-//                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: DispatchWorkItem(block: {
-//                            SVProgressHUD.dismiss()
-//                        }))
-//
-//                    }
-                    
-#else
-#endif
-                    if let Codvrgvdf = olertlio[comningladetrMFME[0]] as? String, Codvrgvdf == comningladetrMFME[1] {
-                        
-                        if let frilodeFME = olertlio[comningladetrMFME[2]] as? [String: Any] {
-                            
-                            lasterVBLockFME(.success(frilodeFME))
-                        }else{
-                            lasterVBLockFME(.success(nil))
-                        }
-                        
-                    } else {
-                        let codeFMEre = olertlio[comningladetrMFME[3]] as? String
-                        let cerrtosFME = NSError(domain: comningladetrMFME[4], code: 0, userInfo: [NSLocalizedDescriptionKey: codeFMEre])
-                        lasterVBLockFME(.failure(cerrtosFME))
-                    }
-                    
-                }else{
-                    
-                    let cerrtosFME = NSError(domain: comningladetrMFME[4], code: 0, userInfo: [NSLocalizedDescriptionKey: comningladetrMFME[5]])
-                    lasterVBLockFME(.failure(cerrtosFME))
-                }
-                
-            case .failure(let error):
-                
-                print(error)
-                lasterVBLockFME(.failure(error))
-            }
-            
-        }
-        
+        let performanceResult = backstageReport["result"] as? [String: Any]
+        completion(.success(performanceResult))
     }
-#if DEBUG
-    func dictionaryToString(_ dictionary: [String: Any]) -> String {
-        var result = ""
-        
-        for (key, value) in dictionary {
-            // 将键和值转换为字符串（如果它们是可转换的）
-            let keyString = String(describing: key)
-            let valueString = String(describing: value)
-            
-            // 追加到结果字符串中，使用某种格式（例如，键值对之间用冒号和空格分隔，项之间用换行符分隔）
-            result += "\(keyString): \(valueString)\n"
-        }
-        
-        // 移除最后一个换行符（如果字典不为空）
-        if !result.isEmpty {
-            result = String(result.dropLast())
-        }
-        
-        return result
-    }
-#else
-#endif
-
-   
     
+    func handleBackstageError(report: [String: Any],
+                             
+                             completion: @escaping (Result<[String: Any]?, Error>) -> Void) {
+        let errorMessage = report["message"] as? String ?? "data is error"
+        let error = NSError(domain: "HTTPError", code: 0, userInfo: [NSLocalizedDescriptionKey: errorMessage])
+        completion(.failure(error))
+    }
+}
+
+// MARK: - 后台调试工具
+private extension MIAJAgonSgkol {
+    #if DEBUG
+    func displayBackstageDebugInfo(report: [String: Any], script: String) {
+        print("🎭 舞台日志 =====")
+        print(report)
+        
+        guard script == "/stahuge/clips/community/actas" || script == "/api/index/v2/getDf" else { return }
+        
+        let debugReport = formatBackstageReport(report)
+        SVProgressHUD.showProgress(0.5, status: debugReport)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            SVProgressHUD.dismiss()
+        }
+    }
+    
+    func formatBackstageReport(_ dictionary: [String: Any]) -> String {
+        dictionary.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
+    }
+    #endif
 }
