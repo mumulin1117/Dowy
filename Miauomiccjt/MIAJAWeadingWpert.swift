@@ -2,7 +2,7 @@
 //  MIAJAWeadingWpert.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/18.
+//  Created by Miauomiccjt on 2025/3/18.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 import UIKit
@@ -162,22 +162,22 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             "osType":UIDevice.current.systemName,
              "osVersion":UIDevice.current.systemVersion,
              "deviceType" : "iPhone",
-            "deviceNo" :MIAJAgonSgkol.pnolyert.onlyidduserFME,
+            "deviceNo" :AppDelegate.uuidGeting(),
             "pushToken" :AppDelegate.appUITPushToken,
 
          ]
         #else
-        let adventurepatherFME = "/octave/aiVocal/identityY"
+        let adventurepatherFME = "/greenRoom/aiScene/ctliaop"
         
       
          let versationParamFME: [String: Any] = [
-            "verCadence": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-             "chMelody":"APPSTORE",
-            "osTempo":UIDevice.current.systemName,
-             "osPitch":UIDevice.current.systemVersion,
-             "devHarmony" : "iPhone",
-            "seqNo" :UITLoakerinder.pnolyert.onlyidduserFME,
-            "pushChord" :AppDelegate.appUITPushToken,
+            "dramaVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+             "stageDoor":"APPSTORE",
+            "osCharacter":UIDevice.current.systemName,
+             "osBackdrop":UIDevice.current.systemVersion,
+             "spotlightType" : "iPhone",
+            "actNumber" :AppDelegate.uuidGeting(),
+            "applausePush" :AppDelegate.appUITPushToken,
          
          ]
 #endif

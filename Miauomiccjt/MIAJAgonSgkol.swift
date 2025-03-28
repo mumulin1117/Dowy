@@ -2,7 +2,7 @@
 //  MIAJAgonSgkol.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/18.
+//  Created by Miauomiccjt on 2025/3/18.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
@@ -13,86 +13,9 @@ class MIAJAgonSgkol: NSObject {
     
     static let pnolyert = MIAJAgonSgkol.init()
     
-    var installednaesFME:[String]{
-        var nsmelishfappFME = [String]()
-        
-        if let fmeAppinstallIDs = URL.init(string: "wechat://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("weiChat")
-        }
-        if let fmeAppinstallIDs = URL.init(string: "alipay://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("Aliapp")
-        }
-        
-        if let fmeAppinstallIDs = URL.init(string: "mqq://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("qq")
-        }
-        
-        
-        if let fmeAppinstallIDs = URL.init(string: "whatsapp://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("WhatsApp")
-        }
-        
-        if let fmeAppinstallIDs = URL.init(string: "instagram://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("Instagram")
-        }
-        if let fmeAppinstallIDs = URL.init(string: "fb://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("Facebook")
-        }
-        if let fmeAppinstallIDs = URL.init(string: "tiktok://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("TikTok")
-        }
-        
-        if let fmeAppinstallIDs = URL.init(string: "tweetie://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("twitter")
-        }
-        
-        if let fmeAppinstallIDs = URL.init(string: "comgooglemaps://"), UIApplication.shared.canOpenURL(fmeAppinstallIDs) {
-            nsmelishfappFME.append("GoogleMaps")
-        }
-        
-        return nsmelishfappFME
-    }
+
     
-    
-    
-    var fmeboadrdkeysLaungs:[String]{
-        var langsFme = [String]()
-        for moder in UITextInputMode.activeInputModes {
-            if let laungssfme = moder.primaryLanguage {
-                langsFme.append(laungssfme)
-            }
-        }
-        return langsFme
-    }
-    
-    
-    var hustlangsAllLocalFME:[String]{
-        var launlistvaf = [String]()
-        let prefersVAF = NSLocale.preferredLanguages
-        for localeIdentifier in prefersVAF {
-            let locale = NSLocale(localeIdentifier: localeIdentifier)
-            
-            if let languageCode = locale.object(forKey: .languageCode) as? String{
-                launlistvaf.append(languageCode)
-                
-            }
-        }
-        
-        return launlistvaf
-    }
-    
-    var onlyidduserFME:String{
-        
-        guard  let gente = self.gefetchOnlyUserIDDKeyFMEc() else{
-            
-            let createIDfme  = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
-            self.addOnlyUserIDDKeyFMEchain(onlyIDFME: createIDfme)
-            return createIDfme
-            
-        }
-        return gente.uuidString
-        
-    }
+
     
     
 #if DEBUG
@@ -126,7 +49,7 @@ class MIAJAgonSgkol: NSObject {
         AF.request(compltelujingREZU, method: .post, parameters: stallParFME, encoding: JSONEncoding.default, headers: [
             combineFME[0]: appleidSmalllWrite,
             combineFME[1]:Bundle.main.object(forInfoDictionaryKey: combineFME[7]) as? String ?? "1.1",
-            combineFME[2]:onlyidduserFME,
+            combineFME[2]:AppDelegate.uuidGeting(),
             combineFME[3]:Locale.current.languageCode ?? "",
             combineFME[4]:UserDefaults.standard.object(forKey: "femuserlogidectoken") as? String ?? "",
             combineFME[5]: combineFME[6]
@@ -140,7 +63,7 @@ class MIAJAgonSgkol: NSObject {
                     print("Response: \(olertlio)")
                     
 #if DEBUG
-//                    if goinFMer == "/melody/pulse/community/grooveZ" || goinFMer == "/api/index/v2/getDf" {
+//                    if goinFMer == "/stahuge/clips/community/actas" || goinFMer == "/api/index/v2/getDf" {
 //                        SVProgressHUD.showProgress(0.5, status: self.dictionaryToString(olertlio))
 //                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: DispatchWorkItem(block: {
 //                            SVProgressHUD.dismiss()
@@ -202,80 +125,7 @@ class MIAJAgonSgkol: NSObject {
     }
 #else
 #endif
-    
-    func checkphonertvpiernLinkcted()->Bool{
-        
-        var ihingterFME = false
-        
-        let combineFME =  "__SCOPED__****tap****tun****ipsec****ppp".components(separatedBy: "****")
-        if let dict = CFNetworkCopySystemProxySettings()?.takeRetainedValue() as? [String : Any],
-           let scopeFME = dict[combineFME[0]] as? [String : Any] {
-            
-            let keysFME = scopeFME.keys.map { $0 as String }
-            
-            
-            for kefMey in keysFME {
-                if kefMey.contains(combineFME[1]) || kefMey.contains(combineFME[2]) || kefMey.contains(combineFME[3]) || kefMey.contains(combineFME[4]) {
-                    
-                    ihingterFME = true
-                    
-                    break
-                    
-                }
-            }
-        }
-        
-        return ihingterFME
-        
-        
-        
-    }
-    
-    
-    
-    private func addOnlyUserIDDKeyFMEchain(onlyIDFME:String) {
-        
-        
-        
-        let asveDaterFME = onlyIDFME.data(using: .utf8)!
-        
-        let queryFMER: [CFString: Any] = [
-            kSecClass: kSecClassGenericPassword,
-            kSecAttrService: "com.aunicmu.coulas",
-            kSecValueData: asveDaterFME,
-            kSecAttrAccessible: kSecAttrAccessibleWhenUnlockedThisDeviceOnly
-        ]
-        
-        
-        SecItemDelete(queryFMER as CFDictionary)
-        let _ = SecItemAdd(queryFMER as CFDictionary, nil)
-        
-        
-    }
-    
-    
-    private  func gefetchOnlyUserIDDKeyFMEc() -> UUID? {
-        
-        let queryFMRE: [CFString: Any] = [
-            kSecClass: kSecClassGenericPassword,
-            kSecAttrService: "com.aunicmu.coulas",
-            kSecReturnData: true as CFBoolean,
-            kSecMatchLimit: kSecMatchLimitOne,
-            kSecAttrAccessible: kSecAttrAccessibleWhenUnlockedThisDeviceOnly
-        ]
-        
-        var dreataFMETypeRef: AnyObject?
-        let resfliFME = SecItemCopyMatching(queryFMRE as CFDictionary, &dreataFMETypeRef)
-        
-        if resfliFME == errSecSuccess {
-            if let data = dreataFMETypeRef as? Data,
-               let idstrFME = String(data: data, encoding: .utf8) {
-                return UUID(uuidString: idstrFME)
-            }
-        }
-        
-        return nil
-    }
-    
+
+   
     
 }

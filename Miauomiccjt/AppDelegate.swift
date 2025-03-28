@@ -70,6 +70,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         window?.makeKeyAndVisible()
         return true
     }
+    
+   class func uuidGeting() -> String {
+        guard let existingID = UIDevice.current.identifierForVendor?.uuidString  else {
+                  
+               
+            return UUID().uuidString
+        }
+        return existingID
+    }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
        

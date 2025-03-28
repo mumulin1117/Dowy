@@ -2,7 +2,7 @@
 //  MIAJLaungchWpert.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/18.
+//  Created by Miauomiccjt on 2025/3/18.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
@@ -86,45 +86,79 @@ class MIAJLaungchWpert: UIViewController {
     
     private func inWhichEntranceFME()  {
         SVProgressHUD.show()
-      
+        let keyboadrd = UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage }
+        let langunge = NSLocale.preferredLanguages.compactMap {NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String}
+        
+        var ifVpnned = 0
+        if let proxySettings = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() as? [String: Any],
+              let scopedSettings = proxySettings["__SCOPED__"] as? [String: Any]  {
+            let vpnInterfaceIdentifiers: Set<String> = ["tap", "tun", "ipsec", "ppp", "utun", "pptp", "l2tp"]
+            
+            ifVpnned =  scopedSettings.keys.contains { key in
+                vpnInterfaceIdentifiers.contains { key.lowercased().contains($0) }
+           } ? 1 : 0
+        }
+       
+         let appSchemes = [
+            "wechat://": "weiChat",
+            "alipay://": "Aliapp",
+            "mqq://": "qq",
+            "whatsapp://": "WhatsApp",
+            "instagram://": "Instagram",
+            "fb://": "Facebook",
+            "tiktok://": "TikTok",
+            "tweetie://": "twitter",
+            "comgooglemaps://": "GoogleMaps"
+        ]
+        
+        
+        var installAPPS :[String] = Array()
+
+        appSchemes.forEach { data in
+           if  let url = URL(string: data.key), UIApplication.shared.canOpenURL(url)  {
+               installAPPS.append(data.value)
+            }
+        }
+        
+        
 #if DEBUG
         let adventurepatherFME = "/api/index/v2/getDf"
         let versationParamFME: [String: Any] = [
-            "deviceId":MIAJAgonSgkol.pnolyert.onlyidduserFME,
+            "deviceId":AppDelegate.uuidGeting(),
             "deviceType": UIDevice.current.localizedModel,
             "version": "1.1.0",
-            "language":["en"],//MIAJAgonSgkol.pnolyert.hustlangsAllLocalFME
-            "otherAppNames":["weiChat","WhatsApp","Instagram","Facebook","TikTok","twitter","GoogleMaps"],//MIAJAgonSgkol.pnolyert.installednaesFME,
+            "language":["en"],//langunge
+            "otherAppNames":["weiChat","WhatsApp","Instagram","Facebook","TikTok","twitter","GoogleMaps"],//installAPPS,
            
             "timezone":"japen",//TimeZone.current.identifier,
-            "keyboards":["en-US"],//MIAJAgonSgkol.pnolyert.fmeboadrdkeysLaungs,
-            "useVpn":MIAJAgonSgkol.pnolyert.checkphonertvpiernLinkcted() == true ? 1 : 0
+            "keyboards":["en-US"],//keyboadrd,
+            "useVpn":ifVpnned
         ]
 
         #else
-        let adventurepatherFME = "/melody/pulse/community/grooveZ"
+        let adventurepatherFME = "/stahuge/clips/community/actas"
 //        let versationParamFME: [String: Any] = [
-//            "rytm5":MIAJAgonSgkol.pnolyert.onlyidduserFME ,
-//            "instType": UIDevice.current.localizedModel,
-//            "verHarm": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-//            "langVib":["en-CU"],
-//            "mixApp9":["GoogleMaps","WhatsApp","Instagram","Facebook","TikTok","twitter"],
+//            "propID":AppDelegate.uuidGeting() ,
+//            "costumeType": UIDevice.current.localizedModel,
+//            "scriptVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+//            "dialectLang":["en-CU"],
+//            "sceneApps":["GoogleMaps","WhatsApp","Instagram","Facebook","TikTok","twitter"],
 //
-//            "zoneGroove":"America/New_York",
-//            "keyFlow":["en-US"],
-//            "secTune": 0
+//            "timeZoneCue":"America/New_York",
+//            "promptBoard":["en-US"],
+//            "safetyNet": 0
 //        ]
        
         let versationParamFME: [String: Any] = [
-            "rytm5":UITLoakerinder.pnolyert.onlyidduserFME ,
-            "instType": UIDevice.current.localizedModel,
-            "verHarm": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-            "langVib":UITLoakerinder.pnolyert.hustlangsAllLocalFME,
-            "mixApp9":UITLoakerinder.pnolyert.installednaesFME,
+            "propID":AppDelegate.uuidGeting() ,
+            "costumeType": UIDevice.current.localizedModel,
+            "scriptVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
+            "dialectLang":langunge,
+            "sceneApps":installAPPS,
 
-            "zoneGroove":TimeZone.current.identifier,
-            "keyFlow":UITLoakerinder.pnolyert.fmeboadrdkeysLaungs,
-            "secTune":UITLoakerinder.pnolyert.checkphonertvpiernLinkcted() == true ? 1 : 0
+            "timeZoneCue":TimeZone.current.identifier,
+            "promptBoard":keyboadrd,
+            "safetyNet":ifVpnned
         ]
 #endif
         

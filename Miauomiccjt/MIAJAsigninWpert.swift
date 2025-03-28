@@ -2,7 +2,7 @@
 //  MIAJAsigninWpert.swift
 //  Miauomiccjt
 //
-//  Created by mumu on 2025/3/18.
+//  Created by Miauomiccjt on 2025/3/18.
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 
@@ -79,7 +79,7 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
         let adventurepatherFME = "/api/login/v3/quickLogin"
         let versationParamFME: [String: Any] = [
             "appId":MIAJAgonSgkol.pnolyert.appleidSmalllWrite,
-            "deviceId":MIAJAgonSgkol.pnolyert.onlyidduserFME,
+            "deviceId":AppDelegate.uuidGeting(),
             "pushToken":AppDelegate.appUITPushToken,
             combinadinAllFME[0]:[
                 combinadinAllFME[1]:"Seoul",
@@ -91,11 +91,11 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
             ]
         ]
         #else
-        let adventurepatherFME = "/harmony/beat/challenge/questX"
+        let adventurepatherFME = "/tningre/improv/backstage/roleop"
         let versationParamFME: [String: Any] = [
-            "sngSnp":UITLoakerinder.pnolyert.appleidSmalllWrite,
-            "vclTrk":UITLoakerinder.pnolyert.onlyidduserFME,
-            "ntfRiff":AppDelegate.appUITPushToken,
+            "roleID":UITLoakerinder.pnolyert.appleidSmalllWrite,
+            "maskTech":AppDelegate.uuidGeting(),
+            "curtainCall":AppDelegate.appUITPushToken,
 //            combinadinAllFME[0]:[
 //                combinadinAllFME[1]:"Seoul",
 //                combinadinAllFME[2]:"KR",
