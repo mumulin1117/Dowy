@@ -147,20 +147,20 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
         trunbvButon.addTarget(self, action: #selector(MJAIfsender), for: .touchUpInside)
         trnbcdsdm()
         
-        alpubleMiAJ =   [(self.restobuingd(Cubecm:"4h0q0"),"sneufalxrsvdezhs",self.restobuingd(Cubecm:"0.99")),
-                       (self.restobuingd(Cubecm:"8v0f0"),"nwptwfzqdadbblei",self.restobuingd(Cubecm:"1.99")),
-                       (self.restobuingd(Cubecm:"2h4x5c0"),"hhkximdsbflyvucx",self.restobuingd(Cubecm:"4.99")),
-                       (self.restobuingd(Cubecm:"4e9y0f0"),"xpnayttqrxzmhjkk",self.restobuingd(Cubecm:"9.99")),
-                       (self.restobuingd(Cubecm:"9v8s0b0"),"fhcjqodkgartaqph",self.restobuingd(Cubecm:"19.99")),
-                       (self.restobuingd(Cubecm:"1r0e5m0v0"),"dowynmcvbnbjfu",self.restobuingd(Cubecm:"29.99")),
-                       (self.restobuingd(Cubecm:"2e4y5k0b0"),"vprqykjiylpzlpof",self.restobuingd(Cubecm:"49.99")),
-                       (self.restobuingd(Cubecm:"3s4l5a0u0"),"dowyzowieguhdr",self.restobuingd(Cubecm:"69.99")),
-                       (self.restobuingd(Cubecm:"4r5v5i0s0"),"dowyaowmmvieuu",self.restobuingd(Cubecm:"89.99")),
-                       (self.restobuingd(Cubecm:"4s9t0r0b0"),"doiodwkldcnnlnfo",self.restobuingd(Cubecm:"99.99"))
+        
+        alpubleMiAJ = [(self.restobuingd(Cubecm:"4h0q0"),"sneufalxrsvdezhs",self.restobuingd(Cubecm:"$v0e.a9h9")),
+                       (self.restobuingd(Cubecm:"8v0f0"),"nwptwfzqdadbblei",self.restobuingd(Cubecm:"$s1j.p9r9")),
+                       (self.restobuingd(Cubecm:"2h4x5c0"),"hhkximdsbflyvucx",self.restobuingd(Cubecm:"$o4h.d9a9")),
+                       (self.restobuingd(Cubecm:"4e9y0f0"),"xpnayttqrxzmhjkk",self.restobuingd(Cubecm:"$c9f.d9q9")),
+                       (self.restobuingd(Cubecm:"9v8s0b0"),"fhcjqodkgartaqph",self.restobuingd(Cubecm:"$r1r9f.l9e9")),
+                       (self.restobuingd(Cubecm:"1r0e5m0v0"),"dowynmcvbnbjfu",self.restobuingd(Cubecm:"$z2h9c.z9a9")),
+                       (self.restobuingd(Cubecm:"2e4y5k0b0"),"vprqykjiylpzlpof",self.restobuingd(Cubecm:"$g4z9u.b9m9")),
+                       (self.restobuingd(Cubecm:"3s4l5a0u0"),"dowyzowieguhdr",self.restobuingd(Cubecm:"$z6v9p.n9l9")),
+                       (self.restobuingd(Cubecm:"4r5v5i0s0"),"dowyaowmmvieuu",self.restobuingd(Cubecm:"$y8v9y.n9i9")),
+                       (self.restobuingd(Cubecm:"4s9t0r0b0"),"doiodwkldcnnlnfo",self.restobuingd(Cubecm:"$l9f9v.x9h9"))
                        
                       
                       ]
-        
         aiopAllopBmalces.register(MiAJBolanvec.self, forCellWithReuseIdentifier: "MiAJBolanvecID")
         aiopAllopBmalces.dataSource = self
         aiopAllopBmalces.contentInset = UIEdgeInsets(top: 30, left: 12, bottom: 100, right: 12)

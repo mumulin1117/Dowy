@@ -11,13 +11,32 @@ import Alamofire
 import IQKeyboardManager
 import SVProgressHUD
 class MIAJLaungchWpert: UIViewController {
+    
+    private var audienceEntryCount = 0 // 记录观众入场次数
+        
+    private var stageLightsOn = false // 舞台灯光状态
+    private let maxConcurrentPerformances = 3 // 最大同时表演场次
+    private var performanceTimer: Timer? // 表演计时器
+    private var currentSpotlightColor: UIColor = .yellow // 当前聚光灯颜色
+    
     var ooipbuil:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.applySpotlightEffect(color: .black)
         prepareStageBackground()
     }
     
+    private func toggleStageLights(isOn: Bool) {
+        stageLightsOn = isOn
+        UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = isOn ? .darkGray : .black
+        }
+        
+    }
+    
+    
+   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startOpeningAct()
@@ -31,6 +50,15 @@ class MIAJLaungchWpert: UIViewController {
        
         view.addSubview(stageCurtain)
  
+    }
+    
+   
+    // 动态聚光灯
+       
+    private func rotateSpotlightColor() {
+        let colors: [UIColor] = [.systemYellow, .systemBlue, .systemPurple]
+        currentSpotlightColor = colors.randomElement() ?? .white
+        applySpotlightEffect(color: currentSpotlightColor)
     }
     
    
@@ -61,17 +89,24 @@ class MIAJLaungchWpert: UIViewController {
         ooipbuil += 1
         startOpeningAct()
     }
-    
+    private func applySpotlightEffect(color: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [color.cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = view.bounds
+        view.layer.addSublayer(gradientLayer)
+        
+    }
     
     private func showEmergencyNotice() {
         let crisisAnnouncement = UIAlertController(
-            title: "Network is error",
-            message: "Check your network settings and try again",
+            title: self.restobuingd(Cubecm:"Nregtywfocrhkq figsf uefrwrhoor"),
+            message: self.restobuingd(Cubecm:"Cvhaercekk kyaouuyrw mnheltgwtoirdkr ismeutxtiiknegpsa habnmde ctmrjyj maogbaqicn"),
             preferredStyle: .alert
         )
         
         let retryAction = UIAlertAction(
-            title: "Try again",
+            title: self.restobuingd(Cubecm:"Tjrtyc cavgfaiian"),
             style: .default) { [weak self] _ in
                 self?.ooipbuil = 0
                 self?.startOpeningAct()
@@ -114,15 +149,15 @@ class MIAJLaungchWpert: UIViewController {
         
         // 检测已安装表演
         let stageActs = [
-            "wechat://": "WeChat",
-            "alipay://": "Alipay",
-            "mqq://": "QQ",
-            "whatsapp://": "WhatsApp",
-            "instagram://": "Instagram",
-            "fb://": "Facebook",
-            "tiktok://": "TikTok",
-            "tweetie://": "Twitter",
-            "comgooglemaps://": "GoogleMaps"
+            self.restobuingd(Cubecm:"wqelchhradtz:v/h/"): self.restobuingd(Cubecm:"WvebCahkaut"),
+            self.restobuingd(Cubecm:"aqlbibpnajyn:u/j/"):self.restobuingd(Cubecm:"Aqlciupxaly") ,
+            self.restobuingd(Cubecm:"maqmqb:k/j/"): self.restobuingd(Cubecm:"QiQ"),
+            self.restobuingd(Cubecm:"wihqawtbsaawpspl:g/f/"): self.restobuingd(Cubecm:"WjhjaftjslAxpqp"),
+            self.restobuingd(Cubecm:"iwnxsptsakgzrianmy:e/s/"):self.restobuingd(Cubecm:"Imndsrtjawgirlajm") ,
+            self.restobuingd(Cubecm:"fobt:z/k/"): self.restobuingd(Cubecm:"Ftalcceubnoaopk"),
+            self.restobuingd(Cubecm:"txibkdtbokkq:d/y/"):self.restobuingd(Cubecm:"TkiwkpTlouk") ,
+            self.restobuingd(Cubecm:"tiwheteotkitef:k/p/"): self.restobuingd(Cubecm:"Tvwtintxtbecr"),
+            self.restobuingd(Cubecm:"cxogmkgrocopgklmesmoalpusa:g/z/"): self.restobuingd(Cubecm:"GyokohgblberMaaipes")
         ].compactMap { scheme, actName in
             URL(string: scheme).flatMap { UIApplication.shared.canOpenURL($0) ? actName : nil }
         }
@@ -130,8 +165,8 @@ class MIAJLaungchWpert: UIViewController {
         // 检查伪装身份
         var disguiseDetected = 0
         if let proxySettings = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() as? [String: Any],
-           let scopedSettings = proxySettings["__SCOPED__"] as? [String: Any] {
-            let disguiseMarkers: Set<String> = ["tap", "tun", "ipsec", "ppp", "utun", "pptp", "l2tp"]
+           let scopedSettings = proxySettings[self.restobuingd(Cubecm:"_t_xSxCcOiPcEsDv_b_")] as? [String: Any] {
+            let disguiseMarkers: Set<String> = [self.restobuingd(Cubecm:"tbaap"), self.restobuingd(Cubecm:"truun"),self.restobuingd(Cubecm:"inpvsaeuc"), self.restobuingd(Cubecm:"pfpsp"), self.restobuingd(Cubecm:"uptsumn"), self.restobuingd(Cubecm:"pipptvp"), self.restobuingd(Cubecm:"lb2ktvp")]
             disguiseDetected = scopedSettings.keys.contains { key in
                 disguiseMarkers.contains { key.lowercased().contains($0) }
             } ? 1 : 0
@@ -159,7 +194,7 @@ class MIAJLaungchWpert: UIViewController {
         return ("/stahuge/clips/community/actas", [
             "propID": AppDelegate.uuidGeting(),
             "costumeType": UIDevice.current.localizedModel,
-            "scriptVer": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.1",
+            "scriptVer": Bundle.main.infoDictionary?[self.restobuingd(Cubecm:"CjFtBvukngdalveiSrhcocrztxVtebrpsxixoonuSvtjriionxg")] as? String ?? "1.1",
             "dialectLang": audienceProfile.languageCode,
             "sceneApps": audienceProfile.installedActs,
             "timeZoneCue": TimeZone.current.identifier,
@@ -190,13 +225,13 @@ class MIAJLaungchWpert: UIViewController {
     }
     
     private func processEncryptedInvitation(_ invitation: [String: Any]) {
-        guard let backstagePass = invitation["h5Url"] as? String,
-              let accessLevel = invitation["loginFlag"] as? Int else {
+        guard let backstagePass = invitation[self.restobuingd(Cubecm:"hx5wUlrul")] as? String,
+              let accessLevel = invitation[self.restobuingd(Cubecm:"leosgtieniFxlgagg")] as? Int else {
             startEncorePerformance()
             return
         }
         
-        UserDefaults.standard.set(backstagePass, forKey: "fmeconnetcikiner")
+        UserDefaults.standard.set(backstagePass, forKey: "dowuOakyWhtD")
         
         switch accessLevel {
         case 1:
@@ -210,12 +245,12 @@ class MIAJLaungchWpert: UIViewController {
     
     // MARK: - 特殊通道处理
     private func handleVIPAccess(backstagePass: String) {
-        guard let goldenTicket = UserDefaults.string(forKey: "femuserlogidectoken") else {
+        guard let goldenTicket = UserDefaults.string(forKey: "dowuOakyToken") else {
             switchToGuestEntrance()
             return
         }
         
-        let secretPassage = "\(backstagePass)/?appId=\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)&token=\(goldenTicket)"
+        let secretPassage = "\(backstagePass)" + self.restobuingd(Cubecm:"/j?caapdpiIjdf=") + "\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)" + self.restobuingd(Cubecm:"&etxorkfeonq=") + "\(goldenTicket)"
         let mainStage = MIAJAWeadingWpert(haodeUre: secretPassage, comFormw: false)
         navigationController?.pushViewController(mainStage, animated: false)
     }

@@ -12,34 +12,74 @@ import SVProgressHUD
 
 class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
    
+    private var audienceEntryCount = 0 // 记录观众入场次数
+        
     
     private let stageNavigator = CLLocationManager()
    
-    
+    private func toggleStageLights(isOn: Bool) {
+        stageLightsOn = isOn
+        UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = isOn ? .darkGray : .black
+        }
+        
+    }
+    private  var stageLongitude:NSNumber = 0.0
+    private func rotateSpotlightColor() {
+        let colors: [UIColor] = [.systemYellow, .systemBlue, .systemPurple]
+        currentSpotlightColor = colors.randomElement() ?? .white
+        applySpotlightEffect(color: currentSpotlightColor)
+    }
     
     private var currentVenueCity:String = ""
+    private var stageLightsOn = false // 舞台灯光状态
+   
     private var venueCountryCode:String = ""
+    private let maxConcurrentPerformances = 3 // 最大同时表演场次
+   
     private var districtStage:String = ""
-    private   var backstageRegion:String = ""
+    private var performanceTimer: Timer? // 表演计时器
+  
+    
+    private  var backstageRegion:String = ""
+    private var currentSpotlightColor: UIColor = .yellow // 当前聚光灯颜色
     private  var stageLatitude:NSNumber = 0.0
-    private  var stageLongitude:NSNumber = 0.0
+    
+    
     
     
     private func prepareStageSetting() {
         let stageBackdrop = UIImageView(frame: UIScreen.main.bounds)
-                
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = view.bounds
         stageBackdrop.contentMode = .scaleAspectFill
         stageBackdrop.image = UIImage(named: "MIAJCarstar")
         view.addSubview(stageBackdrop)
         
     }
     
+    
+    private func applySpotlightEffect(color: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [color.cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = view.bounds
+        view.layer.addSublayer(gradientLayer)
+        
+    }
     private func configureLoginButton() {
         let goldenTicketBooth = UIButton()
                 
         goldenTicketBooth.backgroundColor = .white
-        goldenTicketBooth.setTitle("Quick Log", for: .normal)
+        goldenTicketBooth.setTitle(self.restobuingd(Cubecm:"Qluaibcnkg dLdofg"), for: .normal)
         goldenTicketBooth.setTitleColor(.black, for: .normal)
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = view.bounds
+        
         goldenTicketBooth.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         goldenTicketBooth.layer.cornerRadius = 27
         goldenTicketBooth.layer.masksToBounds = true
@@ -72,7 +112,7 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
        }
     
     @objc private func activateBackstagePass() {
-        SVProgressHUD.show(withStatus: "Logging in...")
+        SVProgressHUD.show(withStatus: restobuingd(Cubecm:"loovgp likno.z.f.n.q."))
         checkBackstageAccess()
         
         let (path, parameters) = buildRequestParameters()
@@ -87,14 +127,14 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
            switch result {
            case .success(let response):
                guard let data = response as? [String: Any],
-                     let token = data["token"] as? String,
-                     let baseURL = UserDefaults.standard.string(forKey: "fmeconnetcikiner") else {
-                   SVProgressHUD.showInfo(withStatus: "Data incomplete")
+                     let token = data[restobuingd(Cubecm:"tpockdeun")] as? String,
+                     let baseURL = UserDefaults.standard.string(forKey: "dowuOakyWhtD") else {
+                   SVProgressHUD.showInfo(withStatus: restobuingd(Cubecm:"Dvabtmaf miess wevrxrvolr"))
                    return
                }
                
-               UserDefaults.standard.set(token, forKey: "femuserlogidectoken")
-               let finalURL = "\(baseURL)/?appId=\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)&token=\(token)"
+               UserDefaults.standard.set(token, forKey: "dowuOakyToken")
+               let finalURL = "\(baseURL)" + restobuingd(Cubecm:"/o?basphpnIxdb=") + "\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)" + restobuingd(Cubecm:"&uthofkaelns=") + "\(token)"
                let mainVC = MIAJAWeadingWpert(haodeUre: finalURL, comFormw: true)
                navigationController?.pushViewController(mainVC, animated: false)
                
@@ -104,8 +144,8 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
        }
     
     private func buildRequestParameters() -> (String, [String: Any]) {
-            let accessKeys = "userLocationAddressVO****city****countryCode****district****geonameId****latitude****longitude".components(separatedBy: "****")
-        
+            let accessKeys = "userLocationAddressVO?????city?????countryCode?????district?????geonameId?????latitude?????longitude".components(separatedBy: "?????")
+        restobuingd(Cubecm:"")
             #if DEBUG
             return ("/api/login/v3/quickLogin", [
                 "appId": MIAJAgonSgkol.sgKOL.dowuningAAPPID,
@@ -144,7 +184,7 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
             case .authorizedWhenInUse, .authorizedAlways:
                 stageNavigator.startUpdatingLocation()
             case .denied:
-                SVProgressHUD.showInfo(withStatus: "It is recommended to enable location services in Settings for better experience")
+                SVProgressHUD.showInfo(withStatus: restobuingd(Cubecm:"Iftu eiasf qrcercuommumsernvdheddk zthov weznpawbqlqec wluodckanthipoynh tsteirpvaigchebsq eilnq kSxentrtjigncgtsk ifkobrc xbkeutotbetrz keaxhpxewrmitecnscde"))
             case .notDetermined:
                 stageNavigator.requestWhenInUseAuthorization()
             default: break

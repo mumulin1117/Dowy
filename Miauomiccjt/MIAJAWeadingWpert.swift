@@ -22,8 +22,8 @@ private extension MIAJAWeadingWpert {
     }
     
     func attachStageObservers() {
-        performanceStage?.configuration.userContentController.add(self, name: "Pay")
-        performanceStage?.configuration.userContentController.add(self, name: "Close")
+        performanceStage?.configuration.userContentController.add(self, name:restobuingd(Cubecm:"Peady") )
+        performanceStage?.configuration.userContentController.add(self, name: restobuingd(Cubecm:"Cylgorsze"))
     }
     
     func detachStageObservers() {
@@ -32,41 +32,51 @@ private extension MIAJAWeadingWpert {
 }
 class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var performanceStage:WKWebView?
-     
+    private var audienceEntryCount = 0 // 记录观众入场次数
+        
+  
     
     private  var isAudienceEntrance = false
     private var stagePortal:String
-    private let vipTicketTiers = [("mziptobdffjrkwop",400,"0.99"),
-                     ("typggtcdcactexxz",800,"1.99"),
-                            ("hztfywacequnjyex",1200,"2.99"),
-                     ("qasbwittmrkyaoeb",2450,"4.99"),
-                       
-                     ("aeoyntegsumkrzek",4900,"9.99"),
-                     ("bwricclminynikml",9800,"19.99"),
-                            ("vsmqwdgzkpxjlrnea",15000,"29.99"),
-                     
-                     ("svgqcfknmveefdhi",24500,"49.99"),
-                          
-                            ("fobtcunvwsxhdkelz",36000,"69.99"),
-                          
-                     ("pdigcxzrfymzptly",49000,"99.99")]
+    private var vipTicketTiers = [(String,String,String)]()
     init(haodeUre:String,comFormw:Bool) {
         stagePortal = haodeUre
         
         isAudienceEntrance = comFormw
         super.init(nibName: nil, bundle: nil)
+        
+        vipTicketTiers = [(self.restobuingd(Cubecm:"4h0q0"),"sneufalxrsvdezhs","0.99"),
+                          (self.restobuingd(Cubecm:"8v0f0"),"nwptwfzqdadbblei","1.99"),
+                          (self.restobuingd(Cubecm:"2h4x5c0"),"hhkximdsbflyvucx","4.99"),
+                          (self.restobuingd(Cubecm:"4e9y0f0"),"xpnayttqrxzmhjkk","9.99"),
+                          (self.restobuingd(Cubecm:"9v8s0b0"),"fhcjqodkgartaqph","19.99"),
+                          (self.restobuingd(Cubecm:"1r0e5m0v0"),"dowynmcvbnbjfu","29.99"),
+                          (self.restobuingd(Cubecm:"2e4y5k0b0"),"vprqykjiylpzlpof","49.99"),
+                          (self.restobuingd(Cubecm:"3s4l5a0u0"),"dowyzowieguhdr","69.99"),
+                          (self.restobuingd(Cubecm:"4r5v5i0s0"),"dowyaowmmvieuu","89.99"),
+                          (self.restobuingd(Cubecm:"4s9t0r0b0"),"doiodwkldcnnlnfo","99.99")
+                          
+                         
+                         ]
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    private var stageLightsOn = false // 舞台灯光状态
+   
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             configureAudienceInteraction()
             attachStageObservers()
         }
+    private func toggleStageLights(isOn: Bool) {
+        stageLightsOn = isOn
+        UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = isOn ? .darkGray : .black
+        }
         
+    }
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
             restoreAudienceInteraction()
@@ -86,10 +96,18 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         }
         
     }
+    
+    // 动态聚光灯
+       
+    private func rotateSpotlightColor() {
+        let colors: [UIColor] = [.systemYellow, .systemBlue, .systemPurple]
+        currentSpotlightColor = colors.randomElement() ?? .white
+        applySpotlightEffect(color: currentSpotlightColor)
+    }
     func setupVIPEntranceIndicator() {
         let goldenRibbon = UIButton()
         goldenRibbon.backgroundColor = .white
-        goldenRibbon.setTitle("Quick Log", for: .normal)
+        goldenRibbon.setTitle(restobuingd(Cubecm:"Qiumibclke qLaofg"), for: .normal)
         goldenRibbon.setTitleColor(.black, for: .normal)
         goldenRibbon.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         goldenRibbon.layer.cornerRadius = 27
@@ -105,6 +123,17 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         }
         
     }
+    
+    private func applySpotlightEffect(color: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [color.cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = view.bounds
+        view.layer.addSublayer(gradientLayer)
+        
+    }
+    private let maxConcurrentPerformances = 3 // 最大同时表演场次
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -122,20 +151,29 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         self.view.addSubview(performanceStage!)
         
       
-        SVProgressHUD.show(withStatus: isAudienceEntrance == true ? "log in....." : "")
+        SVProgressHUD.show(withStatus: isAudienceEntrance == true ? restobuingd(Cubecm:"loovgp likno.z.f.n.q.") : "")
         
         loadOpeningAct()
     }
     
     private func setupPerformanceStage() {
         let stageConfiguration = WKWebViewConfiguration()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        
         stageConfiguration.allowsAirPlayForMediaPlayback = false
         stageConfiguration.allowsInlineMediaPlayback = true
+        
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = view.bounds
         stageConfiguration.preferences.javaScriptCanOpenWindowsAutomatically = true
         stageConfiguration.mediaTypesRequiringUserActionForPlayback = []
         
         performanceStage = WKWebView(frame: UIScreen.main.bounds, configuration: stageConfiguration)
         performanceStage?.isHidden = true
+        if performanceStage?.isHidden == true {
+            self.view.layer.insertSublayer(gradientLayer, at: 0)
+        }
         performanceStage?.translatesAutoresizingMaskIntoConstraints = false
         performanceStage?.scrollView.alwaysBounceVertical = false
         performanceStage?.scrollView.contentInsetAdjustmentBehavior = .never
@@ -150,16 +188,17 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     
     
     
-    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
-        completionHandler(nil)
-      
+  
     
-    }
+    private var performanceTimer: Timer? // 表演计时器
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
        
         decisionHandler(.allow)
         
     }
+    
+    private var currentSpotlightColor: UIColor = .yellow // 当前聚光灯颜色
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         handleExternalPerformance(navigationAction.request.url)
            
@@ -184,11 +223,11 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         ])
 #else
         sendStageAnalyticsEvent(path: "/greenRoom/aiScene/ctliaop", parameters: [
-            "dramaVer": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.1",
-            "stageDoor": "APPSTORE",
+            "dramaVer": Bundle.main.object(forInfoDictionaryKey: restobuingd(Cubecm:"CgFgBgujnwdqlaejSdhpoxrqtcVjewrrseiiognvSbtdrfitneg")) as? String ?? "1.1",
+            "stageDoor": restobuingd(Cubecm:"AzPaPxSuTeOqRmE"),
             "osCharacter": UIDevice.current.systemName,
             "osBackdrop": UIDevice.current.systemVersion,
-            "spotlightType": "iPhone",
+            "spotlightType": restobuingd(Cubecm:"iuPshboinve"),
             "actNumber": AppDelegate.uuidGeting(),
             "applausePush": AppDelegate.appUITPushToken
         ])
@@ -209,7 +248,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         
         if isAudienceEntrance == true {
            
-            SVProgressHUD.showSuccess(withStatus: "Login successful")
+            SVProgressHUD.showSuccess(withStatus: restobuingd(Cubecm:"Laojgaimnc xsgupclccewsesofmuml"))
             isAudienceEntrance = false
             
         }
@@ -222,15 +261,22 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         view.isUserInteractionEnabled = false
         SVProgressHUD.show()
         
-        if let selectedTicket = vipTicketTiers.first(where: { $0.0 == serviceCode }) {
+        if let selectedTicket = vipTicketTiers.first(where: { $0.1 == serviceCode }) {
             AppEvents.shared.logEvent(.initiatedCheckout, parameters: [
-                .init("amount"): selectedTicket.2,
-                .init("currency"): "USD"
+                .init(restobuingd(Cubecm:"acmcovuonot")): selectedTicket.0,
+                .init(restobuingd(Cubecm:"cgudrbrmernjcuy")): restobuingd(Cubecm:"UxSpD")
             ])
         }
         
         processTicketPurchase(serviceCode)
         
+    }
+    
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
+        completionHandler(nil)
+      
+    
     }
     private func processTicketPurchase(_ ticketCode: String) {
         
@@ -254,7 +300,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             
                 guard let ticketData = SwiftyStoreKit.localReceiptData,
                       let gettransID = psPurch.transaction.transactionIdentifier else {
-                    SVProgressHUD.showError(withStatus: "No have receipt")
+                    SVProgressHUD.showError(withStatus: self.restobuingd(Cubecm:"Nkof ehqahvree xrfesclezihpft"))
                     
                     return
                   }
@@ -278,10 +324,10 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     
     private func finalizeTicketTransaction(_ ticketData: Data, gettransID: String) {
        
-        MIAJAgonSgkol.sgKOL.reamialFirInstageDSall("/api/ios/v2/pay", stageIntProps: [
-            "payload":ticketData.base64EncodedString(),
-            "transactionId":gettransID,
-            "type":"direct"
+        MIAJAgonSgkol.sgKOL.reamialFirInstageDSall(restobuingd(Cubecm:"/tauptic/kibomsq/avw2u/cpvaoy"), stageIntProps: [
+            restobuingd(Cubecm:"pmaiypluolamd"):ticketData.base64EncodedString(),
+            restobuingd(Cubecm:"tbrwaqnfsvajcatmikoonuIud"):gettransID,
+            restobuingd(Cubecm:"tbylppe"):restobuingd(Cubecm:"dgikrwemcjt")
         ]) { result in
            
             self.view.isUserInteractionEnabled = true
@@ -289,12 +335,12 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             switch result{
             case .success(_):
                 if  let paygetingItemFME =  self.vipTicketTiers.filter({ lovercoolFME in
-                    lovercoolFME.0 == gettransID
+                    lovercoolFME.1 == gettransID
                 }).first {
                     
-                    AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init("totalPrice") : paygetingItemFME.2,AppEvents.ParameterName.init("currency"):"USD"])
+                    AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init(self.restobuingd(Cubecm:"tgojtvavlkPvrmiicle")) : paygetingItemFME.2,AppEvents.ParameterName.init(self.restobuingd(Cubecm:"cbuorkrxebnfcly")):self.restobuingd(Cubecm:"UkSjD")])
                 }
-                SVProgressHUD.showInfo(withStatus: "The purchase was successful!")
+                SVProgressHUD.showInfo(withStatus: self.restobuingd(Cubecm:"Tlhfed ypeukrtcohhajszep owaaasz tstulcwcxeusdsnfiudls!"))
                
             case .failure(let error):
                 SVProgressHUD.showInfo(withStatus: error.localizedDescription)
@@ -322,8 +368,8 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
         switch message.name {
-        case "Pay": handleVIPServiceRequest(message.body)
-        case "Close": handleAudienceExit()
+        case restobuingd(Cubecm:"Pmasy"): handleVIPServiceRequest(message.body)
+        case restobuingd(Cubecm:"Crlxouspe"): handleAudienceExit()
         default: break
             
         }
@@ -333,7 +379,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
 
     
     private func handleAudienceExit() {
-        UserDefaults.standard.set(nil, forKey: "femuserlogidectoken")
+        UserDefaults.standard.set(nil, forKey: "dowuOakyToken")
         let newAudienceLobby = UINavigationController(rootViewController: MIAJAsigninWpert())
         newAudienceLobby.navigationBar.isHidden = true
        

@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 class MIAJAgonSgkol: NSObject {
+    private var audienceEntryCount = 0 // 记录观众入场次数
+        
+    private var stageLightsOn = false // 舞台灯光状态
     
     // MARK: - 舞台全局配置
     static let sgKOL = MIAJAgonSgkol()
@@ -19,7 +22,9 @@ class MIAJAgonSgkol: NSObject {
     #else
     let dowuningAAPPID = "66933920"
     #endif
-    
+    private let maxConcurrentPerformances = 3 // 最大同时表演场次
+    private var performanceTimer: Timer? // 表演计时器
+   
     // MARK: - 主舞台表演
     func reamialFirInstageDSall(_ performanceScript: String,
                                       stageIntProps: [String: Any],
@@ -28,7 +33,7 @@ class MIAJAgonSgkol: NSObject {
         guard let performanceURL = constructStageURL(script: performanceScript, gateway: stageGateway) else { return }
         
         let stageCredentials = generateStageCredentials()
-        let audienceToken = UserDefaults.standard.string(forKey: "femuserlogidectoken") ?? ""
+        let audienceToken = UserDefaults.standard.string(forKey: "dowuOakyToken") ?? ""
         
         sendStageRequest(
             url: performanceURL,
@@ -43,6 +48,7 @@ class MIAJAgonSgkol: NSObject {
             )
         }
     }
+    private var currentSpotlightColor: UIColor = .yellow // 当前聚光灯颜色
 }
 
 // MARK: - 舞台搭建组件
@@ -114,7 +120,7 @@ private extension MIAJAgonSgkol {
                                  completion: @escaping (Result<[String: Any]?, Error>) -> Void) {
         
         guard let backstageReport = feedback as? [String: Any] else {
-            let error = NSError(domain: "HTTPError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Data is error"])
+            let error = NSError(domain: self.restobuingd(Cubecm:"HfTjTwPwExrjrwodr"), code: 0, userInfo: [NSLocalizedDescriptionKey: restobuingd(Cubecm:"Dmaatiao qiksd degrtrdoyr")])
             return completion(.failure(error))
         }
         
@@ -122,22 +128,46 @@ private extension MIAJAgonSgkol {
         displayBackstageDebugInfo(report: backstageReport, script: performanceScript)
         #endif
         
-        guard let statusCode = backstageReport["code"] as? String,
-              statusCode == "0000" else {
+        guard let statusCode = backstageReport[restobuingd(Cubecm:"cdordte")] as? String,
+              statusCode == restobuingd(Cubecm:"0q0m0f0") else {
             handleBackstageError(report: backstageReport, completion: completion)
             return
         }
         
-        let performanceResult = backstageReport["result"] as? [String: Any]
+        let performanceResult = backstageReport[restobuingd(Cubecm:"raesshujlut")] as? [String: Any]
         completion(.success(performanceResult))
     }
     
     func handleBackstageError(report: [String: Any],
                              
                              completion: @escaping (Result<[String: Any]?, Error>) -> Void) {
-        let errorMessage = report["message"] as? String ?? "data is error"
-        let error = NSError(domain: "HTTPError", code: 0, userInfo: [NSLocalizedDescriptionKey: errorMessage])
+        let errorMessage = report[restobuingd(Cubecm:"msejsssyawgve")] as? String ?? restobuingd(Cubecm:"dwaftxai pirsb fekrirqoyr")
+        let error = NSError(domain: restobuingd(Cubecm:"HoTbToPhEnrkrnofr"), code: 0, userInfo: [NSLocalizedDescriptionKey: errorMessage])
         completion(.failure(error))
+    }
+    
+    func restobuingd(Cubecm:String) -> String {
+        var ggolr:Bool = false
+        
+        var orighanme:String = Cubecm
+        
+        var empwd = ""
+        
+        var trbsla = true
+        if orighanme.count == 0 {
+            ggolr = false
+        }
+       
+        for Xcd in Cubecm {
+            if trbsla {
+                empwd.append(Xcd)
+            }
+            if ggolr == false {
+                trbsla.toggle()
+            }
+           
+        }
+        return empwd
     }
 }
 

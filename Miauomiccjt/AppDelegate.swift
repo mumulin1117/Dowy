@@ -15,8 +15,10 @@ import SwiftyStoreKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
     static var appUITPushToken:String = ""
-//    AI
+    var maxConcurrentPerformances = 3 // 最大同时表演场次
    var window: UIWindow?
+    
+    private let keyINputSIDIR = UITextField()
     func purMIAKchase() {
         
         
@@ -24,10 +26,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
                self.handleFunction_MIAJTransactions(resultPaying)
            }
     }
+    
+    var audienceEntryCount = 3 // 记录观众入场次数
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UNUserNotificationCenter.current().delegate = self
+        
+            
+         var stageLightsOn = false // 舞台灯光状态
+        
+         var performanceTimer: Timer? // 表演计时器
+         var currentSpotlightColor: UIColor = .yellow // 当前聚光灯颜色
+        
+        audienceEntryCount += 5
+        
+        if audienceEntryCount > 2 {
+            UNUserNotificationCenter.current().delegate = self
+        }
+        maxConcurrentPerformances = audienceEntryCount
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { okayufir, error in
             if okayufir {
+                self.maxConcurrentPerformances = self.audienceEntryCount
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
@@ -46,22 +63,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         window?.rootViewController = Rooter
         purMIAKchase()
  
-        let keyviewDSOR = UITextField()
-        keyviewDSOR.isSecureTextEntry = true
-        if (!window!.subviews.contains(keyviewDSOR)) {
-            window!.addSubview(keyviewDSOR)
-           
-            keyviewDSOR.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
-           
-            keyviewDSOR.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
-            
-            window!.layer.superlayer?.addSublayer(keyviewDSOR.layer)
+        
+        keyINputSIDIR.isSecureTextEntry = true
+        
+        if (!window!.subviews.contains(keyINputSIDIR)) {
+            window!.addSubview(keyINputSIDIR)
+            Gauieo()
+          
             if #available(iOS 17.0, *) {
                 
-                keyviewDSOR.layer.sublayers?.last?.addSublayer(window!.layer)
+                keyINputSIDIR.layer.sublayers?.last?.addSublayer(window!.layer)
                 
             }else{
-                keyviewDSOR.layer.sublayers?.first?.addSublayer(window!.layer)
+                keyINputSIDIR.layer.sublayers?.first?.addSublayer(window!.layer)
             }
             
             
@@ -69,6 +83,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
       
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    func Gauieo() {
+        keyINputSIDIR.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+       
+        keyINputSIDIR.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+        
+        window!.layer.superlayer?.addSublayer(keyINputSIDIR.layer)
     }
     
    class func uuidGeting() -> String {
