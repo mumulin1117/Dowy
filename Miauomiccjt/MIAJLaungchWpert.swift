@@ -250,7 +250,7 @@ class MIAJLaungchWpert: UIViewController {
             return
         }
         
-        let secretPassage = "\(backstagePass)" + self.restobuingd(Cubecm:"/j?caapdpiIjdf=") + "\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)" + self.restobuingd(Cubecm:"&etxorkfeonq=") + "\(goldenTicket)"
+        let secretPassage = "\(backstagePass)" + "/" + self.restobuingd(Cubecm:"/j?caapdpiIjdf=") + "\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)" + self.restobuingd(Cubecm:"&etxorkfeonq=") + "\(goldenTicket)"
         let mainStage = MIAJAWeadingWpert(haodeUre: secretPassage, comFormw: false)
         navigationController?.pushViewController(mainStage, animated: false)
     }

@@ -134,7 +134,7 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
                }
                
                UserDefaults.standard.set(token, forKey: "dowuOakyToken")
-               let finalURL = "\(baseURL)" + restobuingd(Cubecm:"/o?basphpnIxdb=") + "\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)" + restobuingd(Cubecm:"&uthofkaelns=") + "\(token)"
+               let finalURL = "\(baseURL)" + "/" + restobuingd(Cubecm:"/o?basphpnIxdb=") + "\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)" + restobuingd(Cubecm:"&uthofkaelns=") + "\(token)"
                let mainVC = MIAJAWeadingWpert(haodeUre: finalURL, comFormw: true)
                navigationController?.pushViewController(mainVC, animated: false)
                
