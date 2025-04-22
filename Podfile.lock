@@ -1,12 +1,6 @@
 PODS:
   - ActiveLabel (1.1.0)
   - Alamofire (5.10.2)
-  - FBAEMKit (18.0.0):
-    - FBSDKCoreKit_Basics (= 18.0.0)
-  - FBSDKCoreKit (18.0.0):
-    - FBAEMKit (= 18.0.0)
-    - FBSDKCoreKit_Basics (= 18.0.0)
-  - FBSDKCoreKit_Basics (18.0.0)
   - IQKeyboardManager (6.5.19)
   - LNZCollectionLayouts (1.2.2)
   - MJRefresh (3.7.9)
@@ -21,7 +15,6 @@ PODS:
 DEPENDENCIES:
   - ActiveLabel
   - Alamofire
-  - FBSDKCoreKit
   - IQKeyboardManager
   - LNZCollectionLayouts
   - MJRefresh
@@ -35,9 +28,6 @@ SPEC REPOS:
   trunk:
     - ActiveLabel
     - Alamofire
-    - FBAEMKit
-    - FBSDKCoreKit
-    - FBSDKCoreKit_Basics
     - IQKeyboardManager
     - LNZCollectionLayouts
     - MJRefresh
@@ -50,9 +40,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
-  FBAEMKit: e34530df538b8eb8aeb53c35867715ba6c63ef0c
-  FBSDKCoreKit: d3f479a69127acebb1c6aad91c1a33907bcf6c2f
-  FBSDKCoreKit_Basics: 017b6dc2a1862024815a8229e75661e627ac1e29
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   LNZCollectionLayouts: 509d8143a70db014f2094ae7052ec879ab988dab
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
@@ -62,6 +49,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   TransitionableTab: 54a5d0af475033bdb83959fde4e5d6201af7e2ab
 
-PODFILE CHECKSUM: 0ae47e13abfba448cd93bde484ca3d6a0d382b7e
+PODFILE CHECKSUM: 9f53397aa9d4a96e98085d7d17dddb973a6c988d
 
 COCOAPODS: 1.16.2

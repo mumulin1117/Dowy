@@ -6,11 +6,12 @@
 //  Copyright © 2025 MIAJ. All rights reserved.
 //
 import UIKit
-
+import WebKit
 import Alamofire
 import SwiftyStoreKit
-import FBSDKCoreKit
+
 import SVProgressHUD
+import StoreKit
 //web
 private extension MIAJAWeadingWpert {
     func configureAudienceInteraction() {
@@ -45,19 +46,19 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         isAudienceEntrance = comFormw
         super.init(nibName: nil, bundle: nil)
         
-        vipTicketTiers = [(self.restobuingd(Cubecm:"4h0q0"),"sneufalxrsvdezhs","0.99"),
-                          (self.restobuingd(Cubecm:"8v0f0"),"nwptwfzqdadbblei","1.99"),
-                          (self.restobuingd(Cubecm:"2h4x5c0"),"hhkximdsbflyvucx","4.99"),
-                          (self.restobuingd(Cubecm:"4e9y0f0"),"xpnayttqrxzmhjkk","9.99"),
-                          (self.restobuingd(Cubecm:"9v8s0b0"),"fhcjqodkgartaqph","19.99"),
-                          (self.restobuingd(Cubecm:"1r0e5m0v0"),"dowynmcvbnbjfu","29.99"),
-                          (self.restobuingd(Cubecm:"2e4y5k0b0"),"vprqykjiylpzlpof","49.99"),
-                          (self.restobuingd(Cubecm:"3s4l5a0u0"),"dowyzowieguhdr","69.99"),
-                          (self.restobuingd(Cubecm:"4r5v5i0s0"),"dowyaowmmvieuu","89.99"),
-                          (self.restobuingd(Cubecm:"4s9t0r0b0"),"doiodwkldcnnlnfo","99.99")
-                          
-                         
-                         ]
+//        vipTicketTiers = [(self.restobuingd(Cubecm:"4h0q0"),"sneufalxrsvdezhs","0.99"),
+//                          (self.restobuingd(Cubecm:"8v0f0"),"nwptwfzqdadbblei","1.99"),
+//                          (self.restobuingd(Cubecm:"2h4x5c0"),"hhkximdsbflyvucx","4.99"),
+//                          (self.restobuingd(Cubecm:"4e9y0f0"),"xpnayttqrxzmhjkk","9.99"),
+//                          (self.restobuingd(Cubecm:"9v8s0b0"),"fhcjqodkgartaqph","19.99"),
+//                          (self.restobuingd(Cubecm:"1r0e5m0v0"),"dowynmcvbnbjfu","29.99"),
+//                          (self.restobuingd(Cubecm:"2e4y5k0b0"),"vprqykjiylpzlpof","49.99"),
+//                          (self.restobuingd(Cubecm:"3s4l5a0u0"),"dowyzowieguhdr","69.99"),
+//                          (self.restobuingd(Cubecm:"4r5v5i0s0"),"dowyaowmmvieuu","89.99"),
+//                          (self.restobuingd(Cubecm:"4s9t0r0b0"),"doiodwkldcnnlnfo","99.99")
+//                          
+//                         
+//                         ]
     }
     
     required init?(coder: NSCoder) {
@@ -261,12 +262,12 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         view.isUserInteractionEnabled = false
         SVProgressHUD.show()
         
-        if let selectedTicket = vipTicketTiers.first(where: { $0.1 == serviceCode }) {
-            AppEvents.shared.logEvent(.initiatedCheckout, parameters: [
-                .init(restobuingd(Cubecm:"acmcovuonot")): selectedTicket.0,
-                .init(restobuingd(Cubecm:"cgudrbrmernjcuy")): restobuingd(Cubecm:"UxSpD")
-            ])
-        }
+//        if let selectedTicket = vipTicketTiers.first(where: { $0.1 == serviceCode }) {
+//            AppEvents.shared.logEvent(.initiatedCheckout, parameters: [
+//                .init(restobuingd(Cubecm:"acmcovuonot")): selectedTicket.0,
+//                .init(restobuingd(Cubecm:"cgudrbrmernjcuy")): restobuingd(Cubecm:"UxSpD")
+//            ])
+//        }
         
         processTicketPurchase(serviceCode)
         
@@ -334,12 +335,12 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             
             switch result{
             case .success(_):
-                if  let paygetingItemFME =  self.vipTicketTiers.filter({ lovercoolFME in
-                    lovercoolFME.1 == gettransID
-                }).first {
-                    
-                    AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init(self.restobuingd(Cubecm:"tgojtvavlkPvrmiicle")) : paygetingItemFME.2,AppEvents.ParameterName.init(self.restobuingd(Cubecm:"cbuorkrxebnfcly")):self.restobuingd(Cubecm:"UkSjD")])
-                }
+//                if  let paygetingItemFME =  self.vipTicketTiers.filter({ lovercoolFME in
+//                    lovercoolFME.1 == gettransID
+//                }).first {
+//                    
+//                    AppEvents.shared.logEvent(.purchased, parameters: [AppEvents.ParameterName.init(self.restobuingd(Cubecm:"tgojtvavlkPvrmiicle")) : paygetingItemFME.2,AppEvents.ParameterName.init(self.restobuingd(Cubecm:"cbuorkrxebnfcly")):self.restobuingd(Cubecm:"UkSjD")])
+//                }
                 SVProgressHUD.showInfo(withStatus: self.restobuingd(Cubecm:"Tlhfed ypeukrtcohhajszep owaaasz tstulcwcxeusdsnfiudls!"))
                
             case .failure(let error):
