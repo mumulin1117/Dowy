@@ -206,7 +206,8 @@ class MIAJLaungchWpert: UIViewController {
     
     // MARK: - 观众反馈处理
     private func handleAudienceResponse(_ result: Result<[String : Any]?, Error>) {
-#if !DEBUG
+#if DEBUG
+        #else
         SVProgressHUD.dismiss()
 #endif
         

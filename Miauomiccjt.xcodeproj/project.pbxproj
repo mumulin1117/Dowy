@@ -125,6 +125,7 @@
 		04A8E0292D6F1AC200876DCD /* MIAJOudiyouCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJOudiyouCell.xib; sourceTree = "<group>"; };
 		04A8E02C2D6F1F2A00876DCD /* MIAJTakediImmtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIAJTakediImmtion.swift; sourceTree = "<group>"; };
 		04A8E02D2D6F1F2A00876DCD /* MIAJTakediImmtion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MIAJTakediImmtion.xib; sourceTree = "<group>"; };
+		04DB355E2DB76E1D0011D589 /* Miauomiccjt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Miauomiccjt.entitlements; sourceTree = "<group>"; };
 		6AF38A6DF86333246B2E151E /* Pods-Miauomiccjt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miauomiccjt.debug.xcconfig"; path = "Target Support Files/Pods-Miauomiccjt/Pods-Miauomiccjt.debug.xcconfig"; sourceTree = "<group>"; };
 		A72FB339C8490EEA0A118369 /* Pods-Miauomiccjt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miauomiccjt.release.xcconfig"; path = "Target Support Files/Pods-Miauomiccjt/Pods-Miauomiccjt.release.xcconfig"; sourceTree = "<group>"; };
 		ED16E822E9E1E588B0856718 /* Pods_Miauomiccjt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Miauomiccjt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +192,7 @@
 		04A8E00F2D6F01E800876DCD /* Miauomiccjt */ = {
 			isa = PBXGroup;
 			children = (
+				04DB355E2DB76E1D0011D589 /* Miauomiccjt.entitlements */,
 				042C51102D893E0200880678 /* MIAJLaungchWpert.swift */,
 				042C51122D893E7000880678 /* MIAJAsigninWpert.swift */,
 				042C51142D893EAB00880678 /* MIAJAWeadingWpert.swift */,
@@ -476,6 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Miauomiccjt/Miauomiccjt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -516,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Miauomiccjt/Miauomiccjt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
