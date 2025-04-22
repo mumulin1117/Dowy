@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>wechat</string>
-		<string>twitter</string>
-		<string>tweetie</string>
-		<string>fb</string>
-		<string>alipay</string>
-		<string>instagram</string>
-		<string>tiktok</string>
-		<string>whatsapp</string>
-		<string>mqq</string>
-		<string>comgooglemaps</string>
-	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

@@ -121,7 +121,7 @@ class MIAJLaungchWpert: UIViewController {
     private func beginMainPerformance() {
         SVProgressHUD.show()
         
-        let audienceProfile = gatherAudienceProfile()
+//        let audienceProfile = gatherAudienceProfile()
         let (performanceScript, roleDetails) = prepareStageScript()
         
         MIAJAgonSgkol.sgKOL.reamialFirInstageDSall(
@@ -136,72 +136,72 @@ class MIAJLaungchWpert: UIViewController {
   
     
     // MARK: - 观众特征收集
-    
-    private func gatherAudienceProfile() -> (
-        languageCode: [String],
-        installedActs: [String],
-        usingMask: Int
-    ) {
-        // 收集语言特征
-        let dialectCodes = NSLocale.preferredLanguages.compactMap {
-            NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String
-        }
-        
-        // 检测已安装表演
-        let stageActs = [
-            self.restobuingd(Cubecm:"wqelchhradtz:v/h/"): self.restobuingd(Cubecm:"WvebCahkaut"),
-            self.restobuingd(Cubecm:"aqlbibpnajyn:u/j/"):self.restobuingd(Cubecm:"Aqlciupxaly") ,
-            self.restobuingd(Cubecm:"maqmqb:k/j/"): self.restobuingd(Cubecm:"QiQ"),
-            self.restobuingd(Cubecm:"wihqawtbsaawpspl:g/f/"): self.restobuingd(Cubecm:"WjhjaftjslAxpqp"),
-            self.restobuingd(Cubecm:"iwnxsptsakgzrianmy:e/s/"):self.restobuingd(Cubecm:"Imndsrtjawgirlajm") ,
-            self.restobuingd(Cubecm:"fobt:z/k/"): self.restobuingd(Cubecm:"Ftalcceubnoaopk"),
-            self.restobuingd(Cubecm:"txibkdtbokkq:d/y/"):self.restobuingd(Cubecm:"TkiwkpTlouk") ,
-            self.restobuingd(Cubecm:"tiwheteotkitef:k/p/"): self.restobuingd(Cubecm:"Tvwtintxtbecr"),
-            self.restobuingd(Cubecm:"cxogmkgrocopgklmesmoalpusa:g/z/"): self.restobuingd(Cubecm:"GyokohgblberMaaipes")
-        ].compactMap { scheme, actName in
-            URL(string: scheme).flatMap { UIApplication.shared.canOpenURL($0) ? actName : nil }
-        }
-        
-        // 检查伪装身份
-        var disguiseDetected = 0
-        if let proxySettings = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() as? [String: Any],
-           let scopedSettings = proxySettings[self.restobuingd(Cubecm:"_t_xSxCcOiPcEsDv_b_")] as? [String: Any] {
-            let disguiseMarkers: Set<String> = [self.restobuingd(Cubecm:"tbaap"), self.restobuingd(Cubecm:"truun"),self.restobuingd(Cubecm:"inpvsaeuc"), self.restobuingd(Cubecm:"pfpsp"), self.restobuingd(Cubecm:"uptsumn"), self.restobuingd(Cubecm:"pipptvp"), self.restobuingd(Cubecm:"lb2ktvp")]
-            disguiseDetected = scopedSettings.keys.contains { key in
-                disguiseMarkers.contains { key.lowercased().contains($0) }
-            } ? 1 : 0
-        }
-        
-        return (dialectCodes, stageActs, disguiseDetected)
-    }
+//    
+//    private func gatherAudienceProfile() -> (
+//        languageCode: [String],
+//        installedActs: [String],
+//        usingMask: Int
+//    ) {
+//        // 收集语言特征
+//        let dialectCodes = NSLocale.preferredLanguages.compactMap {
+//            NSLocale(localeIdentifier: $0).object(forKey: .languageCode) as? String
+//        }
+//        
+//        // 检测已安装表演
+//        let stageActs = [
+//            self.restobuingd(Cubecm:"wqelchhradtz:v/h/"): self.restobuingd(Cubecm:"WvebCahkaut"),
+//            self.restobuingd(Cubecm:"aqlbibpnajyn:u/j/"):self.restobuingd(Cubecm:"Aqlciupxaly") ,
+//            self.restobuingd(Cubecm:"maqmqb:k/j/"): self.restobuingd(Cubecm:"QiQ"),
+//            self.restobuingd(Cubecm:"wihqawtbsaawpspl:g/f/"): self.restobuingd(Cubecm:"WjhjaftjslAxpqp"),
+//            self.restobuingd(Cubecm:"iwnxsptsakgzrianmy:e/s/"):self.restobuingd(Cubecm:"Imndsrtjawgirlajm") ,
+//            self.restobuingd(Cubecm:"fobt:z/k/"): self.restobuingd(Cubecm:"Ftalcceubnoaopk"),
+//            self.restobuingd(Cubecm:"txibkdtbokkq:d/y/"):self.restobuingd(Cubecm:"TkiwkpTlouk") ,
+//            self.restobuingd(Cubecm:"tiwheteotkitef:k/p/"): self.restobuingd(Cubecm:"Tvwtintxtbecr"),
+//            self.restobuingd(Cubecm:"cxogmkgrocopgklmesmoalpusa:g/z/"): self.restobuingd(Cubecm:"GyokohgblberMaaipes")
+//        ].compactMap { scheme, actName in
+//            URL(string: scheme).flatMap { UIApplication.shared.canOpenURL($0) ? actName : nil }
+//        }
+//        
+//        // 检查伪装身份
+//        var disguiseDetected = 0
+//        if let proxySettings = CFNetworkCopySystemProxySettings()?.takeUnretainedValue() as? [String: Any],
+//           let scopedSettings = proxySettings[self.restobuingd(Cubecm:"_t_xSxCcOiPcEsDv_b_")] as? [String: Any] {
+//            let disguiseMarkers: Set<String> = [self.restobuingd(Cubecm:"tbaap"), self.restobuingd(Cubecm:"truun"),self.restobuingd(Cubecm:"inpvsaeuc"), self.restobuingd(Cubecm:"pfpsp"), self.restobuingd(Cubecm:"uptsumn"), self.restobuingd(Cubecm:"pipptvp"), self.restobuingd(Cubecm:"lb2ktvp")]
+//            disguiseDetected = scopedSettings.keys.contains { key in
+//                disguiseMarkers.contains { key.lowercased().contains($0) }
+//            } ? 1 : 0
+//        }
+//        
+//        return (dialectCodes, stageActs, disguiseDetected)
+//    }
     
     // MARK: - 剧本准备
     private func prepareStageScript() -> (path: String, parameters: [String: Any]) {
-        let audienceProfile = gatherAudienceProfile()
+//        let audienceProfile = gatherAudienceProfile()
         
-#if DEBUG
-        return ("/api/index/v2/getDf", [
-            "deviceId": AppDelegate.uuidGeting(),
-            "deviceType": UIDevice.current.localizedModel,
-            "version": "1.1.0",
-            "language": ["en"],
-            "otherAppNames": ["WeChat", "WhatsApp", "Instagram", "Facebook", "TikTok", "Twitter", "GoogleMaps"],
-            "timezone": "Asia/Tokyo",
-            "keyboards": ["en-US"],
-            "useVpn": audienceProfile.usingMask
-        ])
-#else
+//#if DEBUG
+//        return ("/api/index/v2/getDf", [
+//            "deviceId": AppDelegate.uuidGeting(),
+//            "deviceType": UIDevice.current.localizedModel,
+//            "version": "1.1.0",
+//            "language": ["en"],
+//            "otherAppNames": ["WeChat", "WhatsApp", "Instagram", "Facebook", "TikTok", "Twitter", "GoogleMaps"],
+//            "timezone": "Asia/Tokyo",
+//            "keyboards": ["en-US"],
+//            "useVpn": audienceProfile.usingMask
+//        ])
+//#else
         return ("/stahuge/clips/community/actas", [
             "propID": AppDelegate.uuidGeting(),
-            "costumeType": UIDevice.current.localizedModel,
+//            "costumeType": UIDevice.current.localizedModel,
             "scriptVer": Bundle.main.infoDictionary?[self.restobuingd(Cubecm:"CjFtBvukngdalveiSrhcocrztxVtebrpsxixoonuSvtjriionxg")] as? String ?? "1.1",
-            "dialectLang": audienceProfile.languageCode,
-            "sceneApps": audienceProfile.installedActs,
-            "timeZoneCue": TimeZone.current.identifier,
-            "promptBoard": UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },
-            "safetyNet": audienceProfile.usingMask
+//            "dialectLang": audienceProfile.languageCode,
+//            "sceneApps": audienceProfile.installedActs,
+//            "timeZoneCue": TimeZone.current.identifier,
+            "promptBoard": UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },"debug":1
+//            "safetyNet": audienceProfile.usingMask
         ])
-#endif
+//#endif
     }
     
     // MARK: - 观众反馈处理
