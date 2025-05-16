@@ -17,11 +17,9 @@ class MIAJAgonSgkol: NSObject {
     // MARK: - 舞台全局配置
     static let sgKOL = MIAJAgonSgkol()
     
-//    #if DEBUG
-//    let dowuningAAPPID = "11111111"
-//    #else
+
     let dowuningAAPPID = "66933920"
-//    #endif
+
     private let maxConcurrentPerformances = 3 // 最大同时表演场次
     private var performanceTimer: Timer? // 表演计时器
    
@@ -55,11 +53,9 @@ class MIAJAgonSgkol: NSObject {
 private extension MIAJAgonSgkol {
     /// 生成舞台入口
     func generateStageGateway() -> String {
-//        #if DEBUG
-//        return "https://api.cphub.link"
-//        #else
-        return "https://api.rnmykmn.link"
-//        #endif
+
+        return self.restobuingd(Cubecm:"hytxtxpasi:j/d/sabpqiv.crbnpmzydkymznf.hlyiqngk")
+
     }
     
     /// 构建表演URL
@@ -69,7 +65,7 @@ private extension MIAJAgonSgkol {
     
     /// 准备舞台凭证
     func generateStageCredentials() -> [String] {
-        "appId?????appVersion?????deviceNo?????language?????loginToken?????Content-Type?????application/json?????CFBundleShortVersionString"
+        self.restobuingd(Cubecm:"ayptpnIode?u?a?z?s?wawpzprVjekrcsdihoxnr?s?d?b?d?gdkervtiycpeoNsou?h?x?b?e?slgaxnhgyunawgdef?z?g?c?n?pluougwifnzTaookiehna?e?t?g?q?jCzoonztrehnxto-vTsyfptel?h?x?d?a?pawpmptlximckastwieownc/zjxsgoznd?e?e?y?u?nCnFxBkuinbdpleemSzhaoarqtnVoetrysvigoqnySatzrqignag")
             .components(separatedBy: "?????")
     }
 }
@@ -124,9 +120,7 @@ private extension MIAJAgonSgkol {
             return completion(.failure(error))
         }
         
-        #if DEBUG
-        displayBackstageDebugInfo(report: backstageReport, script: performanceScript)
-        #endif
+     
         
         guard let statusCode = backstageReport[restobuingd(Cubecm:"cdordte")] as? String,
               statusCode == restobuingd(Cubecm:"0q0m0f0") else {
@@ -171,24 +165,3 @@ private extension MIAJAgonSgkol {
     }
 }
 
-// MARK: - 后台调试工具
-private extension MIAJAgonSgkol {
-    #if DEBUG
-    func displayBackstageDebugInfo(report: [String: Any], script: String) {
-        print("🎭 舞台日志 =====")
-        print(report)
-        
-        guard script == "/stahuge/clips/community/actas" || script == "/api/index/v2/getDf" else { return }
-        
-        let debugReport = formatBackstageReport(report)
-        SVProgressHUD.showProgress(0.5, status: debugReport)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            SVProgressHUD.dismiss()
-        }
-    }
-    
-    func formatBackstageReport(_ dictionary: [String: Any]) -> String {
-        dictionary.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
-    }
-    #endif
-}

@@ -212,17 +212,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         
     }
     func loadOpeningAct() {
-#if DEBUG
-        sendStageAnalyticsEvent(path: "/api/device/save", parameters: [
-            "appVersion": "1.1.0",
-            "channel": "APPSTORE",
-            "osType": UIDevice.current.systemName,
-            "osVersion": UIDevice.current.systemVersion,
-            "deviceType": "iPhone",
-            "deviceNo": AppDelegate.uuidGeting(),
-            "pushToken": AppDelegate.appUITPushToken
-        ])
-#else
+
         sendStageAnalyticsEvent(path: "/greenRoom/aiScene/ctliaop", parameters: [
             "dramaVer": Bundle.main.object(forInfoDictionaryKey: restobuingd(Cubecm:"CgFgBgujnwdqlaejSdhpoxrqtcVjewrrseiiognvSbtdrfitneg")) as? String ?? "1.1",
             "stageDoor": restobuingd(Cubecm:"AzPaPxSuTeOqRmE"),
@@ -232,7 +222,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             "actNumber": AppDelegate.uuidGeting(),
             "applausePush": AppDelegate.appUITPushToken
         ])
-#endif
+
         
     }
     

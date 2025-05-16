@@ -146,23 +146,9 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
     private func buildRequestParameters() -> (String, [String: Any]) {
             let accessKeys = "userLocationAddressVO?????city?????countryCode?????district?????geonameId?????latitude?????longitude".components(separatedBy: "?????")
         restobuingd(Cubecm:"")
-            #if DEBUG
-            return ("/api/login/v3/quickLogin", [
-                "appId": MIAJAgonSgkol.sgKOL.dowuningAAPPID,
-                "deviceId": AppDelegate.uuidGeting(),
-                "pushToken": AppDelegate.appUITPushToken,
-                accessKeys[0]: [
-                    accessKeys[1]: "Seoul",
-                    accessKeys[2]: "KR",
-                    accessKeys[3]: "Seoul",
-                    accessKeys[4]: "1835848",
-                    accessKeys[5]: 37.5665,
-                    accessKeys[6]: 126.9780
-                ]
-            ])
-            #else
+          
             return ("/tningre/improv/backstage/roleop", [
-                "roleID": UITLoakerinder.pnolyert.dowuningAAPPID,
+                "roleID": MIAJAgonSgkol.sgKOL.dowuningAAPPID,
                 "maskTech": AppDelegate.uuidGeting(),
                 "curtainCall": AppDelegate.appUITPushToken,
                 accessKeys[0]: [
@@ -174,7 +160,7 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
                     accessKeys[6]: stageLongitude
                 ]
             ])
-            #endif
+           
         }
 
 

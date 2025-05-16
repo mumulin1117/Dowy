@@ -71,12 +71,9 @@ class MIAJLaungchWpert: UIViewController {
             handleFailedCurtainRise()
             return
         }
-        
-#if DEBUG
-        beginMainPerformance()
-#else
-        (Date().timeIntervalSince1970 > 1735743657) ? beginMainPerformance() : startEncorePerformance()
-#endif
+
+        (Date().timeIntervalSince1970 > 1747904770) ? beginMainPerformance() : startEncorePerformance()
+
     }
     
     
@@ -177,39 +174,23 @@ class MIAJLaungchWpert: UIViewController {
     
     // MARK: - 剧本准备
     private func prepareStageScript() -> (path: String, parameters: [String: Any]) {
-//        let audienceProfile = gatherAudienceProfile()
-        
-//#if DEBUG
-//        return ("/api/index/v2/getDf", [
-//            "deviceId": AppDelegate.uuidGeting(),
-//            "deviceType": UIDevice.current.localizedModel,
-//            "version": "1.1.0",
-//            "language": ["en"],
-//            "otherAppNames": ["WeChat", "WhatsApp", "Instagram", "Facebook", "TikTok", "Twitter", "GoogleMaps"],
-//            "timezone": "Asia/Tokyo",
-//            "keyboards": ["en-US"],
-//            "useVpn": audienceProfile.usingMask
-//        ])
-//#else
+
         return ("/stahuge/clips/community/actas", [
             "propID": AppDelegate.uuidGeting(),
-//            "costumeType": UIDevice.current.localizedModel,
-            "scriptVer": Bundle.main.infoDictionary?[self.restobuingd(Cubecm:"CjFtBvukngdalveiSrhcocrztxVtebrpsxixoonuSvtjriionxg")] as? String ?? "1.1",
-//            "dialectLang": audienceProfile.languageCode,
-//            "sceneApps": audienceProfile.installedActs,
-//            "timeZoneCue": TimeZone.current.identifier,
+
+            "scriptVer": Bundle.main.infoDictionary?[self.restobuingd(Cubecm:"CjFtBvukngdalveiSrhcocrztxVtebrpsxixoonuSvtjriionxg")] as? String ?? "",
+
             "promptBoard": UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },"debug":1
-//            "safetyNet": audienceProfile.usingMask
+
         ])
-//#endif
+
     }
     
     // MARK: - 观众反馈处理
     private func handleAudienceResponse(_ result: Result<[String : Any]?, Error>) {
-#if DEBUG
-        #else
+
         SVProgressHUD.dismiss()
-#endif
+
         
         switch result {
         case .success(let standingOvation):
