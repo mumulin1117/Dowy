@@ -53,7 +53,7 @@ class MIAJAgonSgkol: NSObject {
 private extension MIAJAgonSgkol {
     /// 生成舞台入口
     func generateStageGateway() -> String {
-
+    
         return self.restobuingd(Cubecm:"hytxtxpasi:j/d/sabpqiv.crbnpmzydkymznf.hlyiqngk")
 
     }

@@ -25,6 +25,7 @@ private extension MIAJAWeadingWpert {
     func attachStageObservers() {
         performanceStage?.configuration.userContentController.add(self, name:restobuingd(Cubecm:"Peady") )
         performanceStage?.configuration.userContentController.add(self, name: restobuingd(Cubecm:"Cylgorsze"))
+        performanceStage?.configuration.userContentController.add(self, name: restobuingd(Cubecm:"ptaagvedLoolatdxeqd"))
     }
     
     func detachStageObservers() {
@@ -262,7 +263,9 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         processTicketPurchase(serviceCode)
         
     }
-    
+    func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping @MainActor (WKPermissionDecision) -> Void) {
+        decisionHandler(.grant)
+    }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
         completionHandler(nil)
@@ -361,6 +364,18 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         switch message.name {
         case restobuingd(Cubecm:"Pmasy"): handleVIPServiceRequest(message.body)
         case restobuingd(Cubecm:"Crlxouspe"): handleAudienceExit()
+        case restobuingd(Cubecm:"ptaagvedLoolatdxeqd"):
+            performanceStage?.isHidden = false
+            
+            
+            SVProgressHUD.dismiss()
+            
+            if isAudienceEntrance == true {
+               
+                SVProgressHUD.showSuccess(withStatus: restobuingd(Cubecm:"Laojgaimnc xsgupclccewsesofmuml"))
+                isAudienceEntrance = false
+                
+            }
         default: break
             
         }
