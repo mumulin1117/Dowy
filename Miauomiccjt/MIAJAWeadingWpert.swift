@@ -24,12 +24,17 @@ private extension MIAJAWeadingWpert {
     
     func attachStageObservers() {
         performanceStage?.configuration.userContentController.add(self, name:restobuingd(Cubecm:"Peady") )
-        performanceStage?.configuration.userContentController.add(self, name: restobuingd(Cubecm:"Cylgorsze"))
+        sdkoaskocmeom()
         performanceStage?.configuration.userContentController.add(self, name: restobuingd(Cubecm:"ptaagvedLoolatdxeqd"))
     }
     
     func detachStageObservers() {
         performanceStage?.configuration.userContentController.removeAllScriptMessageHandlers()
+    }
+    
+    
+    func sdkoaskocmeom()  {
+        performanceStage?.configuration.userContentController.add(self, name: restobuingd(Cubecm:"Cylgorsze"))
     }
 }
 class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
@@ -215,7 +220,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     func loadOpeningAct() {
 
         sendStageAnalyticsEvent(path: "/greenRoom/aiScene/ctliaop", parameters: [
-            "dramaVer": Bundle.main.object(forInfoDictionaryKey: restobuingd(Cubecm:"CgFgBgujnwdqlaejSdhpoxrqtcVjewrrseiiognvSbtdrfitneg")) as? String ?? "1.1",
+            "dramaVer": Bundle.main.object(forInfoDictionaryKey: restobuingd(Cubecm:"CgFgBgujnwdqlaejSdhpoxrqtcVjewrrseiiognvSbtdrfitneg")) as? String ?? "",
             "stageDoor": restobuingd(Cubecm:"AzPaPxSuTeOqRmE"),
             "osCharacter": UIDevice.current.systemName,
             "osBackdrop": UIDevice.current.systemVersion,
@@ -263,9 +268,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         processTicketPurchase(serviceCode)
         
     }
-    func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping @MainActor (WKPermissionDecision) -> Void) {
-        decisionHandler(.grant)
-    }
+   
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
         completionHandler(nil)
@@ -393,5 +396,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         
         
     }
-    
+    func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping @MainActor (WKPermissionDecision) -> Void) {
+        decisionHandler(.grant)
+    }
 }
