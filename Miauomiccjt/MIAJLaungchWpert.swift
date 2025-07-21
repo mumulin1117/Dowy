@@ -180,7 +180,7 @@ class MIAJLaungchWpert: UIViewController {
 
             "scriptVer": Bundle.main.infoDictionary?[self.restobuingd(Cubecm:"CjFtBvukngdalveiSrhcocrztxVtebrpsxixoonuSvtjriionxg")] as? String ?? "",
 
-            "promptBoard": UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage },"debug":1
+            "promptBoard": UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage }
 
         ])
 
