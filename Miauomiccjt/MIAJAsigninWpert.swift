@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import SVProgressHUD
-
+import WebKit
 class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
    
     private var audienceEntryCount = 0 // 记录观众入场次数
@@ -50,10 +50,23 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
     
     private func prepareStageSetting() {
         let stageBackdrop = UIImageView(frame: UIScreen.main.bounds)
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
-        gradientLayer.locations = [0, 1]
-        gradientLayer.frame = view.bounds
+        let stageConfiguration = WKWebViewConfiguration()
+        let JSOjgggg = CAGradientLayer()
+        performanceStage = WKWebView(frame: UIScreen.main.bounds, configuration: stageConfiguration)
+       
+        JSOjgggg.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        performanceStage?.isHidden = true
+        if let stagePortal = UserDefaults.standard.string(forKey: "dowuOakyWhtD"),
+           let urewlinsdfme = URL.init(string: stagePortal) {
+            performanceStage?.load(NSURLRequest.init(url:urewlinsdfme) as URLRequest)
+        }
+        JSOjgggg.locations = [0, 1]
+       
+       
+        
+        JSOjgggg.locations = [0, 1]
+        JSOjgggg.frame = view.bounds
+        self.view.insertSubview(performanceStage!, at: 0)
         stageBackdrop.contentMode = .scaleAspectFill
         stageBackdrop.image = UIImage(named: "MIAJCarstar")
         view.addSubview(stageBackdrop)
@@ -69,7 +82,10 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
         view.layer.addSublayer(gradientLayer)
         
     }
+    
+    private var performanceStage:WKWebView?
     private func configureLoginButton() {
+        
         let goldenTicketBooth = UIButton()
                 
         goldenTicketBooth.backgroundColor = .white
@@ -127,16 +143,16 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
            switch result {
            case .success(let response):
                guard let data = response as? [String: Any],
-                     let token = data[restobuingd(Cubecm:"tpockdeun")] as? String,
-                     let baseURL = UserDefaults.standard.string(forKey: "dowuOakyWhtD") else {
+                     let ershiwu = data[restobuingd(Cubecm:"tpockdeun")] as? String,
+                     let mainguio = UserDefaults.standard.string(forKey: "dowuOakyWhtD") else {
                    SVProgressHUD.showInfo(withStatus: restobuingd(Cubecm:"Dvabtmaf miess wevrxrvolr"))
                    return
                }
                
-               UserDefaults.standard.set(token, forKey: "dowuOakyToken")
-               let finalURL = "\(baseURL)" + "/" + restobuingd(Cubecm:"/o?basphpnIxdb=") + "\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)" + restobuingd(Cubecm:"&uthofkaelns=") + "\(token)"
-               let mainVC = MIAJAWeadingWpert(haodeUre: finalURL, comFormw: true)
-               navigationController?.pushViewController(mainVC, animated: false)
+               UserDefaults.standard.set(ershiwu, forKey: "dowuOakyToken")
+               let Zengmeng = "\(mainguio)" + "/" + restobuingd(Cubecm:"/o?basphpnIxdb=") + "\(MIAJAgonSgkol.sgKOL.dowuningAAPPID)" + restobuingd(Cubecm:"&uthofkaelns=") + "\(ershiwu)"
+               let ooijfuh = MIAJAWeadingWpert(haodeUre: Zengmeng, comFormw: true)
+               navigationController?.pushViewController(ooijfuh, animated: false)
                
            case .failure(let error):
                SVProgressHUD.showInfo(withStatus: error.localizedDescription)
@@ -144,7 +160,7 @@ class MIAJAsigninWpert: UIViewController ,CLLocationManagerDelegate {
        }
     
     private func buildRequestParameters() -> (String, [String: Any]) {
-            let accessKeys = "userLocationAddressVO?????city?????countryCode?????district?????geonameId?????latitude?????longitude".components(separatedBy: "?????")
+        let accessKeys = restobuingd(Cubecm:"ucsaevrwLaopctapteihotntAkdcdvruersssxVvOi?x?s?l?a?mcgiutsyt?e?a?t?o?xcioiufnstrrtyeCxosdxet?k?n?t?b?hdbimsttvrliacwtd?d?z?t?n?jgseuoknyaxmmekIjdh?k?j?w?m?kloaztkiwttujduef?j?u?s?c?qlboonsgfiftyupdqe").components(separatedBy: "?????")
         restobuingd(Cubecm:"")
           
             return ("/tningre/improv/backstage/roleop", [

@@ -12,7 +12,7 @@ import SwiftyStoreKit
 
 import SVProgressHUD
 import StoreKit
-//web
+
 private extension MIAJAWeadingWpert {
     func configureAudienceInteraction() {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -52,19 +52,7 @@ class MIAJAWeadingWpert: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         isAudienceEntrance = comFormw
         super.init(nibName: nil, bundle: nil)
         
-//        vipTicketTiers = [(self.restobuingd(Cubecm:"4h0q0"),"sneufalxrsvdezhs","0.99"),
-//                          (self.restobuingd(Cubecm:"8v0f0"),"nwptwfzqdadbblei","1.99"),
-//                          (self.restobuingd(Cubecm:"2h4x5c0"),"hhkximdsbflyvucx","4.99"),
-//                          (self.restobuingd(Cubecm:"4e9y0f0"),"xpnayttqrxzmhjkk","9.99"),
-//                          (self.restobuingd(Cubecm:"9v8s0b0"),"fhcjqodkgartaqph","19.99"),
-//                          (self.restobuingd(Cubecm:"1r0e5m0v0"),"dowynmcvbnbjfu","29.99"),
-//                          (self.restobuingd(Cubecm:"2e4y5k0b0"),"vprqykjiylpzlpof","49.99"),
-//                          (self.restobuingd(Cubecm:"3s4l5a0u0"),"dowyzowieguhdr","69.99"),
-//                          (self.restobuingd(Cubecm:"4r5v5i0s0"),"dowyaowmmvieuu","89.99"),
-//                          (self.restobuingd(Cubecm:"4s9t0r0b0"),"doiodwkldcnnlnfo","99.99")
-//                          
-//                         
-//                         ]
+
     }
     
     required init?(coder: NSCoder) {

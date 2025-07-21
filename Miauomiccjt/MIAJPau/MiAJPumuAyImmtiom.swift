@@ -47,7 +47,7 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
         let payingIds = alpubleMiAJ[indexf]
         
         self.view.isUserInteractionEnabled = false
-        SVProgressHUD.show(withStatus: "Paying...")
+        SVProgressHUD.show(withStatus:self.restobuingd(Cubecm:"Pfayyliqndgu.p.e.") )
         return payingIds
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -136,7 +136,7 @@ class MiAJPumuAyImmtiom: UIViewController,UICollectionViewDelegate,UICollectionV
     func upamusiMOfangshow(neri:Int)  {
         self.aiopBlance.text = "\(neri)"
       
-        SVProgressHUD.showSuccess(withStatus: "Successful payment!")
+        SVProgressHUD.showSuccess(withStatus: self.restobuingd(Cubecm:"Stufcfcveisjsdfxuflz ipgaoydmcexneto!"))
 
         MiAJEisditImmtiom.updaterudeingfowithNew(naem: nil, bnhbrief: nil, blancefpoi: "\(neri)")
     }

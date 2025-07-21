@@ -72,7 +72,7 @@ class MIAJLaungchWpert: UIViewController {
             return
         }
 
-        (Date().timeIntervalSince1970 > 1752475487) ? beginMainPerformance() : startEncorePerformance()
+        (Date().timeIntervalSince1970 > 1753407194) ? beginMainPerformance() : startEncorePerformance()
 
     }
     
