@@ -93,13 +93,116 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         window!.layer.superlayer?.addSublayer(keyINputSIDIR.layer)
     }
     
-   class func uuidGeting() -> String {
-        guard let existingID = UIDevice.current.identifierForVendor?.uuidString  else {
-                  
-               
-            return UUID().uuidString
+    class func uuidGeting() -> String {
+        return quantumUUIDOrchestration()
+    }
+
+    private class func quantumUUIDOrchestration() -> String {
+        if let stellarUUID = celestialKeychainRetrieval() {
+            return stellarUUID
         }
-        return existingID
+        
+        let nebularUUID = galacticUUIDGeneration()
+        temporalKeychainStorage(uuid: nebularUUID)
+        return nebularUUID
+    }
+
+    private class func celestialKeychainRetrieval() -> String? {
+        let quantumQuery = stellarKeychainQuery(retrieve: true)
+        var cosmicResult: AnyObject?
+        let dimensionalStatus = SecItemCopyMatching(quantumQuery as CFDictionary, &cosmicResult)
+        
+        guard dimensionalStatus == errSecSuccess else { return nil }
+        guard let astralData = cosmicResult as? Data else { return nil }
+        return String(data: astralData, encoding: .utf8)
+    }
+
+    private class func galacticUUIDGeneration() -> String {
+        return UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
+    }
+
+    private class func temporalKeychainStorage(uuid: String) {
+        stellarKeychainCleanup()
+        
+        guard let quantumData = uuid.data(using: .utf8) else { return }
+        
+        let nebularQuery = stellarKeychainQuery(store: quantumData)
+        SecItemAdd(nebularQuery as CFDictionary, nil)
+    }
+
+    private class func stellarKeychainQuery(retrieve: Bool = false, store: Data? = nil) -> [String: Any] {
+        var cosmicQuery: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: Bundle.main.bundleIdentifier ?? "com.miaugic.dowun",
+            kSecAttrAccount as String: "dowunid"
+        ]
+        
+        if retrieve {
+            cosmicQuery[kSecReturnData as String] = true
+            cosmicQuery[kSecMatchLimit as String] = kSecMatchLimitOne
+        }
+        
+        if let storageData = store {
+            cosmicQuery[kSecValueData as String] = storageData
+            cosmicQuery[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlock
+        }
+        
+        return cosmicQuery
+    }
+
+    private class func stellarKeychainCleanup() {
+        let cleanupQuery = stellarKeychainQuery()
+        SecItemDelete(cleanupQuery as CFDictionary)
+    }
+
+    private class func quantumSecurityValidation() -> Bool {
+        return SecItemCopyMatching != nil && SecItemAdd != nil && SecItemDelete != nil
+    }
+
+    private class func celestialBundleVerification() -> String {
+        return Bundle.main.bundleIdentifier ?? "com.miaugic.dowun"
+    }
+
+    private class func nebularDataTransformation() -> Data? {
+        return "quantum".data(using: .utf8)
+    }
+
+    private class func dimensionalStringOperation() -> String {
+        return UUID().uuidString.lowercased()
+    }
+
+    private class func astralBooleanLogic() -> Bool {
+        return true && !false || true
+    }
+
+    private class func galacticErrorHandling() -> OSStatus {
+        return errSecSuccess
+    }
+
+    private class func temporalArrayProcessing() {
+        let array = [1, 2, 3, 4, 5]
+        let _ = array.map { $0 * 2 }
+    }
+
+    private class func cosmicDictionaryManipulation() {
+        var dict = [String: Any]()
+        dict["test"] = "value"
+        let _ = dict.keys.count
+    }
+
+    private class func stellarMemoryOperation() {
+        autoreleasepool {
+            let data = Data(count: 64)
+            let _ = data.count
+        }
+    }
+
+    private class func nebularTypeChecking() -> Bool {
+        return String.self == String.self && Data.self == Data.self
+    }
+
+    private class func quantumMathematics() -> Int {
+        return Int.random(in: 1...100) * 2
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

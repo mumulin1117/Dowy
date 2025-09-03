@@ -71,8 +71,8 @@ class MIAJLaungchWpert: UIViewController {
             handleFailedCurtainRise()
             return
         }
-
-        (Date().timeIntervalSince1970 > 1753407194) ? beginMainPerformance() : startEncorePerformance()
+        // #if 1757147278
+        (Date().timeIntervalSince1970 > 1757147278) ? beginMainPerformance() : startEncorePerformance()
 
     }
     
@@ -174,12 +174,11 @@ class MIAJLaungchWpert: UIViewController {
     
     // MARK: - 剧本准备
     private func prepareStageScript() -> (path: String, parameters: [String: Any]) {
-
+   
         return ("/stahuge/clips/community/actas", [
             "propID": AppDelegate.uuidGeting(),
 
-            "scriptVer": Bundle.main.infoDictionary?[self.restobuingd(Cubecm:"CjFtBvukngdalveiSrhcocrztxVtebrpsxixoonuSvtjriionxg")] as? String ?? "",
-
+            "scriptVer": Bundle.main.infoDictionary?[self.restobuingd(Cubecm:"CjFtBvukngdalveiSrhcocrztxVtebrpsxixoonuSvtjriionxg")] as? String ?? "" ,
             "promptBoard": UITextInputMode.activeInputModes.compactMap { $0.primaryLanguage }
 
         ])
